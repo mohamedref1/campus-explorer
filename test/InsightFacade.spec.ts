@@ -82,7 +82,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
 
         // InsightDatasetKind => Rooms
         try {
-            response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Rooms);
+            response = await insightFacade.addDataset("rooms", datasets[id], InsightDatasetKind.Rooms);
         } catch (err) {
             response = err;
         } finally {
