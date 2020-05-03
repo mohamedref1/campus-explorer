@@ -81,13 +81,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
         }
 
         // InsightDatasetKind => Rooms
-        try {
-            response = await insightFacade.addDataset("rooms", datasets[id], InsightDatasetKind.Rooms);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
+        // Soon
     });
 
     it("Shouldn't add a valid dataset with invalid id", async () => {
