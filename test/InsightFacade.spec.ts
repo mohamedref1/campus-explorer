@@ -71,8 +71,18 @@ describe("InsightFacade Add/Remove Dataset", function () {
         const expectedCode: number = 204;
         let response: InsightResponse;
 
+        // InsightDatasetKind => Courses
         try {
             response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Courses);
+        } catch (err) {
+            response = err;
+        } finally {
+            expect(response.code).to.equal(expectedCode);
+        }
+
+        // InsightDatasetKind => Rooms
+        try {
+            response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Rooms);
         } catch (err) {
             response = err;
         } finally {
