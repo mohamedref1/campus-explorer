@@ -1,0 +1,10 @@
+{
+    "title": "A query of non-existed dataset kinds",
+    "query": "In lectures dataset courses, find entries whose Seats is greater than 80; show Seats.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "title": "A query uses \"Show\" instead of \"show\"",
+    "query": "In courses dataset courses, find entries whose Average is not equal to 95 or Average is greater than 90; Show Department, Title and Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

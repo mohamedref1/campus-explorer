@@ -1,0 +1,195 @@
+{
+    "title": "SELECT dept, id WHERE id == '578'",
+    "query": "In courses dataset courses, find entries whose ID is \"578\"; show Department and ID.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "mtrl",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_id": "578"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_id": "578"
+                }
+              ]
+        }
+    }
+}

@@ -1,10 +1,27 @@
 {
-    "title": "A query with invalid sort key",
-    "query": "In rooms dataset abc, find entries whose Seats is greater than 80; show Seats and Address; sort in ascending order by Average2.",
+    "title": "SELECT dept, fail WHERE fail == 100",
+    "query": "In courses dataset courses, find entries whose Fail is equal to 100; show Department and Fail; sort in ascending order by Fail.",
     "response": {
-        "code": 400,
+        "code": 200,
         "body": {
-            "error": ""
+            "result": [
+                {
+                  "courses_dept": "math",
+                  "courses_fail": 100
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_fail": 100
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_fail": 100
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_fail": 100
+                }
+            ]
         }
     }
 }

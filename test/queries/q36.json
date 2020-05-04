@@ -1,0 +1,10 @@
+{
+    "title": "A query uses \",\" instead of \";\" after find entries whose phrase",
+    "query": "In courses dataset courses, find entries whose Average is not equal to 95 or Average is greater than 90, show Department and Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "title": "A query uses \"include\" instead of \"includes\"",
+    "query": "In courses dataset courses, find entries whose ID include \"578\"; show Department and ID.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

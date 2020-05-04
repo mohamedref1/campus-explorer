@@ -1,0 +1,10 @@
+{
+    "title": "A query uses \"Sort\" instead of \"sort\"",
+    "query": "In courses dataset courses, find entries whose Average is greater than 80; show Department and Average; Sort in ascending order by Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

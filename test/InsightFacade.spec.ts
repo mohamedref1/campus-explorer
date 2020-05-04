@@ -84,6 +84,20 @@ describe("InsightFacade Add/Remove Dataset", function () {
         // Soon
     });
 
+    it("Shoudn't add a valid dataset with an id that used before", async () => {
+        const id: string = "courses";
+        const expectedCode: number = 400;
+        let response: InsightResponse;
+
+        try {
+            response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Courses);
+        } catch (err) {
+            response = err;
+        } finally {
+            expect(response.code).to.equal(expectedCode);
+        }
+    });
+
     it("Shouldn't add a valid dataset with invalid id", async () => {
         const expectedCode: number = 400;
         const validDataID: string = "courses";
@@ -185,7 +199,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
             expect(response.code).to.equal(expectedCode);
         }
 
-        // Shouldn't accept a base64 serialized zip file dataset that have an empty csv files (now sections/data rows)
+        // Shouldn't accept a base64 serialized zip file dataset that have an empty csv files (no sections/data rows)
         invalidDataID = "coursesWithoutSections";
         try {
             response = await insightFacade.addDataset(id, datasets[invalidDataID], InsightDatasetKind.Courses);
@@ -211,7 +225,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
         }
     });
 
-    it("Shouldn't remove non-existed dataset", async () => {
+    it("Shouldn't remove a non-existed dataset", async () => {
         const id: string = "courses";
         const expectedCode: number = 404;
         let response: InsightResponse;

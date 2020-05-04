@@ -1,0 +1,10 @@
+{
+    "title": "A query uses \"equals\" instead of \"is equal to\"",
+    "query": "In courses dataset courses, find entries whose Average equals 80; show Department and Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

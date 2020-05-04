@@ -1,0 +1,10 @@
+{
+    "title": "A query uses \"isn't\" instead of \"is not\"",
+    "query": "In courses dataset courses, find entries whose Average isn't equal to 80; show Department and Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

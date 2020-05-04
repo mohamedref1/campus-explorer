@@ -1,0 +1,151 @@
+{
+    "title": "SELECT dept, audit WHERE audit !< 10",
+    "query": "In courses dataset courses, find entries whose Audit is not less than 10; show Department and Audit; sort in ascending order by Audit.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 10
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 10
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_audit": 10
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_audit": 10
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_audit": 10
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_audit": 11
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 11
+                },
+                {
+                  "courses_dept": "cpsc",
+                  "courses_audit": 11
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_audit": 11
+                },
+                {
+                  "courses_dept": "biol",
+                  "courses_audit": 12
+                },
+                {
+                  "courses_dept": "biol",
+                  "courses_audit": 12
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 12
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 12
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 12
+                },
+                {
+                  "courses_dept": "fren",
+                  "courses_audit": 12
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 12
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 13
+                },
+                {
+                  "courses_dept": "cnto",
+                  "courses_audit": 13
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 14
+                },
+                {
+                  "courses_dept": "cpsc",
+                  "courses_audit": 14
+                },
+                {
+                  "courses_dept": "cons",
+                  "courses_audit": 15
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 15
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 15
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 17
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 18
+                },
+                {
+                  "courses_dept": "cpsc",
+                  "courses_audit": 18
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 19
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 19
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 19
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_audit": 19
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_audit": 19
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 20
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 21
+                },
+                {
+                  "courses_dept": "cpsc",
+                  "courses_audit": 21
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_audit": 23
+                }
+            ]
+        }
+    }
+}
