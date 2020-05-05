@@ -19,10 +19,12 @@ describe("InsightFacade Add/Remove Dataset", function () {
     // automatically be loaded in the Before All hook.
     const datasetsToLoad: { [id: string]: string } = {
         courses: "./test/data/courses.zip",
+        rooms: "./test/data/rooms.zip",
         courses7Z: "./test/data/courses.7z",
         coursesWithoutFolder: "./test/data/coursesWithoutFolder.zip",
         coursesWithoutCSVfiles: "./test/data/coursesWithoutCSVfiles.zip",
         coursesWithoutSections: "./test/data/coursesWithoutSections.zip",
+        roomsWithoutIndex: "./test/data/roomsWithoutIndex.zip",
     };
 
     let insightFacade: InsightFacade;
@@ -67,11 +69,12 @@ describe("InsightFacade Add/Remove Dataset", function () {
     });
 
     it("Should add a valid dataset", async () => {
-        const id: string = "courses";
         const expectedCode: number = 204;
+        let id: string;
         let response: InsightResponse;
 
         // InsightDatasetKind => Courses
+        id = "courses";
         try {
             response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Courses);
         } catch (err) {
@@ -81,7 +84,14 @@ describe("InsightFacade Add/Remove Dataset", function () {
         }
 
         // InsightDatasetKind => Rooms
-        // Soon
+        id = "room";
+        try {
+            response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Rooms);
+        } catch (err) {
+            response = err;
+        } finally {
+            expect(response.code).to.equal(expectedCode);
+        }
     });
 
     it("Shoudn't add a valid dataset with an id that used before", async () => {
@@ -147,13 +157,13 @@ describe("InsightFacade Add/Remove Dataset", function () {
 
     it("Shouldn't add an invalid dataset", async () => {
         const expectedCode: number = 400;
-        const id: string = "courses";
         let invalidDataID: string;
         let response: InsightResponse;
 
         // Shouldn't accept a null dataset
+        invalidDataID = "test1";
         try {
-            response = await insightFacade.addDataset(id, null, InsightDatasetKind.Courses);
+            response = await insightFacade.addDataset(invalidDataID, null, InsightDatasetKind.Courses);
         } catch (err) {
             response = err;
         } finally {
@@ -161,8 +171,9 @@ describe("InsightFacade Add/Remove Dataset", function () {
         }
 
         // Shouldn't accept an undefined dataset
+        invalidDataID = "test2";
         try {
-            response = await insightFacade.addDataset(id, undefined, InsightDatasetKind.Courses);
+            response = await insightFacade.addDataset(invalidDataID, undefined, InsightDatasetKind.Courses);
         } catch (err) {
             response = err;
         } finally {
@@ -172,37 +183,52 @@ describe("InsightFacade Add/Remove Dataset", function () {
         // Shouldn't accept a base64 non-serialized zip file dataset
         invalidDataID = "courses7Z";
         try {
-            response = await insightFacade.addDataset(id, datasets[invalidDataID], InsightDatasetKind.Courses);
+            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                 InsightDatasetKind.Courses);
         } catch (err) {
             response = err;
         } finally {
             expect(response.code).to.equal(expectedCode);
         }
 
-        // Shouldn't accept a base64 serialized zip file dataset that doesn't have direct folder (/courses)
+        // Shouldn't accept a base64 serialized zip file courses dataset that doesn't have direct folder (/courses)
         invalidDataID = "coursesWithoutFolder";
         try {
-            response = await insightFacade.addDataset(id, datasets[invalidDataID], InsightDatasetKind.Courses);
+            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                InsightDatasetKind.Courses);
         } catch (err) {
             response = err;
         } finally {
             expect(response.code).to.equal(expectedCode);
         }
 
-        // Shouldn't accept a base64 serialized zip file dataset that doesn't have csv files (/courses/*.csv)
+        // Shouldn't accept a base64 serialized zip file courses dataset that doesn't have csv files (/courses/*.csv)
         invalidDataID = "coursesWithoutCSVfiles";
         try {
-            response = await insightFacade.addDataset(id, datasets[invalidDataID], InsightDatasetKind.Courses);
+            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                InsightDatasetKind.Courses);
         } catch (err) {
             response = err;
         } finally {
             expect(response.code).to.equal(expectedCode);
         }
 
-        // Shouldn't accept a base64 serialized zip file dataset that have an empty csv files (no sections/data rows)
+        // Shouldn't accept a base64 serialized zip file courses dataset that have an empty csv files (no sections)
         invalidDataID = "coursesWithoutSections";
         try {
-            response = await insightFacade.addDataset(id, datasets[invalidDataID], InsightDatasetKind.Courses);
+            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                InsightDatasetKind.Courses);
+        } catch (err) {
+            response = err;
+        } finally {
+            expect(response.code).to.equal(expectedCode);
+        }
+
+        // Shouldn't accept a base64 serialized zip file room dataset that doesn't have index.html
+        invalidDataID = "roomsWithoutIndex";
+        try {
+            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                 InsightDatasetKind.Courses);
         } catch (err) {
             response = err;
         } finally {

@@ -1,6 +1,6 @@
 {
     "title": "A query starting with lower case \"in\" instead of \"In\"",
-    "query": "in rooms dataset abc, find entries whose Seats is greater than 80; show Seats.",
+    "query": "in courses dataset courses, find entries whose Seats is greater than 80; show Seats.",
     "response": {
         "code": 400,
         "body": {

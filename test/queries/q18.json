@@ -1,6 +1,6 @@
 {
     "title": "A query uses upper case \"Dataset\" instead of \"dataset\"",
-    "query": "In rooms Dataset abc, find entries whose Seats is greater than 80; show Seats.",
+    "query": "In courses Dataset courses, find entries whose Seats is greater than 80; show Seats.",
     "response": {
         "code": 400,
         "body": {
