@@ -1,6 +1,6 @@
 {
     "title": "A query with invalid dataset input (underscored id)",
-    "query": "In courses dataset new_courses, find entries whose Seats is greater than 80; show Seats and Address; sort in ascending order by Average.",
+    "query": "In courses dataset new_courses, find entries whose Average is greater than 80; show Average; sort in ascending order by Average.",
     "response": {
         "code": 400,
         "body": {
