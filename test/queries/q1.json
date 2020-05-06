@@ -1,5 +1,5 @@
 {
-    "title": "A Query uses 'find all entries' but with incorrect show key",
+    "title": "A Query uses 'find all entries' but with an invalid show key",
     "query": "In courses dataset courses, find all entries; show IDs.",
     "response": {
         "code": 400,
