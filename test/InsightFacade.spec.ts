@@ -67,7 +67,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
         Log.test(`AfterTest: ${this.currentTest.title}`);
     });
 
-    describe("InsightFacade addDataset", function () {
+    describe("InsightFacade Add Dataset", function () {
         it("Should add a valid dataset", async () => {
             const expectedCode: number = 204;
             const id: string = "courses";
@@ -264,7 +264,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
         });
     });
 
-    describe("InsightFacade removeDataset", function () {
+    describe("InsightFacade Remove Dataset", function () {
         it("Should remove the courses dataset", async () => {
             const id: string = "courses";
             const expectedCode: number = 204;
