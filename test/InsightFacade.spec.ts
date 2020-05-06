@@ -102,7 +102,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
             let invalidID: string;
             let response: InsightResponse;
 
-            it("Shouldn't accept null id", async () => {
+            it("null id isn't accepted", async () => {
                 invalidID = null;
                 try {
                     response = await insightFacade.addDataset(invalidID, datasets[validDataID],
@@ -114,7 +114,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept undefined id", async () => {
+            it("undefined id isn't accepted", async () => {
                 invalidID = undefined;
                 try {
                     response = await insightFacade.addDataset(invalidID, datasets[validDataID],
@@ -126,7 +126,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept id that has space", async () => {
+            it("id that has space isn't accepted", async () => {
                 invalidID = "new courses";
                 try {
                     response = await insightFacade.addDataset(invalidID, datasets[validDataID],
@@ -138,7 +138,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept id that has underscore", async () => {
+            it("id that has underscore isn't accepted", async () => {
                 invalidID = "new_courses";
                 try {
                     response = await insightFacade.addDataset(invalidID, datasets[validDataID],
@@ -156,7 +156,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
             let invalidDataID: string;
             let response: InsightResponse;
 
-            it("Shouldn't accept null dataset", async () => {
+            it("null dataset isn't accepted", async () => {
                 invalidDataID = "test1";
                 try {
                     response = await insightFacade.addDataset(invalidDataID, null, InsightDatasetKind.Courses);
@@ -167,7 +167,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept undefined dataset", async () => {
+            it("undefined dataset isn't accepted", async () => {
                 invalidDataID = "test2";
                 try {
                     response = await insightFacade.addDataset(invalidDataID, undefined, InsightDatasetKind.Courses);
@@ -178,7 +178,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept a non-base64 dataset", async () => {
+            it("a non-base64 dataset isn't accepted", async () => {
                 invalidDataID = "simpleSentence";
                 try {
                     response = await insightFacade.addDataset(invalidDataID,
@@ -190,7 +190,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept a non-serialized zip file dataset", async () => {
+            it("a non-serialized zip file dataset isn't accepted", async () => {
                 invalidDataID = "courses7Z";
                 try {
                     response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
@@ -202,7 +202,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept a dataset that doesn't have (/courses) folder", async () => {
+            it("a dataset that doesn't have (/courses) folder isn't accepted", async () => {
                 invalidDataID = "coursesWithoutFolder";
                 try {
                     response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
@@ -214,7 +214,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept a dataset that doesn't have (/courses/*.csv) files", async () => {
+            it("a dataset that doesn't have (/courses/*.csv) files isn't accepted", async () => {
                 invalidDataID = "coursesWithoutCSVfiles";
                 try {
                     response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
@@ -226,19 +226,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept a dataset that has empty csv files (no sections)", async () => {
-                invalidDataID = "coursesWithoutSections";
-                try {
-                    response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
-                        InsightDatasetKind.Courses);
-                } catch (err) {
-                    response = err;
-                } finally {
-                    expect(response.code).to.equal(expectedCode);
-                }
-            });
-
-            it("Shouldn't accept a dataset that has csv files with no right headings", async () => {
+            it("a dataset that has csv files with no right headings isn't accepted", async () => {
                 invalidDataID = "coursesWithoutRightHeadings";
                 try {
                     response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
@@ -250,7 +238,19 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept a dataset that doesn't match the correct InsightDatasetKind", async () => {
+            it("a dataset that has empty csv files (no sections) isn't accepted", async () => {
+                invalidDataID = "coursesWithoutSections";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("a dataset that doesn't match the correct InsightDatasetKind isn't accepted", async () => {
                 invalidDataID = "courses";
                 try {
                     response = await insightFacade.addDataset("test3", datasets[invalidDataID],
@@ -298,7 +298,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
             let id: string;
             let response: InsightResponse;
 
-            it("Souldn't accept null id", async () => {
+            it("null id isn't accepted", async () => {
                 try {
                     response = await insightFacade.removeDataset(null);
                 } catch (err) {
@@ -308,7 +308,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept undefined id", async () => {
+            it("undefined id isn't accepted", async () => {
                 try {
                     response = await insightFacade.removeDataset(undefined);
                 } catch (err) {
@@ -318,7 +318,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept id that has space", async () => {
+            it("id that has space isn't accepted", async () => {
                 id = "new courses";
                 try {
                     response = await insightFacade.removeDataset(id);
@@ -329,7 +329,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accpet id that has underscore", async () => {
+            it("id that has underscore isn't accepted", async () => {
                 id = "new_courses";
                 try {
                     response = await insightFacade.removeDataset(id);
@@ -340,7 +340,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            it("Shouldn't accept a non-existed id", async () => {
+            it("non-existed id isn't accepted", async () => {
                 id = "Courses";
                 try {
                     response = await insightFacade.removeDataset(id);
