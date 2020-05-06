@@ -23,6 +23,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
         coursesWithoutFolder: "./test/data/coursesWithoutFolder.zip",
         coursesWithoutCSVfiles: "./test/data/coursesWithoutCSVfiles.zip",
         coursesWithoutSections: "./test/data/coursesWithoutSections.zip",
+        coursesWithoutRightHeadings: "./test/data/coursesWithoutRightHeadings.zip",
     };
 
     let insightFacade: InsightFacade;
@@ -200,6 +201,17 @@ describe("InsightFacade Add/Remove Dataset", function () {
 
         // Shouldn't accept courses dataset that doesn't have csv files (/courses/*.csv)
         invalidDataID = "coursesWithoutCSVfiles";
+        try {
+            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                InsightDatasetKind.Courses);
+        } catch (err) {
+            response = err;
+        } finally {
+            expect(response.code).to.equal(expectedCode);
+        }
+
+        // Shouldn't accept courses dataset that have csv without correct headings
+        invalidDataID = "coursesWithoutRightHeadings";
         try {
             response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
                 InsightDatasetKind.Courses);
