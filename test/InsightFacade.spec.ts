@@ -67,264 +67,290 @@ describe("InsightFacade Add/Remove Dataset", function () {
         Log.test(`AfterTest: ${this.currentTest.title}`);
     });
 
-    it("Should add a valid dataset", async () => {
-        const expectedCode: number = 204;
-        const id: string = "courses";
-        let response: InsightResponse;
+    describe("InsightFacade addDataset", function () {
+        it("Should add a valid dataset", async () => {
+            const expectedCode: number = 204;
+            const id: string = "courses";
+            let response: InsightResponse;
 
-        try {
-            response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
+            try {
+                response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Courses);
+            } catch (err) {
+                response = err;
+            } finally {
+                expect(response.code).to.equal(expectedCode);
+            }
+        });
+
+        it("Shoudn't add a dataset with an id that used before", async () => {
+            const id: string = "courses";
+            const expectedCode: number = 400;
+            let response: InsightResponse;
+
+            try {
+                response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Courses);
+            } catch (err) {
+                response = err;
+            } finally {
+                expect(response.code).to.equal(expectedCode);
+            }
+        });
+
+        describe("Shouldn't add a dataset with an incorrect id", function () {
+            const expectedCode: number = 400;
+            const validDataID: string = "courses";
+            let invalidID: string;
+            let response: InsightResponse;
+
+            it("Shouldn't accept null id", async () => {
+                invalidID = null;
+                try {
+                    response = await insightFacade.addDataset(invalidID, datasets[validDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept undefined id", async () => {
+                invalidID = undefined;
+                try {
+                    response = await insightFacade.addDataset(invalidID, datasets[validDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept id that has space", async () => {
+                invalidID = "new courses";
+                try {
+                    response = await insightFacade.addDataset(invalidID, datasets[validDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept id that has underscore", async () => {
+                invalidID = "new_courses";
+                try {
+                    response = await insightFacade.addDataset(invalidID, datasets[validDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+        });
+
+        describe("Shouldn't add an invalid dataset ", function () {
+            const expectedCode: number = 400;
+            let invalidDataID: string;
+            let response: InsightResponse;
+
+            it("Shouldn't accept null dataset", async () => {
+                invalidDataID = "test1";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, null, InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept undefined dataset", async () => {
+                invalidDataID = "test2";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, undefined, InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept a non-base64 dataset", async () => {
+                invalidDataID = "simpleSentence";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID,
+                        "this is a string", InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept a non-serialized zip file dataset", async () => {
+                invalidDataID = "courses7Z";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                         InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept a dataset that doesn't have (/courses) folder", async () => {
+                invalidDataID = "coursesWithoutFolder";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept a dataset that doesn't have (/courses/*.csv) files", async () => {
+                invalidDataID = "coursesWithoutCSVfiles";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept a dataset that has empty csv files (no sections)", async () => {
+                invalidDataID = "coursesWithoutSections";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept a dataset that has csv files with no right headings", async () => {
+                invalidDataID = "coursesWithoutRightHeadings";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+
+            it("Shouldn't accept a dataset that doesn't match the correct InsightDatasetKind", async () => {
+                invalidDataID = "courses";
+                try {
+                    response = await insightFacade.addDataset("test3", datasets[invalidDataID],
+                        InsightDatasetKind.Rooms);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+        });
     });
 
-    it("Shoudn't add a valid dataset with an id that used before", async () => {
-        const id: string = "courses";
-        const expectedCode: number = 400;
-        let response: InsightResponse;
+    describe("InsightFacade removeDataset", function () {
+        it("Should remove the courses dataset", async () => {
+            const id: string = "courses";
+            const expectedCode: number = 204;
+            let response: InsightResponse;
 
-        try {
-            response = await insightFacade.addDataset(id, datasets[id], InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-    });
+            try {
+                response = await insightFacade.removeDataset(id);
+            } catch (err) {
+                response = err;
+            } finally {
+                expect(response.code).to.equal(expectedCode);
+            }
+        });
 
-    it("Shouldn't add a valid dataset with invalid id", async () => {
-        const expectedCode: number = 400;
-        const validDataID: string = "courses";
-        let invalidID: string;
-        let response: InsightResponse;
+        it("Shouldn't remove a non-existed dataset", async () => {
+            const id: string = "courses";
+            const expectedCode: number = 404;
+            let response: InsightResponse;
 
-        // Shouldn't accept null id
-        invalidID = null;
-        try {
-            response = await insightFacade.addDataset(invalidID, datasets[validDataID], InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
+            try {
+                response = await insightFacade.removeDataset(id);
+            } catch (err) {
+                response = err;
+            } finally {
+                expect(response.code).to.equal(expectedCode);
+            }
+        });
 
-        // Shouldn't accept undefined id
-        invalidID = undefined;
-        try {
-            response = await insightFacade.addDataset(invalidID, datasets[validDataID], InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
+        describe("Shouldn't remove a dataset with an invalid id", function () {
+            const expectedCode: number = 404;
+            let id: string;
+            let response: InsightResponse;
 
-        // Shouldn't accept id with multiple words separated by spaces
-        invalidID = "new courses";
-        try {
-            response = await insightFacade.addDataset(invalidID, datasets[validDataID], InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
+            it("Souldn't accept null id", async () => {
+                try {
+                    response = await insightFacade.removeDataset(null);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
 
-        // Shouldn't accept id with multiple words separated by underscore
-        invalidID = "new_courses";
-        try {
-            response = await insightFacade.addDataset(invalidID, datasets[validDataID], InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-    });
+            it("Shouldn't accept undefined id", async () => {
+                try {
+                    response = await insightFacade.removeDataset(undefined);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
 
-    it("Shouldn't add an invalid dataset", async () => {
-        const expectedCode: number = 400;
-        let invalidDataID: string;
-        let response: InsightResponse;
+            it("Shouldn't accept id that has space", async () => {
+                id = "new courses";
+                try {
+                    response = await insightFacade.removeDataset(id);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
 
-        // Shouldn't accept a null dataset
-        invalidDataID = "test1";
-        try {
-            response = await insightFacade.addDataset(invalidDataID, null, InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
+            it("Shouldn't accpet id that has underscore", async () => {
+                id = "new_courses";
+                try {
+                    response = await insightFacade.removeDataset(id);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
 
-        // Shouldn't accept an undefined dataset
-        invalidDataID = "test2";
-        try {
-            response = await insightFacade.addDataset(invalidDataID, undefined, InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept a non-base64 string
-        invalidDataID = "simpleSentence";
-        try {
-            response = await insightFacade.addDataset(invalidDataID, "this is a string", InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept a non-serialized zip file dataset
-        invalidDataID = "courses7Z";
-        try {
-            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
-                 InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept courses dataset that doesn't have direct folder (/courses)
-        invalidDataID = "coursesWithoutFolder";
-        try {
-            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
-                InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept courses dataset that doesn't have csv files (/courses/*.csv)
-        invalidDataID = "coursesWithoutCSVfiles";
-        try {
-            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
-                InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept courses dataset that have csv without correct headings
-        invalidDataID = "coursesWithoutRightHeadings";
-        try {
-            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
-                InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept courses dataset that have an empty csv files (no sections)
-        invalidDataID = "coursesWithoutSections";
-        try {
-            response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
-                InsightDatasetKind.Courses);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept courses dataset with InsightDatasetKind.Rooms
-        invalidDataID = "courses";
-        try {
-            response = await insightFacade.addDataset("test3", datasets[invalidDataID],
-                 InsightDatasetKind.Rooms);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-    });
-
-    // This is an example of a pending test. Add a callback function to make the test run.
-    it("Should remove the courses dataset", async () => {
-        const id: string = "courses";
-        const expectedCode: number = 204;
-        let response: InsightResponse;
-
-        try {
-            response = await insightFacade.removeDataset(id);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-    });
-
-    it("Shouldn't remove a non-existed dataset", async () => {
-        const id: string = "courses";
-        const expectedCode: number = 404;
-        let response: InsightResponse;
-
-        try {
-            response = await insightFacade.removeDataset(id);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-    });
-
-    it("Shouldn't remove a dataset with an invalid id", async () => {
-        const expectedCode: number = 404;
-        let id: string;
-        let response: InsightResponse;
-
-        // Shouldn't accept null id
-        try {
-            response = await insightFacade.removeDataset(null);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept undefined id
-        try {
-            response = await insightFacade.removeDataset(undefined);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept space-separated words id
-        id = "new courses";
-        try {
-            response = await insightFacade.removeDataset(id);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept underscore-separated words id
-        id = "new_courses";
-        try {
-            response = await insightFacade.removeDataset(id);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
-
-        // Shouldn't accept non-existed id (letter cases is sensitive)
-        id = "Courses";
-        try {
-            response = await insightFacade.removeDataset(id);
-        } catch (err) {
-            response = err;
-        } finally {
-            expect(response.code).to.equal(expectedCode);
-        }
+            it("Shouldn't accept a non-existed id", async () => {
+                id = "Courses";
+                try {
+                    response = await insightFacade.removeDataset(id);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
+        });
     });
 });
 
