@@ -149,6 +149,38 @@ describe("InsightFacade Add/Remove Dataset", function () {
                     expect(response.code).to.equal(expectedCode);
                 }
             });
+
+            it("id that uses a reserved word isn't accepted", async () => {
+                invalidID = "dataset";
+                try {
+                    response = await insightFacade.addDataset(invalidID, datasets[validDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+
+                invalidID = "is";
+                try {
+                    response = await insightFacade.addDataset(invalidID, datasets[validDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+
+                invalidID = "includes";
+                try {
+                    response = await insightFacade.addDataset(invalidID, datasets[validDataID],
+                        InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+            });
         });
 
         describe("Shouldn't add an invalid dataset ", function () {
