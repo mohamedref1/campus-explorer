@@ -1,0 +1,10 @@
+{
+    "title": "A query with invalid sort key",
+    "query": "In rooms dataset abc, find entries whose Seats is greater than 80; show Seats and Address; sort in ascending order by Average2.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

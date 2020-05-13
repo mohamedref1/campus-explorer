@@ -1,0 +1,43 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 99.50 || avg < 5.80",
+    "query": "In courses dataset courses, find entries whose Average is greater than 99.50 or Average is less than 5.80; show Department and Average; sort in ascending order by Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "lfs",
+                  "courses_avg": 0
+                },
+                {
+                  "courses_dept": "lfs",
+                  "courses_avg": 0
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_avg": 0
+                },
+                {
+                  "courses_dept": "busi",
+                  "courses_avg": 4
+                },
+                {
+                  "courses_dept": "busi",
+                  "courses_avg": 4
+                },
+                {
+                  "courses_dept": "fopr",
+                  "courses_avg": 4.5
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 99.78
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 99.78
+                }
+              ]
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "title": "A query uses \"And\" instead of \"and\" (show phrase)",
+    "query": "In courses dataset courses, find entries whose Average is not equal to 95 or Average is greater than 90; show Department, Title And Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

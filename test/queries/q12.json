@@ -1,0 +1,723 @@
+{
+    "title": "SELECT dept, instructor WHERE instructor !*= 'he' && instructor ^= 'na'",
+    "query": "In courses dataset courses, find entries whose Instructor does not include \"he\" and Instructor begins with \"na\"; show Department and Instructor.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "mine",
+                  "courses_instructor": "nadolski, stefan"
+                },
+                {
+                  "courses_dept": "mine",
+                  "courses_instructor": "nadolski, stefan"
+                },
+                {
+                  "courses_dept": "civl",
+                  "courses_instructor": "naghibi, ali"
+                },
+                {
+                  "courses_dept": "cogs",
+                  "courses_instructor": "narayan, chandan"
+                },
+                {
+                  "courses_dept": "cogs",
+                  "courses_instructor": "narayan, chandan"
+                },
+                {
+                  "courses_dept": "cogs",
+                  "courses_instructor": "narayan, chandan;vatikiotis-bateson, eric"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "nathan, lisa"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "nathan, lisa"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "nathan, lisa"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nadel, ira bruce"
+                },
+                {
+                  "courses_dept": "eece",
+                  "courses_instructor": "nasiopoulos, panos"
+                },
+                {
+                  "courses_dept": "eece",
+                  "courses_instructor": "nasiopoulos, panos"
+                },
+                {
+                  "courses_dept": "eece",
+                  "courses_instructor": "nasiopoulos, panos"
+                },
+                {
+                  "courses_dept": "eece",
+                  "courses_instructor": "nasiopoulos, panos"
+                },
+                {
+                  "courses_dept": "eece",
+                  "courses_instructor": "nasiopoulos, panos"
+                },
+                {
+                  "courses_dept": "eece",
+                  "courses_instructor": "nasiopoulos, panos"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nardizzi, vincent"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nardizzi, vincent"
+                },
+                {
+                  "courses_dept": "cogs",
+                  "courses_instructor": "narayan, chandan;ward, lawrence"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "eece",
+                  "courses_instructor": "najarian, siamak"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nadel, ira bruce"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nardizzi, vincent"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nardizzi, vincent"
+                },
+                {
+                  "courses_dept": "civl",
+                  "courses_instructor": "nazhat, yahya"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "courses_instructor": "najar, hossain"
+                },
+                {
+                  "courses_dept": "basm",
+                  "courses_instructor": "nakamura, masao"
+                },
+                {
+                  "courses_dept": "basm",
+                  "courses_instructor": "nakamura, masao"
+                },
+                {
+                  "courses_dept": "basm",
+                  "courses_instructor": "nakamura, masao"
+                },
+                {
+                  "courses_dept": "basm",
+                  "courses_instructor": "nakamura, masao"
+                },
+                {
+                  "courses_dept": "ling",
+                  "courses_instructor": "narayan, chandan"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_instructor": "nappi, carla"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_instructor": "nappi, carla"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nachmias, asaf"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nachmias, asaf"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_instructor": "nanay, bence"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "caps",
+                  "courses_instructor": "nabi, ivan robert;underhill, tully michael"
+                },
+                {
+                  "courses_dept": "caps",
+                  "courses_instructor": "nabi, ivan robert;underhill, tully michael"
+                },
+                {
+                  "courses_dept": "caps",
+                  "courses_instructor": "nabi, ivan robert;underhill, tully michael"
+                },
+                {
+                  "courses_dept": "caps",
+                  "courses_instructor": "nabi, ivan robert;underhill, tully michael"
+                },
+                {
+                  "courses_dept": "etec",
+                  "courses_instructor": "nashon, samson madera"
+                },
+                {
+                  "courses_dept": "etec",
+                  "courses_instructor": "nashon, samson madera"
+                },
+                {
+                  "courses_dept": "etec",
+                  "courses_instructor": "nashon, samson madera"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "enph",
+                  "courses_instructor": "nakane, jonathan"
+                },
+                {
+                  "courses_dept": "enph",
+                  "courses_instructor": "nakane, jonathan"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "educ",
+                  "courses_instructor": "nashon, samson madera"
+                },
+                {
+                  "courses_dept": "educ",
+                  "courses_instructor": "nashon, samson madera;scott, sandra"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "enph",
+                  "courses_instructor": "nakane, jonathan;young, jeff"
+                },
+                {
+                  "courses_dept": "enph",
+                  "courses_instructor": "nakane, jonathan;young, jeff"
+                },
+                {
+                  "courses_dept": "civl",
+                  "courses_instructor": "navin, francis p d"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "japn",
+                  "courses_instructor": "nakata, masahiko"
+                },
+                {
+                  "courses_dept": "bait",
+                  "courses_instructor": "nan, ning"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nadel, ira bruce"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nardizzi, vincent"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "najarian, siamak"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nachmias, asaf"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_instructor": "nappi, carla"
+                },
+                {
+                  "courses_dept": "path",
+                  "courses_instructor": "naus, monika"
+                },
+                {
+                  "courses_dept": "path",
+                  "courses_instructor": "naus, monika;patrick, david"
+                },
+                {
+                  "courses_dept": "path",
+                  "courses_instructor": "naus, monika;patrick, david"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "narimani, mohammad"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "nagamune, ryozo"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nadel, ira bruce"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nadel, ira bruce"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nadel, ira bruce"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nadel, ira bruce"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "narang, preetinder"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "nardizzi, vincent"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_instructor": "nappi, carla"
+                },
+                {
+                  "courses_dept": "apsc",
+                  "courses_instructor": "najarian, siamak"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nachmias, asaf"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nagata, k wayne"
+                },
+                {
+                  "courses_dept": "apsc",
+                  "courses_instructor": "najarian, siamak"
+                },
+                {
+                  "courses_dept": "apsc",
+                  "courses_instructor": "najarian, siamak"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_instructor": "nappi, carla"
+                },
+                {
+                  "courses_dept": "lais",
+                  "courses_instructor": "nathan, lisa"
+                },
+                {
+                  "courses_dept": "lais",
+                  "courses_instructor": "nathan, lisa"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_instructor": "nappi, carla"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_instructor": "nachmias, asaf"
+                }
+            ]
+        }
+    }
+}

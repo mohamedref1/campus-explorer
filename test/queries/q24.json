@@ -1,0 +1,10 @@
+{
+    "title": "A query that uses \",\" instead of \";\" after find all entries phrase",
+    "query": "In courses dataset courses, find all entries, show Department and Average; sort in ascending order by Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

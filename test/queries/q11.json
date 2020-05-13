@@ -1,0 +1,1707 @@
+{
+    "title": "SELECT dept, id WHERE id != '578' && dept *= 'adhe'",
+    "query": "In courses dataset courses, find entries whose ID is not \"578\" and Department includes \"am\"; show Department and ID.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "524"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "524"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "524"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "524"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "524"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "524"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "521"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "541"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "508"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "591"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "591"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "591"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "591"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "591"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "591"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "522"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "523"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "550"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "500"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "517"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "566"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "566"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "566"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "566"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "566"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "566"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bams",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "503"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "514"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "515"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "501"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "504"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "name",
+                  "courses_id": "502"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "506"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                },
+                {
+                  "courses_dept": "bama",
+                  "courses_id": "513"
+                }
+            ]
+        }
+    }
+}

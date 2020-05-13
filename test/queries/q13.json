@@ -1,0 +1,1186 @@
+{
+    "title": "SELECT dept, instructor, title WHERE title !^= 'name' && title $= 'ies'",
+    "query": "In courses dataset courses, find entries whose Title does not begin with \"name\" and Title ends with \"ies\"; show Department, Instructor and Title.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_title": "directed studies"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "kiefl, robert",
+                  "courses_title": "directed studies"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_title": "directed studies"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_title": "directed studies"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "kiefl, robert",
+                  "courses_title": "directed studies"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "rocha perkerwicz, samuel",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "ruitenberg, claudia",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "shamsher, mohammed",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "rocha perkerwicz, samuel",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "rocha perkerwicz, samuel",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_instructor": "",
+                  "courses_title": "educ theories"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "tan, elsie",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "lynam, mary judith",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "pham, chandra",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "pham, chandra",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "cook, karen",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "macphee, maura",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldren&families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "hall, wendy anne",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "segaric, cheryl",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "hall, wendy anne",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "hall, wendy anne",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "hall, wendy anne;jetha, farah;segaric, cheryl",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "hall, wendy anne",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "chldbrg families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "cunningham, margaret mui yeah;foster, paula;jackson, cathryn;simpson, margaret;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "affleck, frances;esson, lynne;foster, paula;jackson, cathryn;marshall, helga;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "jackson, cathryn",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "affleck, frances;esson, lynne;foster, paula;jackson, cathryn;mann, dalbir;marshall, helga;mislang, jonathan;polyhronopoulos, nancy;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "affleck, frances;esson, lynne;foster, paula;jackson, cathryn;mann, dalbir;marshall, helga;mislang, jonathan;polyhronopoulos, nancy;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "jackson, cathryn;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "jackson, cathryn",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "affleck, frances;esson, lynne;foster, paula;jackson, cathryn;mann, dalbir;mislang, jonathan;taverner, tarnia;valkenier, beverley",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "cunningham, margaret mui yeah;foster, paula;jackson, cathryn;simpson, margaret;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "affleck, frances;esson, lynne;foster, paula;jackson, cathryn;marshall, helga;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "esson, lynne",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "esson, lynne",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "esson, lynne",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "esson, lynne;jackson, cathryn;mcburney, sheila mary;mislang, jonathan;taverner, tarnia;valkenier, beverley",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "foster, paula;jackson, cathryn;mann, dalbir;mislang, jonathan;valkenier, beverley",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "affleck, frances;esson, lynne;jackson, cathryn;mann, dalbir;marshall, helga;mislang, jonathan;taverner, tarnia;valkenier, beverley",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "esson, lynne;mann, dalbir",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "jackson, cathryn;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "marshall, helga;taverner, tarnia",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adlts & families"
+                },
+                {
+                  "courses_dept": "astr",
+                  "courses_instructor": "heyl, jeremy",
+                  "courses_title": "galaxies"
+                },
+                {
+                  "courses_dept": "astr",
+                  "courses_instructor": "",
+                  "courses_title": "galaxies"
+                },
+                {
+                  "courses_dept": "astr",
+                  "courses_instructor": "scott, douglas",
+                  "courses_title": "galaxies"
+                },
+                {
+                  "courses_dept": "astr",
+                  "courses_instructor": "",
+                  "courses_title": "galaxies"
+                },
+                {
+                  "courses_dept": "astr",
+                  "courses_instructor": "scott, douglas",
+                  "courses_title": "galaxies"
+                },
+                {
+                  "courses_dept": "astr",
+                  "courses_instructor": "",
+                  "courses_title": "galaxies"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "arias hernandez, richard",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "absar, rafa",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "arias hernandez, richard",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "rasmussen, edith",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "arias hernandez, richard",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "arias hernandez, richard",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "rasmussen, edith",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "dgtl libraries"
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_instructor": "",
+                  "courses_title": "directed studies"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "macneil, kimberley",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grund, brandy-jean",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "mcquarrie, maureen",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "turriff, wendy",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "turriff, wendy",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "turriff, wendy",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "turriff, wendy",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "turriff, wendy",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "turriff, wendy",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "siegel, linda",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "heikkila, mary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "turriff, wendy",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "dowler, judith rosemary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "dowler, judith rosemary",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "mcquarrie, maureen",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "turriff, wendy",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "",
+                  "courses_title": "lrn'g disablties"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "mech",
+                  "courses_instructor": "",
+                  "courses_title": "proj mec studies"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "lee, christopher",
+                  "courses_title": "transnat studies"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_instructor": "",
+                  "courses_title": "transnat studies"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "copeland, lynn",
+                  "courses_title": "acad libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "acad libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "farrell, adam",
+                  "courses_title": "acad libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "acad libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "copeland, lynn;garnett, joyce",
+                  "courses_title": "acad libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "acad libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "copeland, lynn;garnett, joyce",
+                  "courses_title": "acad libraries"
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_instructor": "",
+                  "courses_title": "acad libraries"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "bostock, michael",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "eosc",
+                  "courses_instructor": "",
+                  "courses_title": "anl time series"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "baumbusch, jennifer;esson, lynne",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "baumbusch, jennifer;esson, lynne",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "segaric, cheryl",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "affleck, frances;foster, paula;jackson, cathryn;jetha, farah;mcburney, sheila mary;rea, gail;segaric, cheryl",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "jackson, cathryn;jetha, farah;mislang, jonathan;phinney, alison;rea, gail;segaric, cheryl;valkenier, beverley",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "kryworuchko, jennifer;segaric, cheryl",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "baumbusch, jennifer;esson, lynne",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_instructor": "",
+                  "courses_title": "adults & famlies"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "wyly, elvin",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "wyly, elvin kirk",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "wyly, elvin kirk",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "frost, heather danielle",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "wyly, elvin kirk",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "wyly, elvin kirk",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "wyly, elvin kirk",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "urst",
+                  "courses_instructor": "",
+                  "courses_title": "cities"
+                },
+                {
+                  "courses_dept": "fist",
+                  "courses_instructor": "mathijs, ernest",
+                  "courses_title": "media industries"
+                },
+                {
+                  "courses_dept": "fist",
+                  "courses_instructor": "",
+                  "courses_title": "media industries"
+                },
+                {
+                  "courses_dept": "fist",
+                  "courses_instructor": "baltruschat, doris",
+                  "courses_title": "media industries"
+                },
+                {
+                  "courses_dept": "fist",
+                  "courses_instructor": "",
+                  "courses_title": "media industries"
+                },
+                {
+                  "courses_dept": "fist",
+                  "courses_instructor": "baltruschat, doris",
+                  "courses_title": "media industries"
+                },
+                {
+                  "courses_dept": "fist",
+                  "courses_instructor": "",
+                  "courses_title": "media industries"
+                },
+                {
+                  "courses_dept": "fist",
+                  "courses_instructor": "mathijs, ernest",
+                  "courses_title": "media industries"
+                },
+                {
+                  "courses_dept": "fist",
+                  "courses_instructor": "",
+                  "courses_title": "media industries"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "mckay, sherry",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "mckay, sherry;soules, matthew",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "fujita, mari;mckay, sherry",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "soules, matthew;wagner, george stuart",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "mckay, sherry;neumann, oliver",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "mckay, sherry",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "mckay, sherry;soules, matthew",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "mckay, sherry",
+                  "courses_title": "cntmpry theories"
+                },
+                {
+                  "courses_dept": "arch",
+                  "courses_instructor": "",
+                  "courses_title": "cntmpry theories"
+                }
+            ]
+        }
+    }
+}

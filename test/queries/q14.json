@@ -1,0 +1,386 @@
+{
+    "title": "SELECT dept, instructor, UUID WHERE uuid *= '335' && title !$= '96'",
+    "query": "In courses dataset courses, find entries whose UUID begins with \"335\" and UUID does not end with \"96\"; show Department, Instructor and UUID.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "karczmarek, joanna",
+                  "courses_uuid": "33549"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33550"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "mckenna, janis",
+                  "courses_uuid": "33594"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33595"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "kiefl, robert",
+                  "courses_uuid": "33597"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "louis-martinez, domingo",
+                  "courses_uuid": "33551"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33552"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "mattison, thomas",
+                  "courses_uuid": "33561"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33562"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "mcmillan, j malcolm",
+                  "courses_uuid": "33544"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "mcmillan, j malcolm;semenoff, gordon walter",
+                  "courses_uuid": "33545"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "turrell, brian g",
+                  "courses_uuid": "33546"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "semenoff, gordon walter",
+                  "courses_uuid": "33547"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33548"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33504"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33505"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33510"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33511"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33506"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33507"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33512"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33513"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "brewer, jess",
+                  "courses_uuid": "33559"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33560"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "iqbal, javed",
+                  "courses_uuid": "33518"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "folk, joshua",
+                  "courses_uuid": "33519"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "bates, frances",
+                  "courses_uuid": "33520"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "mackay, alexander",
+                  "courses_uuid": "33521"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "oser, scott",
+                  "courses_uuid": "33522"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "milner, valery",
+                  "courses_uuid": "33523"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "eldridge, john e",
+                  "courses_uuid": "33524"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33525"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "rieger, georg",
+                  "courses_uuid": "33514"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "rieger, georg;zhou, fei",
+                  "courses_uuid": "33515"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "reinsberg, stefan;rieger, georg",
+                  "courses_uuid": "33516"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33517"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "rieger, georg",
+                  "courses_uuid": "33526"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "sossi, vesna",
+                  "courses_uuid": "33527"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "bates, frances",
+                  "courses_uuid": "33528"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "rottler, joerg",
+                  "courses_uuid": "33529"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33530"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "curzon, francis l",
+                  "courses_uuid": "33578"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33579"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "zhitnitsky, ariel",
+                  "courses_uuid": "33565"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33566"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "affleck, ian keith;bonn, douglas andrew",
+                  "courses_uuid": "33531"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33532"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "hansen, carl",
+                  "courses_uuid": "33570"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33571"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "folk, joshua",
+                  "courses_uuid": "33567"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "madison, kirk",
+                  "courses_uuid": "33568"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33569"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "berciu, mona",
+                  "courses_uuid": "33574"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33575"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33500"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33501"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "mckenna, janis",
+                  "courses_uuid": "33533"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33534"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "bonn, douglas andrew",
+                  "courses_uuid": "33535"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "bonn, douglas andrew",
+                  "courses_uuid": "33536"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "bonn, douglas andrew",
+                  "courses_uuid": "33537"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "bonn, douglas andrew",
+                  "courses_uuid": "33538"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33539"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "halpern, mark",
+                  "courses_uuid": "33572"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33573"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "waltham, christopher",
+                  "courses_uuid": "33582"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33583"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "kotlicki, andrzej",
+                  "courses_uuid": "33584"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33585"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "halpern, mark",
+                  "courses_uuid": "33590"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33591"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33508"
+                },
+                {
+                  "courses_dept": "rsot",
+                  "courses_instructor": "",
+                  "courses_uuid": "33509"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "sigurdson, kris",
+                  "courses_uuid": "33598"
+                },
+                {
+                  "courses_dept": "phys",
+                  "courses_instructor": "",
+                  "courses_uuid": "33599"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "title": "SELECT dept, fail WHERE fail == 100",
+    "query": "In courses dataset courses, find entries whose Fail is equal to 100; show Department and Fail; sort in ascending order by Fail.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "math",
+                  "courses_fail": 100
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_fail": 100
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_fail": 100
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_fail": 100
+                }
+            ]
+        }
+    }
+}

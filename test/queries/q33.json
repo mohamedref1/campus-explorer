@@ -1,0 +1,10 @@
+{
+    "title": "A query uses 578 instead of \"578\"",
+    "query": "In courses dataset courses, find entries whose ID includes 578; show Department and ID.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

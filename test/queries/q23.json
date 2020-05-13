@@ -1,0 +1,10 @@
+{
+    "title": "A query uses \"Find\" instead of \"find\"",
+    "query": "In courses dataset courses, Find all entries; show Department and Average; sort in ascending order by Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "title": "A query uses upper case \"Find\" instead of \"find\"",
+    "query": "In courses dataset courses, Find entries whose Average is greater than 80; show Department and Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

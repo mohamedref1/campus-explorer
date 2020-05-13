@@ -1,0 +1,10 @@
+{
+    "title": "A query starting with lower case \"in\" instead of \"In\"",
+    "query": "in courses dataset courses, find entries whose Average is greater than 80; show Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}
