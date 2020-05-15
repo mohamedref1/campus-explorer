@@ -2,7 +2,7 @@ import Log from "../Util";
 import {IInsightFacade, InsightResponse, InsightDatasetKind,
         InsightDataset, InsightResponseSuccessBody} from "./IInsightFacade";
 import JSZip = require("jszip");
-import ICoursesDataset, { ISection, ICourse, IDatasetResponseSuccessBody } from "../model/courses/ICoursesDataset";
+import { ISection, IDatasetResponseSuccessBody } from "../model/courses/ICoursesDataset";
 import Course from "../model/courses/Course";
 import CoursesDataset from "../model/courses/CoursesDataset";
 
