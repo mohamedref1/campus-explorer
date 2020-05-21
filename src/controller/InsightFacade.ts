@@ -116,18 +116,12 @@ export default class InsightFacade implements IInsightFacade {
                 const sortedSections: ISection[] = await this.sortDataset(filteredSections, sort);
 
                 // Display dataset
-                const displayedCourseDataset: ISection[] = await this.displayDataset(sortedSections, display);
-
-                if (filter.criteria[0].criteria.key === MKey.Audit &&
-                    filter.criteria[0].criteria.operand === 10) {
-                        // tslint:disable-next-line:no-console
-                        console.log(displayedCourseDataset);
-                    }
+                const displayedSections: ISection[] = await this.displayDataset(sortedSections, display);
 
                 fulfill({
                     code: 200,
                     body: {
-                        result: displayedCourseDataset,
+                        result: displayedSections,
                     },
                 });
 
@@ -381,15 +375,15 @@ export default class InsightFacade implements IInsightFacade {
 
                     if (listOfWords.length >= 10) {
                         const section = {
-                            courses_dept: listOfWords[9],
-                            courses_id: listOfWords[1],
+                            courses_dept: listOfWords[9].replace("\r", ""),
+                            courses_id: listOfWords[5],
                             courses_avg: parseFloat(listOfWords[8]),
                             courses_instructor: listOfWords[2],
                             courses_title: listOfWords[0],
                             courses_pass: parseFloat(listOfWords[6]),
                             courses_fail: parseFloat(listOfWords[7]),
                             courses_audit: parseFloat(listOfWords[3]),
-                            courses_uuid: listOfWords[5],
+                            courses_uuid: listOfWords[1],
                         };
 
                         sections.push(section);
@@ -505,6 +499,7 @@ export default class InsightFacade implements IInsightFacade {
 
         // Filter sections according to the first criteria
         let stringyOneCriteria = stringyCriteria.shift();
+
         try {
             filteredSections = await (this.filterForOneCriteria(stringyOneCriteria, sections));
         } catch (err) {
@@ -516,7 +511,7 @@ export default class InsightFacade implements IInsightFacade {
             if (logicalOperator === LogicalOperator.AND) { // AND is the conjunction
                 try {
                     stringyOneCriteria = stringyCriteria.shift();
-                    filteredSections = await (this.filterForOneCriteria(stringyOneCriteria, filteredSections));
+                    filteredSections = await this.filterForOneCriteria(stringyOneCriteria, filteredSections);
                 } catch (err) {
                     return Promise.reject(err);
                 }
@@ -612,10 +607,8 @@ export default class InsightFacade implements IInsightFacade {
         const operator = stringyOneCriteria[1];
         const operand = stringyOneCriteria[2];
 
-        // tslint:disable-next-line:no-console
-        console.log(key + " " + operator + " " + operand);
-
         for (const section of sections) {
+
             switch (operator) {
                 case MOperator.Equal:
                     if ((section as any)[key] === operand) { filteredSections.push(section); }
@@ -779,7 +772,7 @@ export default class InsightFacade implements IInsightFacade {
                         oneResult["courses_pass"] = section.courses_pass;
                         break;
                     case SKey.Department:
-                        oneResult["courses_dept"] = section.courses_dept.replace("\r", "");
+                        oneResult["courses_dept"] = section.courses_dept;
                         break;
                     case SKey.ID:
                         oneResult["courses_id"] = section.courses_id;
