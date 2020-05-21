@@ -1,5 +1,5 @@
 {
-    "title": "SELECT dept, pass WHERE pass > 1000",
+    "title": "SELECT dept, pass WHERE pass > 1000 ORDER BY pass",
     "query": "In courses dataset courses, find entries whose Pass is greater than 1000; show Department and Pass; sort in ascending order by Pass.",
     "response": {
         "code": 200,

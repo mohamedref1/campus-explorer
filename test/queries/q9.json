@@ -1,5 +1,5 @@
 {
-    "title": "SELECT dept, avg WHERE avg != -50.51 && avg > 98.23",
+    "title": "SELECT dept, avg WHERE avg != -50.51 && avg > 98.23, ORDERD BY avg",
     "query": "In courses dataset courses, find entries whose Average is not equal to -50.51 and Average is greater than 98.23; show Department and Average; sort in ascending order by Average.",
     "response": {
         "code": 200,

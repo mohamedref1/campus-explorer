@@ -1,0 +1,10 @@
+{
+    "title": "A query that has no criteria",
+    "query": "In courses dataset courses, find entries whose; show Seats and Address; sort in ascending order by Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

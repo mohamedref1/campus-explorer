@@ -1,5 +1,5 @@
 {
-    "title": "SELECT dept, audit WHERE audit !< 10",
+    "title": "SELECT dept, audit WHERE audit !< 10, ORDERD BY audit",
     "query": "In courses dataset courses, find entries whose Audit is not less than 10; show Department and Audit; sort in ascending order by Audit.",
     "response": {
         "code": 200,

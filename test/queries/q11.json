@@ -1,5 +1,5 @@
 {
-    "title": "SELECT dept, id WHERE id != '578' && dept *= 'adhe'",
+    "title": "SELECT dept, id WHERE id != '578' && dept *= 'am'",
     "query": "In courses dataset courses, find entries whose ID is not \"578\" and Department includes \"am\"; show Department and ID.",
     "response": {
         "code": 200,

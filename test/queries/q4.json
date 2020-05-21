@@ -1,5 +1,5 @@
 {
-    "title": "SELECT dept, fail WHERE fail == 100",
+    "title": "SELECT dept, fail WHERE fail == 100, ORDERD BY fail",
     "query": "In courses dataset courses, find entries whose Fail is equal to 100; show Department and Fail; sort in ascending order by Fail.",
     "response": {
         "code": 200,

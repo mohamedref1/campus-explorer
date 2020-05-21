@@ -31,7 +31,7 @@ export default class CoursesDataset implements ICoursesDataset {
     }
 
     public store(): Promise<IDatasetResponse> {
-        return new Promise((fulfull, reject) => {
+        return new Promise((fulfill, reject) => {
             let numRow: number = 0;
 
             // Check if the dataset doesn't exist in memory
@@ -78,7 +78,7 @@ export default class CoursesDataset implements ICoursesDataset {
 
             }
 
-            fulfull({
+            fulfill({
                 code: 204,
                 body: {
                     result: numRow,
@@ -88,7 +88,38 @@ export default class CoursesDataset implements ICoursesDataset {
     }
 
     public load(): Promise<IDatasetResponse> {
-        return Promise.reject({code: -1, body: null});
+        return new Promise(async (fulfill, reject) => {
+            const path: string = this.path + "/" + this.name + "/";
+
+            // Check whether the given dataset id exists or not
+            if (!fs.existsSync(path)) {
+                reject({
+                    code: 400,
+                    body: {
+                        error: "the given dataset id does not exist",
+                    },
+                });
+            }
+
+            // Load files
+            try {
+                this.courses = this.readFiles(path);
+            } catch (err) {
+                reject({
+                    code: 400,
+                    body: {
+                        error: "there is something wrong with loading id dataset json files",
+                    },
+                });
+            }
+
+            fulfill({
+                code: 200,
+                body: {
+                    result: "courses dataset loaded successfully",
+                },
+            });
+        });
     }
 
     public remove(): Promise<IDatasetResponse> {
@@ -120,9 +151,9 @@ export default class CoursesDataset implements ICoursesDataset {
             if (fs.existsSync(path)) {
                 fs.readdirSync(path).forEach((file, index) => {
                   const curPath = Path.join(path, file);
-                  if (fs.lstatSync(curPath).isDirectory()) { // recurse
+                  if (fs.lstatSync(curPath).isDirectory()) { // Recurse
                     this.deleteFolderRecursive(curPath);
-                  } else { // delete file
+                  } else { // Delete file
                     fs.unlinkSync(curPath);
                   }
                 });
@@ -132,4 +163,34 @@ export default class CoursesDataset implements ICoursesDataset {
 
         recursive();
     }
+
+    private readFiles(dirPath: string): Course[] {
+        const courses: Course[] = [];
+        let fileNames: string[];
+        let fileContet: string;
+        let id: string;
+        let sections: ISection[];
+        let course: Course;
+
+        try {
+            fileNames = fs.readdirSync(dirPath);
+        } catch (err) {
+            throw err;
+        }
+
+        for (const fileName of fileNames) {
+            try {
+                fileContet = fs.readFileSync(dirPath + fileName, "utf-8");
+                id         = fileName.replace(".json", "");
+                sections   = JSON.parse(fileContet).table;
+                course    = new Course(id, sections);
+            } catch (err) {
+                throw err;
+            }
+
+            courses.push(course);
+        }
+
+        return courses;
+      }
  }

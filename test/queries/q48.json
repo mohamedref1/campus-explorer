@@ -1,0 +1,10 @@
+{
+    "title": "A query that uses \"Whose\" instead of \"whose\" after Dataset phrase",
+    "query": "In courses dataset courses, find entries Whose Seats is greater than 80; show Seats and Address; sort in ascending order by Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

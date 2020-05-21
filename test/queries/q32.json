@@ -1,6 +1,6 @@
 {
     "title": "A query uses \"5\"78\" instead of \"578\"",
-    "query": "In courses dataset courses, find entries whose ID includes \"5\"78\"; show Department and ID.",
+    "query": "In courses dataset courses, find entries whose Average includes 5\"78; show Department and ID.",
     "response": {
         "code": 400,
         "body": {

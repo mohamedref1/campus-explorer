@@ -481,7 +481,9 @@ describe("InsightFacade PerformQuery", () => {
                             expect(response.body).to.have.property("result");
                             const expectedResult = (test.response.body as InsightResponseSuccessBody).result;
                             const actualResult = (response.body as InsightResponseSuccessBody).result;
-                            expect(actualResult).to.deep.equal(expectedResult);
+                            // expect(actualResult).to.deep.equal(expectedResult);
+                            expect(actualResult.length).to.deep.equal(expectedResult.length);
+                            expect(actualResult).to.deep.include.members((expectedResult as any[]));
                         }
                     }
                 });
