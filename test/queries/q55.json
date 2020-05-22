@@ -1,0 +1,266 @@
+{
+    "title": "SELECT dept, avg, instructor, avg WHERE instructor *= \"laura\" ORDER BY avg",
+    "query": "In courses dataset courses, find entries whose Instructor includes \"laura\"; show Department, Average and Instructor; sort in ascending order by Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 55.74,
+                  "courses_instructor": "liu, keqin;peskin, laura"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 65.9,
+                  "courses_instructor": "cladek, laura"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_avg": 67.7,
+                  "courses_instructor": "ishiguro, laura"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_avg": 69.53,
+                  "courses_instructor": "ishiguro, laura"
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 70.08,
+                  "courses_instructor": "peskin, laura"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_avg": 70.46,
+                  "courses_instructor": "moss, laura"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_avg": 71.17,
+                  "courses_instructor": "ishiguro, laura"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_avg": 71.61,
+                  "courses_instructor": "moss, laura"
+                },
+                {
+                  "courses_dept": "biol",
+                  "courses_avg": 71.96,
+                  "courses_instructor": "parfrey, laura;pollock, carol"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_avg": 72.03,
+                  "courses_instructor": "ishiguro, laura"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_avg": 72.09,
+                  "courses_instructor": "ishiguro, laura"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_avg": 72.25,
+                  "courses_instructor": "ishiguro, laura"
+                },
+                {
+                  "courses_dept": "biol",
+                  "courses_avg": 73.17,
+                  "courses_instructor": "bole, gregory michael;weir, laura"
+                },
+                {
+                  "courses_dept": "hist",
+                  "courses_avg": 73.68,
+                  "courses_instructor": "madokoro, laura marion"
+                },
+                {
+                  "courses_dept": "biol",
+                  "courses_avg": 74.24,
+                  "courses_instructor": "bole, gregory michael;weir, laura"
+                },
+                {
+                  "courses_dept": "biol",
+                  "courses_avg": 75.36,
+                  "courses_instructor": "parfrey, laura"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_avg": 77,
+                  "courses_instructor": "moss, laura"
+                },
+                {
+                  "courses_dept": "biol",
+                  "courses_avg": 77,
+                  "courses_instructor": "weir, laura"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_avg": 78.63,
+                  "courses_instructor": "moss, laura"
+                },
+                {
+                  "courses_dept": "relg",
+                  "courses_avg": 79.66,
+                  "courses_instructor": "kaplan, laura duhan"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_avg": 80.07,
+                  "courses_instructor": "moss, laura"
+                },
+                {
+                  "courses_dept": "relg",
+                  "courses_avg": 80.59,
+                  "courses_instructor": "kaplan, laura duhan"
+                },
+                {
+                  "courses_dept": "arst",
+                  "courses_avg": 81.65,
+                  "courses_instructor": "wilson, laura"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 81.9,
+                  "courses_instructor": "amundson, norman;klubben, laura"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_avg": 81.94,
+                  "courses_instructor": "moss, laura"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_avg": 83.59,
+                  "courses_instructor": "moss, laura"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 83.82,
+                  "courses_instructor": "amundson, norman;klubben, laura"
+                },
+                {
+                  "courses_dept": "engl",
+                  "courses_avg": 85.38,
+                  "courses_instructor": "moss, laura"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 85.41,
+                  "courses_instructor": "klubben, laura"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 86.24,
+                  "courses_instructor": "klubben, laura"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 87.53,
+                  "courses_instructor": "klubben, laura;westwood, marvin"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 87.54,
+                  "courses_instructor": "daniluk, judith;klubben, laura"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 87.93,
+                  "courses_instructor": "klubben, laura;westwood, marvin"
+                },
+                {
+                  "courses_dept": "micb",
+                  "courses_avg": 88,
+                  "courses_instructor": "gold, michael;perona wright, georgia;sly, laura"
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "courses_avg": 88.5,
+                  "courses_instructor": "campbell, kristin;nimmon, laura"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 89.12,
+                  "courses_instructor": "klubben, laura"
+                },
+                {
+                  "courses_dept": "micb",
+                  "courses_avg": 90.55,
+                  "courses_instructor": "gold, michael;perona wright, georgia;sly, laura"
+                },
+                {
+                  "courses_dept": "medi",
+                  "courses_avg": 90.68,
+                  "courses_instructor": "ashe, maureen;cherkasov, artem;cox, michael;duronio, vincent;mcnagny, kelly marshall;mui, alice;pelech, steven daniel;reiner, neil;roberts, clive;rossi, fabio;sandford, andrew;sly, laura;steiner, theodore;tebbutt, scott;vallance, bruce;wang, yu tian"
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 90.75,
+                  "courses_instructor": "klubben, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 91.22,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 93.27,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 93.59,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 93.81,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 94.25,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 94.72,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 95.47,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.24,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 97.69,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 98.58,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 98.76,
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 98.8,
+                  "courses_instructor": "grow, laura"
+                }
+            ]
+        }
+    }
+}

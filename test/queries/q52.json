@@ -1,0 +1,16 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 90 && avg  97 && Pass is greater than 1, ORDERD BY Average",
+    "query": "In courses dataset courses, find entries whose Average is greater than 90 and Average is equal to 97 and Pass is greater than 1; show Department, Average and Pass; sort in ascending order by Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                    "courses_dept": "epse",
+                    "courses_avg": 97,
+                    "courses_pass": 8
+                }
+            ]
+        }
+    }
+}

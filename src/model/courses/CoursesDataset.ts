@@ -12,14 +12,18 @@ export default class CoursesDataset implements ICoursesDataset {
     private courses: Course[];
     private path: string;
 
-    constructor(name: string, courses?: Course[]) {
+    constructor(name: string, courses?: Course[], path?: string) {
         this.name = name;
-        if ( courses !== undefined) {
+        if (courses !== undefined) {
             this.courses = courses;
         } else {
             this.courses = [];
         }
-        this.path = "assets/courses";
+        if (path !== undefined) {
+            this.path = path;
+        } else {
+            this.path = "assets/courses";
+        }
     }
 
     public getName(): string {
@@ -59,7 +63,7 @@ export default class CoursesDataset implements ICoursesDataset {
                 }
             }
 
-            // Create JSON data files
+            // Create JSON data files and store it on the disk
             const obj: {table: any[]} = {table: []};
             let json: string;
             let path: string;
@@ -73,7 +77,12 @@ export default class CoursesDataset implements ICoursesDataset {
                 numRow += obj.table.length;
 
                 fs.writeFile(path, json, "utf8", (err) => {
-                    reject(err);
+                    reject({
+                        code: 400,
+                        body: {
+                            error: "there is something wrong with storing: " + path + " on the disk",
+                        },
+                    });
                 });
 
             }
@@ -96,7 +105,7 @@ export default class CoursesDataset implements ICoursesDataset {
                 reject({
                     code: 400,
                     body: {
-                        error: "the given dataset id does not exist",
+                        error: "the given dataset id does not exist on the disk",
                     },
                 });
             }
@@ -125,6 +134,7 @@ export default class CoursesDataset implements ICoursesDataset {
     public remove(): Promise<IDatasetResponse> {
         return new Promise((fulfill, reject) => {
             const path: string = this.path + "/" + this.name;
+
             if (fs.existsSync(path)) { // Remove
                 this.deleteFolderRecursive(path);
                 fulfill({
@@ -172,12 +182,14 @@ export default class CoursesDataset implements ICoursesDataset {
         let sections: ISection[];
         let course: Course;
 
+        // Make sure that dirPath exists on the disk
         try {
             fileNames = fs.readdirSync(dirPath);
         } catch (err) {
             throw err;
         }
 
+        // Load course by course
         for (const fileName of fileNames) {
             try {
                 fileContet = fs.readFileSync(dirPath + fileName, "utf-8");

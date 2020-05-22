@@ -39,7 +39,6 @@ export default class Parser implements IParser {
             if (sort !== undefined) { // If sort exists
                 sortObj = await this.parseSort(sort);
             }
-
         } catch (err) {
             return Promise.reject(err);
         }
@@ -65,7 +64,9 @@ export default class Parser implements IParser {
         try { // Slice depending on "In", "find", "show", "sort" at the beginning
               // and ";", ",", "." at the end
             dataset = query.split("; ")[0].split(", ")[0].split(" ");
-            filter  = query.split("; ")[0].split(", ")[1].split(" ");
+            filter  = query.split("; ")[0].replace(", ", "SEP").split("SEP")[1]
+                           .split(", ").join("COMMA&SPACE").split(" ");
+
             display = query.split("; ")[1].replace("show ", "show, ")
                            .split(" and").join(",").split(", ");
 
@@ -174,7 +175,8 @@ export default class Parser implements IParser {
         }
 
         // Parse logical Operators
-        filter = filter.join(" ").replace(" and ", ",and,").replace(" or ", ",or,").split(",");
+        filter = filter.join(" ").split(" and ").join(",and,").split(" or ").join(",or,").split(",");
+
         const logicalOperatorObj: LogicalOperator[] = [];
 
         for (const word of filter) {
@@ -300,7 +302,7 @@ export default class Parser implements IParser {
 
         // Operand
         if (operand.startsWith("\"") && operand.endsWith("\"")) {
-            operandObj = operand.slice(1, -1);
+            operandObj = operand.replace("COMMA&SPACE", ", ").slice(1, -1);
         } else {
             return Promise.reject({
                 code: 400,

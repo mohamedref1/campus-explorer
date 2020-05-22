@@ -1,0 +1,10 @@
+{
+    "title": "A query with descending order",
+    "query": "In courses dataset courses, find entries whose Average is equal to 97; show Department and Average; sort in descending order by Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

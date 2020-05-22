@@ -1,0 +1,59 @@
+{
+    "title": "SELECT dept, instructor WHERE dept = \"adhe\" || dept = \"epse\" && instructor = \"grow, laura\"",
+    "query": "In courses dataset courses, find entries whose Department is \"adhe\" or Department is \"epse\" and Instructor is \"grow, laura\"; show Department and Instructor.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_instructor": "grow, laura"
+                }
+            ]
+        }
+    }
+}

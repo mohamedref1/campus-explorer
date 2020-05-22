@@ -1,0 +1,203 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 96 && avg < 97 ORDER BY avg",
+    "query": "In courses dataset courses, find entries whose Average is greater than 96 and Average is less than 97; show Department and Average; sort in ascending order by Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.03
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.03
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_avg": 96.1
+                },
+                {
+                  "courses_dept": "libr",
+                  "courses_avg": 96.1
+                },
+                {
+                  "courses_dept": "adhe",
+                  "courses_avg": 96.11
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 96.16
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.21
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.21
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.21
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.23
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.24
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_avg": 96.25
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 96.25
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 96.25
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "courses_avg": 96.25
+                },
+                {
+                  "courses_dept": "civl",
+                  "courses_avg": 96.27
+                },
+                {
+                  "courses_dept": "civl",
+                  "courses_avg": 96.27
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 96.33
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.33
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.33
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_avg": 96.33
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_avg": 96.36
+                },
+                {
+                  "courses_dept": "frst",
+                  "courses_avg": 96.36
+                },
+                {
+                  "courses_dept": "fipr",
+                  "courses_avg": 96.4
+                },
+                {
+                  "courses_dept": "fipr",
+                  "courses_avg": 96.4
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 96.44
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 96.44
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_avg": 96.46
+                },
+                {
+                  "courses_dept": "edst",
+                  "courses_avg": 96.46
+                },
+                {
+                  "courses_dept": "etec",
+                  "courses_avg": 96.47
+                },
+                {
+                  "courses_dept": "etec",
+                  "courses_avg": 96.47
+                },
+                {
+                  "courses_dept": "midw",
+                  "courses_avg": 96.5
+                },
+                {
+                  "courses_dept": "midw",
+                  "courses_avg": 96.5
+                },
+                {
+                  "courses_dept": "musc",
+                  "courses_avg": 96.5
+                },
+                {
+                  "courses_dept": "musc",
+                  "courses_avg": 96.5
+                },
+                {
+                  "courses_dept": "mine",
+                  "courses_avg": 96.59
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_avg": 96.64
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_avg": 96.64
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_avg": 96.73
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_avg": 96.73
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 96.83
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_avg": 96.83
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.9
+                },
+                {
+                  "courses_dept": "audi",
+                  "courses_avg": 96.9
+                },
+                {
+                  "courses_dept": "audi",
+                  "courses_avg": 96.9
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_avg": 96.9
+                },
+                {
+                  "courses_dept": "arst",
+                  "courses_avg": 96.94
+                },
+                {
+                  "courses_dept": "arst",
+                  "courses_avg": 96.94
+                }
+            ]
+        }
+    }
+}

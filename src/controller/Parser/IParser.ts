@@ -104,5 +104,20 @@ export enum LogicalOperator {
 }
 
 export default interface IParser {
+    /**
+     * Parse the given query and identify its four parts (dataset, filter, sort, display)
+     *
+     * @return Promise <IParserResponse>
+     *
+     * The promise should return an IParserResponse for both fulfill and reject.
+     *
+     * Fulfill should be for 2XX codes and reject for everything else.
+     *
+     * Response codes:
+     *
+     * 204: the operation was successful
+     * 400: the operation failed. The body should contain {"error": "my text"}
+     * to explain what went wrong.
+     */
     performParse(query: string): Promise<IParserResponse>;
  }
