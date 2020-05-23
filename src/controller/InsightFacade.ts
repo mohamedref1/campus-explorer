@@ -9,6 +9,7 @@ import Parser from "./Parser/Parser";
 import { IParserResponseSuccessBody, IDataset, IFilter,
          IKey, ISort, IParserResponse, SortKind, MKey,
          SKey, ICriteria, LogicalOperator, MOperator, SOperator } from "./Parser/IParser";
+import { SrvRecord } from "dns";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -254,6 +255,7 @@ export default class InsightFacade implements IInsightFacade {
 
             let zip: JSZip = new JSZip();
             try { // Check for zip file
+                if (!dataset.includes("zip")) {throw new Error(); }
                 zip = await zip.loadAsync(dataset, {base64: true});
             } catch (err) {
                 reject({
@@ -373,7 +375,7 @@ export default class InsightFacade implements IInsightFacade {
                 for (const line of listOfLines.slice(1)) { // For each line
                     listOfWords = line.split("|");
 
-                    if (listOfWords.length >= 10) {
+                    if (listOfWords.length === 10) {
                         const section = {
                             courses_dept: listOfWords[9].replace("\r", ""),
                             courses_id: listOfWords[5],

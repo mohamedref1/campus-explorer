@@ -20,6 +20,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
     const datasetsToLoad: { [id: string]: string } = {
         courses: "./test/data/courses.zip",
         courses7Z: "./test/data/courses.7z",
+        coursesRAR: "./test/data/courses.rar",
         coursesWithoutFolder: "./test/data/coursesWithoutFolder.zip",
         coursesWithoutCSVfiles: "./test/data/coursesWithoutCSVfiles.zip",
         coursesWithoutSections: "./test/data/coursesWithoutSections.zip",
@@ -224,6 +225,16 @@ describe("InsightFacade Add/Remove Dataset", function () {
 
             it("a non-serialized zip file dataset isn't accepted", async () => {
                 invalidDataID = "courses7Z";
+                try {
+                    response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
+                         InsightDatasetKind.Courses);
+                } catch (err) {
+                    response = err;
+                } finally {
+                    expect(response.code).to.equal(expectedCode);
+                }
+
+                invalidDataID = "coursesRAR";
                 try {
                     response = await insightFacade.addDataset(invalidDataID, datasets[invalidDataID],
                          InsightDatasetKind.Courses);

@@ -1,0 +1,10 @@
+{
+    "title": "A query that has \"*\" inside its string operand",
+    "query": "In courses dataset courses, find entries whose Department is \"ad*he\"; show Department.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

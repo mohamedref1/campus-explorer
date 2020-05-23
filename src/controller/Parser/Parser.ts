@@ -37,7 +37,7 @@ export default class Parser implements IParser {
             displayObj = await this.parseDisplay(display);
 
             if (sort !== undefined) { // If sort exists
-                sortObj = await this.parseSort(sort);
+                sortObj = await this.parseSort(sort, displayObj);
             }
         } catch (err) {
             return Promise.reject(err);
@@ -301,7 +301,8 @@ export default class Parser implements IParser {
         }
 
         // Operand
-        if (operand.startsWith("\"") && operand.endsWith("\"")) {
+        if (operand.startsWith("\"") && operand.endsWith("\"") &&
+            !operand.includes("*") && !operand.slice(1, -1).includes("\"")) {
             operandObj = operand.replace("COMMA&SPACE", ", ").slice(1, -1);
         } else {
             return Promise.reject({
@@ -350,7 +351,7 @@ export default class Parser implements IParser {
         return Promise.resolve(displayObj);
     }
 
-    private async parseSort(sort: string[]): Promise<ISort> {
+    private async parseSort(sort: string[], displayObj: IKey[]): Promise<ISort> {
 
         // Syntactic validation
         if (sort === undefined || sort.length !== 2) {
@@ -388,6 +389,21 @@ export default class Parser implements IParser {
         let sortKeyObj: MKey | SKey;
         try {
             sortKeyObj = await this.strToKeyObj(sortKey);
+
+            const displayKeys: string[] = [];
+            for (const displayKey of displayObj) {
+                displayKeys.push(displayKey.key);
+            }
+
+            if (!displayKeys.includes(sortKey)) {
+                return Promise.reject({
+                    code: 400,
+                    body: {
+                        error: "invalid key: " + sortKey,
+                    },
+                });
+            }
+
         } catch (err) {
             return Promise.reject(err);
         }

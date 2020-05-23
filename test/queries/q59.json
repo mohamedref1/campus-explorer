@@ -1,0 +1,10 @@
+{
+    "title": "A query that uses a sort key doesn't exist in show keys",
+    "query": "In courses dataset courses, find entries whose Department is \"adhe\"; show Department; sort in ascending order by Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}
