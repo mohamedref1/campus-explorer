@@ -96,6 +96,29 @@ export default class CoursesDataset implements ICoursesDataset {
         });
     }
 
+    public remove(): Promise<IDatasetResponse> {
+        return new Promise((fulfill, reject) => {
+            const path: string = this.path + "/" + this.name;
+
+            if (fs.existsSync(path)) { // Remove
+                this.deleteFolderRecursive(path);
+                fulfill({
+                    code: 204,
+                    body: {
+                        result: this.name + " dataset has been removed correctly",
+                    },
+                });
+            } else {
+                reject({ // Doesn't exist
+                    code: 400,
+                    body: {
+                        error: this.name + " dataset doesnot exist",
+                    },
+                });
+            }
+        });
+    }
+
     public load(): Promise<IDatasetResponse> {
         return new Promise(async (fulfill, reject) => {
             const path: string = this.path + "/" + this.name + "/";
@@ -128,29 +151,6 @@ export default class CoursesDataset implements ICoursesDataset {
                     result: "courses dataset loaded successfully",
                 },
             });
-        });
-    }
-
-    public remove(): Promise<IDatasetResponse> {
-        return new Promise((fulfill, reject) => {
-            const path: string = this.path + "/" + this.name;
-
-            if (fs.existsSync(path)) { // Remove
-                this.deleteFolderRecursive(path);
-                fulfill({
-                    code: 204,
-                    body: {
-                        result: this.name + " dataset has been removed correctly",
-                    },
-                });
-            } else {
-                reject({ // Doesn't exist
-                    code: 400,
-                    body: {
-                        error: this.name + " dataset doesnot exist",
-                    },
-                });
-            }
         });
     }
 
@@ -204,5 +204,5 @@ export default class CoursesDataset implements ICoursesDataset {
         }
 
         return courses;
-      }
+    }
  }
