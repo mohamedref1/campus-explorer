@@ -93,7 +93,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            /*
             it("rooms dataset", async () => {
                 const id: string = "rooms";
 
@@ -105,7 +104,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                     expect(response.code).to.equal(expectedCode);
                 }
             });
-            */
         });
 
         describe("Shoudn't add a dataset with an id that used before", function () {
@@ -122,7 +120,7 @@ describe("InsightFacade Add/Remove Dataset", function () {
                     expect(response.code).to.equal(expectedCode);
                 }
             });
-            /*
+
             it("rooms dataset", async () => {
                 const id: string = "rooms";
 
@@ -134,7 +132,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                     expect(response.code).to.equal(expectedCode);
                 }
             });
-            */
         });
 
         describe("Shouldn't add a dataset with an incorrect id", function () {
@@ -336,7 +333,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 });
             });
 
-            /*
             describe("invalid rooms dataset", function () {
                 it("rooms dataset that doesn't have index.xml file isn't accepted", async () => {
                     invalidDatasetID = "roomsWithoutIndex";
@@ -399,14 +395,12 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 });
 
             });
-            */
         });
 
         describe("a dataset that doesn't match the correct InsightDatasetKind", function () {
             const expectedCode: number = 400;
             let id: string;
 
-            /*
             it("courses dataset that uses rooms InsightDatasetKind isn't accepted", async () => {
                 id = "courses";
                 try {
@@ -417,7 +411,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                     expect(response.code).to.equal(expectedCode);
                 }
             });
-            */
 
             it("rooms dataset that uses courses InsightDatasetKind isn't accepted", async () => {
                 id = "rooms";
@@ -451,7 +444,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            /*
             it("rooms dataset", async () => {
                 id = "rooms";
 
@@ -463,7 +455,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                     expect(response.code).to.equal(expectedCode);
                 }
             });
-            */
         });
 
         describe("Shouldn't remove a non-existed dataset", function () {
@@ -482,7 +473,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                 }
             });
 
-            /*
             it("rooms dataset", async () => {
                 id = "rooms";
 
@@ -494,7 +484,6 @@ describe("InsightFacade Add/Remove Dataset", function () {
                     expect(response.code).to.equal(expectedCode);
                 }
             });
-            */
         });
 
         describe("Shouldn't remove a dataset with an invalid id", function () {
