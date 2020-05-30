@@ -53,7 +53,7 @@ export default class InsightCourses {
 
     public removeDataset(id: string): Promise<InsightResponse> {
         return new Promise((fulfill, reject) => {
-            return new CoursesDataset(id).remove().
+            new CoursesDataset(id).remove().
                 then(() => {
                     fulfill({
                         code: 204,

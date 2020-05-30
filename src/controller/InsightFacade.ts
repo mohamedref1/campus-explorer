@@ -44,6 +44,14 @@ export default class InsightFacade implements IInsightFacade {
                 // Add Rooms Dataset [TODO]
                 } else if (kind === InsightDatasetKind.Rooms) {
                     const res = await this.insightRooms.addDataset(id, content, this.insightDatasets);
+                    this.insightDatasets = ((res.body as InsightResponseSuccessBody).result as InsightDataset []);
+
+                    fulfill({
+                        code: 204,
+                        body: {
+                            result: "the given courses dataset has been added successfull",
+                        },
+                    });
                 }
             } catch (err) {
                 reject (err);
@@ -81,15 +89,15 @@ export default class InsightFacade implements IInsightFacade {
                 } catch (err) {
                     reject(err);
                 }
+            } else {
+                // Dataset id is incorrect or doesn't exist
+                reject({
+                    code: 404,
+                    body: {
+                        error: "the given dataset id is incorrect or doesnot exist",
+                    },
+                });
             }
-
-            // Dataset id is incorrect or doesn't exist
-            reject({
-                code: 404,
-                body: {
-                    error: "the given dataset id is incorrect or doesnot exist",
-                },
-            });
         });
     }
 

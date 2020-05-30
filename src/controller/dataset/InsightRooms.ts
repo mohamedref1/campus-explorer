@@ -4,20 +4,10 @@ import { InsightResponse, InsightDataset } from "../IInsightFacade";
 export default class InsightRooms {
 
     public addDataset(id: string, content: string, insightDatasets: InsightDataset[]): Promise<InsightResponse> {
-        return Promise.reject({
-            code: 400,
-            body: {
-                error: "adding dataset of kind rooms doesnot available yet",
-            },
-        });
+        return Promise.reject({code: -1, body: null});
     }
 
     public removeDataset(id: string): Promise<InsightResponse> {
-        return Promise.reject({
-            code: 404,
-            body: {
-                error: "rooms dataset is not supported yet",
-            },
-        });
+        return Promise.reject({code: -1, body: null});
     }
 }
