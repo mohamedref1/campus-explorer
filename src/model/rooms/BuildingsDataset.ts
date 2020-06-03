@@ -1,28 +1,27 @@
-
-/**
- * This is our primary coursesDataset model implementation
- */
-
-import ICoursesDataset, { ICourse, IDatasetResponse, ISection } from "./ICoursesDataset";
-import Course from "./Course";
+import IBuildingsDataset, { IDatasetResponse, IBuilding } from "./IBuildingsDataset";
+import Building from "./Building";
 import * as fs from "fs";
 
-export default class CoursesDataset implements ICoursesDataset {
+/**
+ * This is our primary buildings dataset model implementation
+ */
+
+export default class BuildingsDataset implements IBuildingsDataset {
     private name: string;
-    private courses: Course[];
+    private buildings: Building[];
     private path: string;
 
-    constructor(name: string, courses?: Course[], path?: string) {
+    constructor(name: string, buildings?: Building[], path?: string) {
         this.name = name;
-        if (courses !== undefined) {
-            this.courses = courses;
+        if (buildings !== undefined) {
+            this.buildings = buildings;
         } else {
-            this.courses = [];
+            this.buildings = [];
         }
         if (path !== undefined) {
             this.path = path;
         } else {
-            this.path = "assets/courses";
+            this.path = "assets/rooms";
         }
     }
 
@@ -30,20 +29,20 @@ export default class CoursesDataset implements ICoursesDataset {
         return this.name;
     }
 
-    public getCourses(): ICourse[] {
-        return this.courses;
+    public getBuildings(): IBuilding[] {
+        return this.buildings;
     }
 
     public store(): Promise<IDatasetResponse> {
         return new Promise((fulfill, reject) => {
-            let numOfSections: number = 0;
+            let numOfRooms: number = 0;
 
             // Check if the dataset doesn't exist in memory
-            if (this.courses === undefined) {
+            if (this.buildings === undefined) {
                 reject({
                     code: 400,
                     body: {
-                        error: "there is no courses to store",
+                        error: "there is no buildings to store",
                     },
                 });
             }
@@ -69,12 +68,12 @@ export default class CoursesDataset implements ICoursesDataset {
             let path: string;
 
             prevDir = directories.join("/") + "/";
-            for (const course of this.courses) { // for each file
-                obj.table = course.getSections();
+            for (const building of this.buildings) { // for each file
+                obj.table = building.getRooms();
                 json = JSON.stringify(obj);
-                path = prevDir + course.getName() + ".json";
+                path = prevDir + building.getName() + ".json";
 
-                numOfSections += obj.table.length;
+                numOfRooms += obj.table.length;
 
                 fs.writeFile(path, json, "utf8", (err) => {
                     reject({
@@ -90,10 +89,13 @@ export default class CoursesDataset implements ICoursesDataset {
             fulfill({
                 code: 204,
                 body: {
-                    result: numOfSections,
+                    result: numOfRooms,
                 },
             });
         });
+    }
+    public load(): Promise<IDatasetResponse> {
+        return Promise.reject({code: -1, body: null});
     }
 
     public remove(): Promise<IDatasetResponse> {
@@ -119,41 +121,6 @@ export default class CoursesDataset implements ICoursesDataset {
         });
     }
 
-    public load(): Promise<IDatasetResponse> {
-        return new Promise(async (fulfill, reject) => {
-            const path: string = this.path + "/" + this.name + "/";
-
-            // Check whether the given dataset id exists or not
-            if (!fs.existsSync(path)) {
-                reject({
-                    code: 400,
-                    body: {
-                        error: "the given dataset id does not exist on the disk",
-                    },
-                });
-            }
-
-            // Load files
-            try {
-                this.courses = this.readFiles(path);
-            } catch (err) {
-                reject({
-                    code: 400,
-                    body: {
-                        error: "there is something wrong with loading id dataset json files",
-                    },
-                });
-            }
-
-            fulfill({
-                code: 200,
-                body: {
-                    result: "courses dataset loaded successfully",
-                },
-            });
-        });
-    }
-
     private deleteFolderRecursive(path: fs.PathLike) {
         const Path = require("path");
 
@@ -172,37 +139,5 @@ export default class CoursesDataset implements ICoursesDataset {
         }
 
         recursive();
-    }
-
-    private readFiles(dirPath: string): Course[] {
-        const courses: Course[] = [];
-        let fileNames: string[];
-        let fileContet: string;
-        let id: string;
-        let sections: ISection[];
-        let course: Course;
-
-        // Make sure that dirPath exists on the disk
-        try {
-            fileNames = fs.readdirSync(dirPath);
-        } catch (err) {
-            throw err;
-        }
-
-        // Load course by course
-        for (const fileName of fileNames) {
-            try {
-                fileContet = fs.readFileSync(dirPath + fileName, "utf-8");
-                id         = fileName.replace(".json", "");
-                sections   = JSON.parse(fileContet).table;
-                course    = new Course(id, sections);
-            } catch (err) {
-                throw err;
-            }
-
-            courses.push(course);
-        }
-
-        return courses;
     }
  }

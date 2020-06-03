@@ -1,5 +1,6 @@
 import { InsightResponse, InsightDataset, InsightResponseSuccessBody } from "../IInsightFacade";
 import JSZip = require("jszip");
+import { parseFragment } from "parse5";
 
 export default class Validator {
 
@@ -75,9 +76,8 @@ export default class Validator {
         return new Promise((fulfill, reject) => {
 
             // Dataset is invalid
-            return this.datasetValidation(dataset).
-            then((res) => {
-                const zip = ((res.body as InsightResponseSuccessBody).result[0] as JSZip);
+            this.datasetValidation(dataset).
+            then((zip) => {
                 const folder: RegExp = /courses/;
 
                 if (!zip.folder(folder).length) { // Check for courses folder
@@ -107,12 +107,54 @@ export default class Validator {
         });
     }
 
-    public RoomsDatasetValidation(dataset: string): Promise<JSZip.JSZipObject[]> {
-        // [TODO]
-        return Promise.reject({code: -1, body: null});
+    public RoomsDatasetValidation(dataset: string): Promise<[string[], JSZip]> {
+        return new Promise((fulfill, reject) => {
+            this.datasetValidation(dataset).
+            then(async (zip) => {
+
+                const index: JSZip.JSZipObject = zip.file(/index.xml/)[0];
+                if (index === undefined) { // Check for index.xml file
+                    reject({
+                        code: 400,
+                        body: {
+                            result: "the given dataset doesnot have index.xml file",
+                        },
+                    });
+                }
+
+                try {
+                    const indexContent: string        = await index.async("text");
+                    const indexDocument: any          = parseFragment(indexContent);
+                    const pathsOfbuildings: string[]  = indexDocument.childNodes[2].childNodes.
+                                                                    filter((e: any) => e.nodeName !== "#text").
+                                                                    map((e: any) => e.attrs[2].value.replace("./", ""));
+
+                    if (!pathsOfbuildings.length) { // Check for building Tag
+                        reject({
+                            code: 400,
+                            body: {
+                                result: "the given dataset doesnot have any building tag inside index.xml file",
+                            },
+                        });
+                    }
+
+                    fulfill([pathsOfbuildings, zip]);
+
+                } catch (err) { // Check for buildings Tag
+                    reject({
+                        code: 400,
+                        body: {
+                            result: "the given dataset doesnot have buildings tag inside index.xml file",
+                        },
+                    });
+                }
+            }).
+
+            catch((err) => reject(err));
+        });
     }
 
-    private datasetValidation(dataset: string): Promise<InsightResponse> {
+    private datasetValidation(dataset: string): Promise<JSZip> {
         return new Promise(async (fulfill, reject) => {
 
             // Dataset is invalid
@@ -158,7 +200,6 @@ export default class Validator {
 
             let zip: JSZip = new JSZip();
             try { // Check for zip file
-                if (!dataset.includes("zip")) {throw new Error(); }
                 zip = await zip.loadAsync(dataset, {base64: true});
             } catch (err) {
                 reject({
@@ -170,12 +211,7 @@ export default class Validator {
             }
 
             // Dataset is valid
-            fulfill({
-                code: 204,
-                body: {
-                    result: [zip],
-                },
-            });
+            fulfill(zip);
         });
     }
 }

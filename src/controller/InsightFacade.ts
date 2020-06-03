@@ -41,7 +41,7 @@ export default class InsightFacade implements IInsightFacade {
                         },
                     });
 
-                // Add Rooms Dataset [TODO]
+                // Add Rooms Dataset
                 } else if (kind === InsightDatasetKind.Rooms) {
                     const res = await this.insightRooms.addDataset(id, content, this.insightDatasets);
                     this.insightDatasets = ((res.body as InsightResponseSuccessBody).result as InsightDataset []);

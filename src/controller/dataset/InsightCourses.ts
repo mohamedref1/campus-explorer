@@ -46,7 +46,7 @@ export default class InsightCourses {
                 }
 
             } catch (err) {
-                reject (err);
+                reject(err);
             }
         });
     }
