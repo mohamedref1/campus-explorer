@@ -1,0 +1,95 @@
+{
+    "title": "SELECT address and type WHERE address ^= '6' && type *= 'Small Group'",
+    "query": "In rooms dataset rooms, find entries whose Address begins with \"6\" and Type includes \"Small Group\"; show Address and Type.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "rooms_address": "6303 North West Marine Drive",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6303 North West Marine Drive",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6303 North West Marine Drive",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6270 University Boulevard",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6270 University Boulevard",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6250 Applied Science Lane",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6250 Applied Science Lane",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6350 Stores Road",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6350 Stores Road",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6333 Memorial Road",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6333 Memorial Road",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6224 Agricultural Road",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6224 Agricultural Road",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6224 Agricultural Road",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6245 Agronomy Road V6T 1Z4",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6245 Agronomy Road V6T 1Z4",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6445 University Boulevard",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6445 University Boulevard",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6445 University Boulevard",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6445 University Boulevard",
+                  "rooms_type": "Small Group"
+                },
+                {
+                  "rooms_address": "6445 University Boulevard",
+                  "rooms_type": "Small Group"
+                }
+            ]
+        }
+    }
+}

@@ -108,6 +108,7 @@ export default class InsightCourses {
                             courses_pass: parseFloat(listOfWords[6]),
                             courses_fail: parseFloat(listOfWords[7]),
                             courses_audit: parseFloat(listOfWords[3]),
+                            courses_year: parseInt(listOfWords[4].replace("overall", "1900"), 10),
                             courses_uuid: listOfWords[1],
                         };
 

@@ -1,0 +1,23 @@
+{
+    "title": "SELECT furniture and link WHERE furniture ^= 'tables' && link ^= 'ANSO'",
+    "query": "In rooms dataset rooms, find entries whose Furniture includes \"Tables\" and Link includes \"ANSO\"; show Furniture and Link.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "rooms_furniture": "Classroom-Movable Tables + Chairs",
+                  "rooms_href": "http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ANSO-202"
+                },
+                {
+                  "rooms_furniture": "Classroom-Moveable Tables + Chairs",
+                  "rooms_href": "http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ANSO-203"
+                },
+                {
+                  "rooms_furniture": "Classroom-Moveable Tables + Chairs",
+                  "rooms_href": "http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ANSO-205"
+                }
+            ]
+        }
+    }
+}

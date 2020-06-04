@@ -25,6 +25,7 @@
     courses_fail: number;
     courses_audit: number;
     courses_uuid: string;
+    courses_year: number;
  }
 
  export interface ICourse {

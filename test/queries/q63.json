@@ -1,0 +1,36 @@
+{
+    "title": "SELECT name, lon and lat WHERE lat == 49.2699 && lot > -0.1",
+    "query": "In rooms dataset rooms, find entries whose Latitude is equal to 49.2699 and Longitude is less than -0.1; show Name, Latitude and Longitude.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "rooms_name": "ALRD_105",
+                  "rooms_lat": 49.2699,
+                  "rooms_lon": -123.25318
+                },
+                {
+                  "rooms_name": "ALRD_112",
+                  "rooms_lat": 49.2699,
+                  "rooms_lon": -123.25318
+                },
+                {
+                  "rooms_name": "ALRD_113",
+                  "rooms_lat": 49.2699,
+                  "rooms_lon": -123.25318
+                },
+                {
+                  "rooms_name": "ALRD_121",
+                  "rooms_lat": 49.2699,
+                  "rooms_lon": -123.25318
+                },
+                {
+                  "rooms_name": "ALRD_B101",
+                  "rooms_lat": 49.2699,
+                  "rooms_lon": -123.25318
+                }
+            ]
+        }
+    }
+}

@@ -194,6 +194,9 @@ export default class Result {
                 case MKey.Pass:
                     key = "courses_pass";
                     break;
+                case MKey.Year:
+                    key = "courses_year";
+                    break;
                 case SKey.Department:
                     key = "courses_dept";
                     break;
@@ -396,6 +399,9 @@ export default class Result {
                         break;
                     case MKey.Pass:
                         oneResult["courses_pass"] = section.courses_pass;
+                        break;
+                    case MKey.Year:
+                        oneResult["courses_year"] = section.courses_year;
                         break;
                     case SKey.Department:
                         oneResult["courses_dept"] = section.courses_dept;

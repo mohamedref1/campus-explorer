@@ -422,6 +422,8 @@ export default class Parser implements IParser {
                 return Promise.resolve(MKey.Fail);
             case MKey.Pass:
                 return Promise.resolve(MKey.Pass);
+            case MKey.Year:
+                return Promise.resolve(MKey.Year);
             case SKey.Department:
                 return Promise.resolve(SKey.Department);
             case SKey.ID:

@@ -1,0 +1,16 @@
+{
+    "title": "SELECT shortname, num and name WHERE shortname == 'ALRD' && num == '105' && name == 'ALRD_105'",
+    "query": "In rooms dataset rooms, find entries whose Short Name is \"ALRD\" and Number is \"105\" and Name is \"ALRD_105\"; show Short Name, Number and Name.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "rooms_shortname": "ALRD",
+                  "rooms_number": "105",
+                  "rooms_name": "ALRD_105"
+                }
+              ]
+        }
+    }
+}

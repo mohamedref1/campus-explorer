@@ -1,0 +1,15 @@
+{
+    "title": "SELECT fullname and seats WHERE fullname == 'Biological Sciences' && seats > 100",
+    "query": "In rooms dataset rooms, find entries whose Full Name is \"Biological Sciences\" and Seats is greater than 100; show Full Name and Seats.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "rooms_fullname": "Biological Sciences",
+                  "rooms_seats": 228
+                }
+            ]
+        }
+    }
+}

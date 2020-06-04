@@ -1,0 +1,41 @@
+{
+    "title": "SELECT year WHERE year > 2015 && avg > 95",
+    "query": "In courses dataset courses, find entries whose Year is greater than 2015 and Average is greater than 95; show Year.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                },
+                {
+                  "courses_year": 2016
+                }
+              ]
+        }
+    }
+}

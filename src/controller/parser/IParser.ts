@@ -68,6 +68,7 @@ export enum MKey {
     Pass = "Pass",
     Fail = "Fail",
     Audit = "Audit",
+    Year = "Year",
 }
 
 export enum SKey {

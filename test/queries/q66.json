@@ -1,0 +1,39 @@
+{
+    "title": "SELECT name and seats WHERE seats > 300 (descending) ORDERD BY Seats",
+    "query": "In rooms dataset rooms, find entries whose Seats is greater than 300; show Name and Seats; sort in descending order by Seats.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "rooms_name": "WOOD_2",
+                  "rooms_seats": 503
+                },
+                {
+                  "rooms_name": "CIRS_1250",
+                  "rooms_seats": 426
+                },
+                {
+                  "rooms_name": "HEBB_100",
+                  "rooms_seats": 375
+                },
+                {
+                  "rooms_name": "LSC_1002",
+                  "rooms_seats": 350
+                },
+                {
+                  "rooms_name": "LSC_1001",
+                  "rooms_seats": 350
+                },
+                {
+                  "rooms_name": "ESB_1013",
+                  "rooms_seats": 350
+                },
+                {
+                  "rooms_name": "WESB_100",
+                  "rooms_seats": 325
+                }
+            ]
+        }
+    }
+}
