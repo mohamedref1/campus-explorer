@@ -1,4 +1,4 @@
-import IBuildingsDataset, { IDatasetResponse, IBuilding } from "./IBuildingsDataset";
+import IBuildingsDataset, { IDatasetResponse, IBuilding, IRoom } from "./IBuildingsDataset";
 import Building from "./Building";
 import * as fs from "fs";
 
@@ -95,7 +95,38 @@ export default class BuildingsDataset implements IBuildingsDataset {
         });
     }
     public load(): Promise<IDatasetResponse> {
-        return Promise.reject({code: -1, body: null});
+        return new Promise(async (fulfill, reject) => {
+            const path: string = this.path + "/" + this.name + "/";
+
+            // Check whether the given dataset id exists or not
+            if (!fs.existsSync(path)) {
+                reject({
+                    code: 400,
+                    body: {
+                        error: "the given dataset id does not exist on the disk",
+                    },
+                });
+            }
+
+            // Load files
+            try {
+                this.buildings = this.readFiles(path);
+            } catch (err) {
+                reject({
+                    code: 400,
+                    body: {
+                        error: "there is something wrong with loading id dataset json files",
+                    },
+                });
+            }
+
+            fulfill({
+                code: 200,
+                body: {
+                    result: "courses dataset loaded successfully",
+                },
+            });
+        });
     }
 
     public remove(): Promise<IDatasetResponse> {
@@ -139,5 +170,37 @@ export default class BuildingsDataset implements IBuildingsDataset {
         }
 
         recursive();
+    }
+
+    private readFiles(dirPath: string): Building[] {
+        const buildings: Building[] = [];
+        let fileNames: string[];
+        let fileContet: string;
+        let id: string;
+        let rooms: IRoom[];
+        let building: Building;
+
+        // Make sure that dirPath exists on the disk
+        try {
+            fileNames = fs.readdirSync(dirPath);
+        } catch (err) {
+            throw err;
+        }
+
+        // Load course by course
+        for (const fileName of fileNames) {
+            try {
+                fileContet = fs.readFileSync(dirPath + fileName, "utf-8");
+                id         = fileName.replace(".json", "");
+                rooms   = JSON.parse(fileContet).table;
+                building    = new Building(id, rooms);
+            } catch (err) {
+                throw err;
+            }
+
+            buildings.push(building);
+        }
+
+        return buildings;
     }
  }

@@ -1,0 +1,10 @@
+{
+    "title": "A valid query with an invalid dataset kind (rooms)",
+    "query": "In rooms dataset rooms, find entries whose Average is not greater than 40.25; show Department and Average; sort in ascending order by Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

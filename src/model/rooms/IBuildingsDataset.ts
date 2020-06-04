@@ -22,8 +22,8 @@ export interface IRoom {
     rooms_name: string;
     rooms_address: string;
     rooms_seats: number;
-    rooms_lat?: number;
-    rooms_lon?: number;
+    rooms_lat: number;
+    rooms_lon: number;
     rooms_type: string;
     rooms_furniture: string;
     rooms_href: string;

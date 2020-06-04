@@ -4,6 +4,8 @@ import { IParserResponse, IParserResponseSuccessBody,
 import CoursesDataset from "../../model/courses/CoursesDataset";
 import { ISection, ICourse } from "../../model/courses/ICoursesDataset";
 import { InsightDatasetKind, InsightResponse } from "../IInsightFacade";
+import BuildingsDataset from "../../model/rooms/BuildingsDataset";
+import { IRoom, IBuilding } from "../../model/rooms/IBuildingsDataset";
 
 export default class Result {
 
@@ -17,26 +19,48 @@ export default class Result {
                 const sort: ISort       = (parsedQuery.body as IParserResponseSuccessBody).sort;
 
                 // Load dataset
-                const coursesDataset: CoursesDataset = await this.loadDataset(dataset.id, dataset.kind);
+                const loadedDataset: CoursesDataset | BuildingsDataset =
+                      await this.loadDataset(dataset.id, dataset.kind);
 
-                // Merge courseDataset sections
-                const sections: ISection[] = await this.sectionize(coursesDataset);
+                if (dataset.kind === InsightDatasetKind.Courses) { // Sections
+                    // Merge sections
+                    const sections = await this.sectionize((loadedDataset as CoursesDataset));
 
-                // Filter dataset
-                const filteredSections: ISection[] = await this.filterDataset(sections, filter);
+                    // Filter dataset
+                    const filteredSections: ISection[] = (await this.filterDataset(sections, filter) as ISection[]);
 
-                // Sort dataset
-                const sortedSections: ISection[] = await this.sortDataset(filteredSections, sort);
+                    // Sort dataset
+                    const sortedSections: ISection[] = await this.sortCoursesDataset(filteredSections, sort);
 
-                // Display dataset
-                const displayedSections: ISection[] = await this.displayDataset(sortedSections, display);
+                    // Display dataset
+                    const displayedSections: ISection[] = await this.displayCoursesDataset(sortedSections, display);
 
-                fulfill({
-                    code: 200,
-                    body: {
-                        result: displayedSections,
-                    },
-                });
+                    fulfill({
+                        code: 200,
+                        body: {
+                            result: displayedSections,
+                        },
+                    });
+
+                } else if (dataset.kind === InsightDatasetKind.Rooms) { // Rooms
+                    const rooms = await this.roomify((loadedDataset as BuildingsDataset));
+
+                    // Filter dataset
+                    const filteredRooms: IRoom[] = (await this.filterDataset(rooms, filter) as IRoom[]);
+
+                    // Sort dataset
+                    const sortedRooms: IRoom[] = await this.sortRoomsDataset(filteredRooms, sort);
+
+                    // Display dataset
+                    const displayedRooms: IRoom[] = await this.displayRoomsDataset(sortedRooms, display);
+
+                    fulfill({
+                        code: 200,
+                        body: {
+                            result: displayedRooms,
+                        },
+                    });
+                }
 
             } catch (err) {
                 reject(err);
@@ -44,7 +68,7 @@ export default class Result {
         });
     }
 
-    private loadDataset(id: string, kind: InsightDatasetKind): Promise<CoursesDataset> {
+    private loadDataset(id: string, kind: InsightDatasetKind): Promise<CoursesDataset | BuildingsDataset> {
         return new Promise(async (fulfill, reject) => {
             if (kind === InsightDatasetKind.Courses) {
                 const coursesDataset = new CoursesDataset(id);
@@ -56,12 +80,13 @@ export default class Result {
                 }
 
             } else if (kind === InsightDatasetKind.Rooms) {
-                reject({
-                    code: 400,
-                    body: {
-                        error: "perform query on rooms datasets does not available yet",
-                    },
-                });
+                const buildingsDataset = new BuildingsDataset(id);
+                try {
+                    await buildingsDataset.load();
+                    fulfill(buildingsDataset);
+                } catch (err) {
+                    reject(err);
+                }
             } else {
                 reject({
                     code: 400,
@@ -74,7 +99,7 @@ export default class Result {
         });
     }
 
-    private sectionize (coursesDataset: CoursesDataset): Promise<ISection[]> {
+    private sectionize(coursesDataset: CoursesDataset): Promise<ISection[]> {
         return new Promise((fulfill, reject) => {
             const courses: ICourse[] = coursesDataset.getCourses();
             const sections: ISection[] = [];
@@ -96,12 +121,35 @@ export default class Result {
         });
     }
 
-    private async filterDataset (sections: ISection[], filter: IFilter): Promise<ISection[]> {
-        let filteredSections: ISection[] = [];
+    private roomify(buildingsDataset: BuildingsDataset): Promise<IRoom[]> {
+        return new Promise((fulfill, reject) => {
+            const buildings: IBuilding[] = buildingsDataset.getBuildings();
+            const rooms: IRoom[] = [];
+
+            for (const building of buildings) {
+                rooms.push(... building.getRooms());
+            }
+
+            if (rooms.length) { // If there is rooms
+                fulfill(rooms);
+            } else { // Else
+                reject({
+                    code: 400,
+                    body: {
+                        error: "there is no sections",
+                    },
+                });
+            }
+        });
+
+    }
+
+    private async filterDataset (dataset: ISection[] | IRoom[], filter: IFilter): Promise<Array<ISection | IRoom>> {
+        let filteredSections: Array<ISection | IRoom> = [];
 
         // Valid (is all entries)
         if (filter.isAllEntries && !filter.criteria.length && !filter.logicalOperator.length) {
-            return Promise.resolve(sections);
+            return Promise.resolve(dataset);
         }
 
         // Invalid (find entries whose)
@@ -127,7 +175,7 @@ export default class Result {
         let stringyOneCriteria = stringyCriteria.shift();
 
         try {
-            filteredSections = await (this.filterForOneCriteria(stringyOneCriteria, sections));
+            filteredSections = await (this.filterForOneCriteria(stringyOneCriteria, dataset));
         } catch (err) {
             return Promise.reject(err);
         }
@@ -144,7 +192,7 @@ export default class Result {
             } else if (logicalOperator === LogicalOperator.OR) { // OR is the conjunction
                 try {
                     stringyOneCriteria = stringyCriteria.shift();
-                    const orFilteredSections = await (this.filterForOneCriteria(stringyOneCriteria, sections));
+                    const orFilteredSections = await (this.filterForOneCriteria(stringyOneCriteria, dataset));
 
                     for (const section of orFilteredSections) {
                         if (!filteredSections.includes(section)) { filteredSections.push(section); }
@@ -197,6 +245,15 @@ export default class Result {
                 case MKey.Year:
                     key = "courses_year";
                     break;
+                case MKey.Seats:
+                    key = "rooms_seats";
+                    break;
+                case MKey.Latitude:
+                    key = "rooms_lat";
+                    break;
+                case MKey.Longitude:
+                    key = "rooms_lon";
+                    break;
                 case SKey.Department:
                     key = "courses_dept";
                     break;
@@ -212,6 +269,30 @@ export default class Result {
                 case SKey.UUID:
                     key = "courses_uuid";
                     break;
+                case SKey.FullName:
+                    key = "rooms_fullname";
+                    break;
+                case SKey.ShortName:
+                    key = "rooms_shortname";
+                    break;
+                case SKey.Number:
+                    key = "rooms_number";
+                    break;
+                case SKey.Name:
+                    key = "rooms_name";
+                    break;
+                case SKey.Address:
+                    key = "rooms_address";
+                    break;
+                case SKey.Type:
+                    key = "rooms_type";
+                    break;
+                case SKey.Furniture:
+                    key = "rooms_furniture";
+                    break;
+                case SKey.Link:
+                    key = "rooms_href";
+                    break;
                 default:
                     return Promise.reject({
                         code: 400,
@@ -225,19 +306,17 @@ export default class Result {
         }
 
         return Promise.resolve(stringyCriteria);
-
     }
 
     private filterForOneCriteria(stringyOneCriteria: [string, string, number | string],
-                                 sections: ISection[]): Promise<ISection[]> {
+                                 dataset: Array<ISection | IRoom>): Promise<Array<ISection | IRoom>> {
 
-        const filteredSections: ISection[] = [];
+        const filteredSections: Array<ISection | IRoom> = [];
         const key = stringyOneCriteria[0];
         const operator = stringyOneCriteria[1];
         const operand = stringyOneCriteria[2];
 
-        for (const section of sections) {
-
+        for (const section of dataset) {
             switch (operator) {
                 case MOperator.Equal:
                     if ((section as any)[key] === operand) { filteredSections.push(section); }
@@ -306,7 +385,7 @@ export default class Result {
         return Promise.resolve(filteredSections);
     }
 
-    private sortDataset (sections: ISection[], sort: ISort): Promise<ISection[]> {
+    private sortCoursesDataset (sections: ISection[], sort: ISort): Promise<ISection[]> {
         if (sort === undefined || sort === null) { // If no sort
             return Promise.resolve(sections);
         }
@@ -376,7 +455,89 @@ export default class Result {
         }
     }
 
-    private displayDataset (sections: ISection[], display: IKey[]): Promise<ISection[]> {
+    private sortRoomsDataset (rooms: IRoom[], sort: ISort): Promise<IRoom[]> {
+        if (sort === undefined || sort === null) { // If no sort
+            return Promise.resolve(rooms);
+        }
+
+        // Sort ascendingly according to the given sort key
+        const key: string = sort.key;
+        switch (key) {
+            case MKey.Seats:
+                rooms.sort((a, b) => a.rooms_seats - b.rooms_seats);
+                break;
+            case MKey.Latitude:
+                rooms.sort((a, b) => a.rooms_lat - b.rooms_lat);
+                break;
+            case MKey.Longitude:
+                rooms.sort((a, b) => a.rooms_lon - b.rooms_lon);
+                break;
+            case SKey.FullName:
+                rooms.sort((a, b) =>
+                +(a.rooms_fullname > b.rooms_fullname) ||
+                -(a.rooms_fullname < b.rooms_fullname));
+                break;
+            case SKey.ShortName:
+                rooms.sort((a, b) =>
+                +(a.rooms_shortname > b.rooms_shortname) ||
+                -(a.rooms_shortname < b.rooms_shortname));
+                break;
+            case SKey.Number:
+                rooms.sort((a, b) =>
+                +(a.rooms_number > b.rooms_number) ||
+                -(a.rooms_number < b.rooms_number));
+                break;
+            case SKey.Name:
+                rooms.sort((a, b) =>
+                +(a.rooms_name > b.rooms_name) ||
+                -(a.rooms_name < b.rooms_name));
+                break;
+            case SKey.Address:
+                rooms.sort((a, b) =>
+                +(a.rooms_address > b.rooms_address) ||
+                -(a.rooms_address < b.rooms_address));
+                break;
+            case SKey.Furniture:
+                rooms.sort((a, b) =>
+                +(a.rooms_furniture > b.rooms_furniture) ||
+                -(a.rooms_furniture < b.rooms_furniture));
+                break;
+            case SKey.Type:
+                rooms.sort((a, b) =>
+                +(a.rooms_type > b.rooms_type) ||
+                -(a.rooms_type < b.rooms_type));
+                break;
+            case SKey.Link:
+                rooms.sort((a, b) =>
+                +(a.rooms_href > b.rooms_href) ||
+                -(a.rooms_href < b.rooms_href));
+                break;
+            default:
+                return Promise.reject({
+                    code: 400,
+                    body: {
+                        error: "the given sort key is invalid",
+                    },
+                });
+        }
+
+        // return sorted sections according to the given sort kind
+        if (sort.kind === SortKind.Descending) { // Descending
+            rooms.reverse();
+            return Promise.resolve(rooms);
+        } else if (sort.kind === SortKind.Ascending) { // Ascending
+            return Promise.resolve(rooms);
+        } else {
+            return Promise.reject({
+                code: 400,
+                body: {
+                    error: "the given sort kind is invalid",
+                },
+            });
+        }
+    }
+
+    private displayCoursesDataset (sections: ISection[], display: IKey[]): Promise<ISection[]> {
         const properties: string[] = [];
         const results: any[] = [];
 
@@ -417,6 +578,67 @@ export default class Result {
                         break;
                     case SKey.UUID:
                         oneResult["courses_uuid"] = section.courses_uuid;
+                        break;
+                    default:
+                        return Promise.reject({
+                            code: 400,
+                            body: {
+                                error: "the given display \"" + property + "\" key is invalid",
+                            },
+                        });
+                }
+            }
+
+            results.push(oneResult);
+        }
+
+        return Promise.resolve(results);
+    }
+
+    private displayRoomsDataset (rooms: IRoom[], display: IKey[]): Promise<IRoom[]> {
+        const properties: string[] = [];
+        const results: any[] = [];
+
+        for (const key of display) { // Convert keys object to strings
+            properties.push(key.key as string);
+        }
+
+        for (const room of rooms) { // assign displayed sections
+            const oneResult: any = {};
+            for (const property of properties) {
+                switch (property) {
+                    case MKey.Seats:
+                        oneResult["rooms_seats"] = room.rooms_seats;
+                        break;
+                    case MKey.Latitude:
+                        oneResult["rooms_lat"] = room.rooms_lat;
+                        break;
+                    case MKey.Longitude:
+                        oneResult["rooms_lon"] = room.rooms_lon;
+                        break;
+                    case SKey.FullName:
+                        oneResult["rooms_fullname"] = room.rooms_fullname;
+                        break;
+                    case SKey.ShortName:
+                        oneResult["rooms_shortname"] = room.rooms_shortname;
+                        break;
+                    case SKey.Number:
+                        oneResult["rooms_number"] = room.rooms_number;
+                        break;
+                    case SKey.Name:
+                        oneResult["rooms_name"] = room.rooms_name;
+                        break;
+                    case SKey.Furniture:
+                        oneResult["rooms_furniture"] = room.rooms_furniture;
+                        break;
+                    case SKey.Address:
+                        oneResult["rooms_address"] = room.rooms_address;
+                        break;
+                    case SKey.Type:
+                        oneResult["rooms_type"] = room.rooms_type;
+                        break;
+                    case SKey.Link:
+                        oneResult["rooms_href"] = room.rooms_href;
                         break;
                     default:
                         return Promise.reject({

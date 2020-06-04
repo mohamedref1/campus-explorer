@@ -1,0 +1,10 @@
+{
+    "title": "A valid query with an invalid dataset kind (courses)",
+    "query": "In courses dataset courses, find entries whose Seats is greater than 300; show Name and Seats; sort in descending order by Seats.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

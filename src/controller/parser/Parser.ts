@@ -31,6 +31,8 @@ export default class Parser implements IParser {
             return Promise.reject(err);
         }
 
+        // Here
+
         // Objectify
         try {
             datasetObj = await this.parseDataset(dataset);
@@ -65,10 +67,14 @@ export default class Parser implements IParser {
         try { // Slice depending on "In", "find", "show", "sort" at the beginning
               // and ";", ",", "." at the end
             dataset = query.split("; ")[0].split(", ")[0].split(" ");
-            filter  = query.split("; ")[0].replace(", ", "SEP").split("SEP")[1]
-                           .split(", ").join("COMMA&SPACE").split(" ");
+            filter  = this.spaceAndQuotesSlicer(query.split("; ")[0].replace(", ", "SEP").split("SEP")[1]
+                                            .split(", ").join("COMMA&SPACE")
+                                            .split("Full Name").join("FullName")
+                                            .split("Short Name").join("ShortName"));
 
             display = query.split("; ")[1].replace("show ", "show, ")
+                           .split("Full Name").join("FullName")
+                           .split("Short Name").join("ShortName")
                            .split(" and").join(",").split(", ");
 
             if (query.split("; ")[2]) { // If sort part exists
@@ -128,11 +134,9 @@ export default class Parser implements IParser {
                 kind: InsightDatasetKind.Courses,
             });
         } else if (dataset[1] === InsightDatasetKind.Rooms) {
-            return Promise.reject({
-                code: 400,
-                body: {
-                    error: "rooms dataset does not available yet",
-                },
+            return Promise.resolve({
+                id: dataset[3],
+                kind: InsightDatasetKind.Rooms,
             });
         } else {
             return Promise.reject({
@@ -179,7 +183,6 @@ export default class Parser implements IParser {
         filter = filter.join(" ").split(" and ").join(",and,").split(" or ").join(",or,").split(",");
 
         const logicalOperatorObj: LogicalOperator[] = [];
-
         for (const word of filter) {
             if (word === LogicalOperator.AND) {
                 logicalOperatorObj.push(LogicalOperator.AND);
@@ -205,55 +208,55 @@ export default class Parser implements IParser {
     }
 
     private  async parseCriteria(criteria: string[]): Promise<ICriteria[]> {
-    const criteriaObj: ICriteria[] = [];
+        const criteriaObj: ICriteria[] = [];
 
-    // Syntactic validation
-    if (!criteria.length) {
-        return Promise.reject({
-            code: 400,
-            body: {
-                error: "invalid syntax: filter (criteria)",
-            },
-        });
-    }
-
-    // One criteria by one
-    for (const oneCriteria of criteria) {
-        try {
-            const splitedOneCriteria = oneCriteria.split(" ");
-            const key: string = splitedOneCriteria.shift();
-            const operand: string = splitedOneCriteria.pop();
-            const operator: string = splitedOneCriteria.join(" ");
-
-            if (key === undefined || operand === undefined || operator === undefined) { throw new Error(); }
-
-            criteriaObj.push(await this.parseOneCriteria(key, operand, operator));
-
-        } catch (err) {
-            return Promise.reject(err);
+        // Syntactic validation
+        if (!criteria.length) {
+            return Promise.reject({
+                code: 400,
+                body: {
+                    error: "invalid syntax: filter (criteria)",
+                },
+            });
         }
-    }
 
-    return Promise.resolve(criteriaObj);
-    }
+        // One criteria by one
+        for (const oneCriteria of criteria) {
+            try {
+                const splitedOneCriteria = this.spaceAndQuotesSlicer(oneCriteria);
+                const key: string = splitedOneCriteria.shift();
+                const operand: string = splitedOneCriteria.pop();
+                const operator: string = splitedOneCriteria.join(" ");
+
+                if (key === undefined || operand === undefined || operator === undefined) { throw new Error(); }
+
+                criteriaObj.push(await this.parseOneCriteria(key, operand, operator));
+
+            } catch (err) {
+                return Promise.reject(err);
+            }
+        }
+
+        return Promise.resolve(criteriaObj);
+        }
 
     private  async parseOneCriteria(key: string, operand: string, operator: string): Promise<ICriteria> {
-    const criteria: ICriteria = {criteria: undefined};
+        const criteria: ICriteria = {criteria: undefined};
 
-    if ((Object as any).values(MKey).includes(key)) { // MCriteria
-        criteria.criteria = await this.parseOneMCriteria(key, operand, operator);
-    } else if ((Object as any).values(SKey).includes(key)) { // SCriteria
-        criteria.criteria = await this.parseOneSCriteria(key, operand, operator);
-    } else {
-        return Promise.reject({ // Invalid
-            code: 400,
-            body: {
-                error: "invalid syntax: filter (one criteria)",
-            },
-        });
-    }
+        if ((Object as any).values(MKey).includes(key)) { // MCriteria
+            criteria.criteria = await this.parseOneMCriteria(key, operand, operator);
+        } else if ((Object as any).values(SKey).includes(key)) { // SCriteria
+            criteria.criteria = await this.parseOneSCriteria(key, operand, operator);
+        } else {
+            return Promise.reject({ // Invalid
+                code: 400,
+                body: {
+                    error: "invalid syntax: filter (one criteria)",
+                },
+            });
+        }
 
-    return Promise.resolve(criteria);
+        return Promise.resolve(criteria);
     }
 
     private async parseOneMCriteria(key: string, operand: string, operator: string): Promise<IMCriteria> {
@@ -304,7 +307,7 @@ export default class Parser implements IParser {
         // Operand
         if (operand.startsWith("\"") && operand.endsWith("\"") &&
             !operand.includes("*") && !operand.slice(1, -1).includes("\"")) {
-            operandObj = operand.replace("COMMA&SPACE", ", ").slice(1, -1);
+                operandObj = operand.split("COMMA&SPACE").join(", ").slice(1, -1);
         } else {
             return Promise.reject({
                 code: 400,
@@ -370,12 +373,7 @@ export default class Parser implements IParser {
         if (sortKind === "sort in ascending order by") {
             sortKindObj = SortKind.Ascending;
         } else if (sortKind === "sort in descending order by") {
-            return Promise.reject({
-                code: 400,
-                body: {
-                    error: "sort in descending order does not available yet",
-                },
-            });
+            sortKindObj = SortKind.Descending;
         } else {
             return Promise.reject({
                 code: 400,
@@ -424,6 +422,12 @@ export default class Parser implements IParser {
                 return Promise.resolve(MKey.Pass);
             case MKey.Year:
                 return Promise.resolve(MKey.Year);
+            case MKey.Seats:
+                return Promise.resolve(MKey.Seats);
+            case MKey.Latitude:
+                return Promise.resolve(MKey.Latitude);
+            case MKey.Longitude:
+                return Promise.resolve(MKey.Longitude);
             case SKey.Department:
                 return Promise.resolve(SKey.Department);
             case SKey.ID:
@@ -434,6 +438,22 @@ export default class Parser implements IParser {
                 return Promise.resolve(SKey.Title);
             case SKey.UUID:
                 return Promise.resolve(SKey.UUID);
+            case SKey.FullName:
+                return Promise.resolve(SKey.FullName);
+            case SKey.ShortName:
+                return Promise.resolve(SKey.ShortName);
+            case SKey.Number:
+                return Promise.resolve(SKey.Number);
+            case SKey.Name:
+                return Promise.resolve(SKey.Name);
+            case SKey.Address:
+                return Promise.resolve(SKey.Address);
+            case SKey.Furniture:
+                return Promise.resolve(SKey.Furniture);
+            case SKey.Type:
+                return Promise.resolve(SKey.Type);
+            case SKey.Link:
+                return Promise.resolve(SKey.Link);
             default:
                 return Promise.reject({
                     code: 400,
@@ -508,5 +528,24 @@ export default class Parser implements IParser {
         }
 
         return true;
+    }
+
+    private spaceAndQuotesSlicer(filter: string): string[] {
+        // The parenthesis in the regex creates a captured group within the quotes
+        const myRegexp = /[^\s"]+|"([^"]*)"/gi;
+        const myString  = filter;
+        const myArray = [];
+        let match: RegExpExecArray;
+        do {
+            // Each call to exec returns the next regex match as an array
+            match = myRegexp.exec(myString);
+            if (match != null) {
+                // Index 1 in the array is the captured group if it exists
+                // Index 0 is the matched text, which we use if no captured group exists
+                myArray.push(match[1] ?  "\"" + match[1] + "\"" : match[0]);
+            }
+        } while (match != null);
+
+        return myArray;
     }
  }

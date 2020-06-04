@@ -69,6 +69,9 @@ export enum MKey {
     Fail = "Fail",
     Audit = "Audit",
     Year = "Year",
+    Latitude = "Latitude",
+    Longitude = "Longitude",
+    Seats = "Seats",
 }
 
 export enum SKey {
@@ -77,6 +80,14 @@ export enum SKey {
     Instructor = "Instructor",
     Title = "Title",
     UUID = "UUID",
+    FullName = "FullName",
+    ShortName = "ShortName",
+    Number = "Number",
+    Name = "Name",
+    Address = "Address",
+    Type = "Type",
+    Furniture = "Furniture",
+    Link = "Link",
 }
 
 export enum MOperator {

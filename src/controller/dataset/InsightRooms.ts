@@ -118,6 +118,8 @@ export default class InsightRooms {
                                 rooms_name: buildingElement.attrs[0].value + "_" + roomElement.attrs[0].value,
                                 rooms_address: buildingElement.attrs[1].value,
                                 rooms_seats: parseInt(spaceElement.attrs[0].value, 10),
+                                rooms_lat: undefined,
+                                rooms_lon: undefined,
                                 rooms_type: spaceElement.attrs[2].value,
                                 rooms_furniture: spaceElement.attrs[1].value,
                                 rooms_href: webElement.attrs[0].value});
@@ -143,11 +145,7 @@ export default class InsightRooms {
                 if (Object.keys(oneCoords).includes("lat") && Object.keys(oneCoords).includes("lon")) {
                     room["rooms_lat"] = oneCoords.lat;
                     room["rooms_lon"] = oneCoords.lon;
-                } else {
-                    room["rooms_lat"] = undefined;
-                    room["rooms_lon"] = undefined;
                 }
-
             }
         }
 
