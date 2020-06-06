@@ -1,0 +1,10 @@
+{
+    "title": "A query with undefined sort key",
+    "query": "In courses dataset courses grouped by Department, Average and ID, find entries whose Average is greater than 97; show Department, avgGrade and ID, where avgGrade is the AVG of Average; sort in descending order by Department, avgGrades and ID.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "title": "SELECT countGrade(count of Average) WHERE Average > 97 GROUPT BY dept",
+    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show countGrade, where countGrade is the COUNT of Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "countGrade": 13
+                },
+                {
+                  "countGrade": 6
+                },
+                {
+                  "countGrade": 1
+                },
+                {
+                  "countGrade": 2
+                },
+                {
+                  "countGrade": 1
+                },
+                {
+                  "countGrade": 4
+                },
+                {
+                  "countGrade": 1
+                }
+            ]
+        }
+    }
+}

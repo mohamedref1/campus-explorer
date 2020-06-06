@@ -1,11 +1,11 @@
 import Log from "../Util";
 import {IInsightFacade, InsightResponse, InsightDatasetKind,
         InsightDataset, InsightResponseSuccessBody} from "./IInsightFacade";
-import Parser from "./parser/Parser";
 import { IParserResponse } from "./parser/IParser";
 import InsightCourses from "./dataset/InsightCourses";
 import InsightRooms from "./dataset/InsightRooms";
 import Result from "./result/result";
+import Parser from "./parser/Parser";
 
 /**
  * This is the main programmatic entry point for the project.

@@ -1,0 +1,32 @@
+{
+    "title": "SELECT avgGrade(avg of Average) WHERE Average > 97 GROUPT BY dept",
+    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show avgGrade, where avgGrade is the AVG of Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "avgGrade": 98.01
+                },
+                {
+                  "avgGrade": 98.14
+                },
+                {
+                  "avgGrade": 98.75
+                },
+                {
+                  "avgGrade": 98.04
+                },
+                {
+                  "avgGrade": 97.5
+                },
+                {
+                  "avgGrade": 97.9
+                },
+                {
+                  "avgGrade": 98
+                }
+            ]
+        }
+    }
+}

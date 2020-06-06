@@ -1,0 +1,32 @@
+{
+    "title": "SELECT maxGrade(max of Average) WHERE Average > 97 GROUPT BY dept",
+    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show maxGrade, where maxGrade is the MAX of Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "maxGrade": 98.8
+                },
+                {
+                  "maxGrade": 98.71
+                },
+                {
+                  "maxGrade": 98.75
+                },
+                {
+                  "maxGrade": 99.19
+                },
+                {
+                  "maxGrade": 97.5
+                },
+                {
+                  "maxGrade": 99.78
+                },
+                {
+                  "maxGrade": 98
+                }
+            ]
+        }
+    }
+}

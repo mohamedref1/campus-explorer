@@ -1,0 +1,156 @@
+{
+    "title": "SELECT dept and avgGrade, id WHERE Average > 97, id ORDERED BY dept, avgGrade, id (descending)",
+    "query": "In courses dataset courses grouped by Department, Average and ID, find entries whose Average is greater than 97; show Department, avgGrade and ID, where avgGrade is the AVG of Average; sort in descending order by Department, avgGrade and ID.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "509",
+                  "avgGrade": 98.71
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578",
+                  "avgGrade": 98.58
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578",
+                  "avgGrade": 98.5
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "509",
+                  "avgGrade": 98.21
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "578",
+                  "avgGrade": 97.53
+                },
+                {
+                  "courses_dept": "nurs",
+                  "courses_id": "591",
+                  "avgGrade": 97.33
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_id": "527",
+                  "avgGrade": 99.78
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_id": "532",
+                  "avgGrade": 97.48
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_id": "525",
+                  "avgGrade": 97.25
+                },
+                {
+                  "courses_dept": "math",
+                  "courses_id": "541",
+                  "avgGrade": 97.09
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "449",
+                  "avgGrade": 98.8
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "449",
+                  "avgGrade": 98.76
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "421",
+                  "avgGrade": 98.7
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "449",
+                  "avgGrade": 98.58
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "519",
+                  "avgGrade": 98.45
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "421",
+                  "avgGrade": 98.36
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "421",
+                  "avgGrade": 98.08
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "534",
+                  "avgGrade": 97.78
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "549",
+                  "avgGrade": 97.69
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "606",
+                  "avgGrade": 97.67
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "534",
+                  "avgGrade": 97.41
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "449",
+                  "avgGrade": 97.41
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "421",
+                  "avgGrade": 97.29
+                },
+                {
+                  "courses_dept": "epse",
+                  "courses_id": "596",
+                  "avgGrade": 97.09
+                },
+                {
+                  "courses_dept": "eece",
+                  "courses_id": "541",
+                  "avgGrade": 98.75
+                },
+                {
+                  "courses_dept": "educ",
+                  "courses_id": "500",
+                  "avgGrade": 97.5
+                },
+                {
+                  "courses_dept": "crwr",
+                  "courses_id": "599",
+                  "avgGrade": 98
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_id": "574",
+                  "avgGrade": 99.19
+                },
+                {
+                  "courses_dept": "cnps",
+                  "courses_id": "574",
+                  "avgGrade": 97.47
+                }
+            ]
+        }
+    }
+}

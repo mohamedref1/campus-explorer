@@ -1,0 +1,32 @@
+{
+    "title": "SELECT sumGrade(sum of Average) WHERE Average > 97 GROUPT BY dept",
+    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show sumGrade, where sumGrade is the SUM of Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "sumGrade": 1862.24
+                },
+                {
+                  "sumGrade": 1177.72
+                },
+                {
+                  "sumGrade": 197.5
+                },
+                {
+                  "sumGrade": 294.13
+                },
+                {
+                  "sumGrade": 97.5
+                },
+                {
+                  "sumGrade": 783.2
+                },
+                {
+                  "sumGrade": 196
+                }
+            ]
+        }
+    }
+}

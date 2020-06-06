@@ -1,0 +1,10 @@
+{
+    "title": "A query that uses a non existed evaluation function",
+    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show avgGrade, where avgGrade is the FN of Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

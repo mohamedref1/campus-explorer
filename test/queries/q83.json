@@ -1,0 +1,10 @@
+{
+    "title": "A query that uses a wrong evaluation function parameter",
+    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show avgGrade, where avgGrade is the AVG of Department.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

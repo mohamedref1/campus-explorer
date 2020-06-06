@@ -1,0 +1,46 @@
+{
+    "title": "SELECT dept, avgGrade(avg of Average), avgCount(count of avg) WHERE Average > 97 GROUPT BY dept",
+    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show Department, avgGrade and avgCount, where avgGrade is the AVG of Average and avgCount is the COUNT of Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "epse",
+                  "avgGrade": 98.01,
+                  "avgCount": 13
+                },
+                {
+                  "courses_dept": "nurs",
+                  "avgGrade": 98.14,
+                  "avgCount": 6
+                },
+                {
+                  "courses_dept": "eece",
+                  "avgGrade": 98.75,
+                  "avgCount": 1
+                },
+                {
+                  "courses_dept": "cnps",
+                  "avgGrade": 98.04,
+                  "avgCount": 2
+                },
+                {
+                  "courses_dept": "educ",
+                  "avgGrade": 97.5,
+                  "avgCount": 1
+                },
+                {
+                  "courses_dept": "math",
+                  "avgGrade": 97.9,
+                  "avgCount": 4
+                },
+                {
+                  "courses_dept": "crwr",
+                  "avgGrade": 98,
+                  "avgCount": 1
+                }
+            ]
+        }
+    }
+}
