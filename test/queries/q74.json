@@ -6,25 +6,25 @@
         "body": {
             "result": [
                 {
-                  "avgGrade": 97.09
+                  "minGrade": 97.09
                 },
                 {
-                  "avgGrade": 97.33
+                  "minGrade": 97.33
                 },
                 {
-                  "avgGrade": 98.75
+                  "minGrade": 98.75
                 },
                 {
-                  "avgGrade": 97.47
+                  "minGrade": 97.47
                 },
                 {
-                  "avgGrade": 97.5
+                  "minGrade": 97.5
                 },
                 {
-                  "avgGrade": 97.09
+                  "minGrade": 97.09
                 },
                 {
-                  "avgGrade": 98
+                  "minGrade": 98
                 }
             ]
         }

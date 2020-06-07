@@ -1,5 +1,6 @@
-import IParser, { IParserResponse, IDataset, IFilter, IKey, MKey, SKey, ISort,
-                  SortKind} from "../IParser";
+import IParser, { IParserResponse, ISimpleDataset, IFilter, IKey, MKey, SKey, ISimpleSort,
+                  SortKind,
+                  ParserType} from "../IParser";
 import { InsightDatasetKind } from "../../IInsightFacade";
 import Slicer from "../slicer/Slicer";
 import KeyObjectifier from "../objectifier/KeyObjectifier";
@@ -26,10 +27,10 @@ export default class SimpleParser implements IParser {
         let display: string[];
         let sort: string[];
 
-        let datasetObj: IDataset;
+        let datasetObj: ISimpleDataset;
         let filterObj: IFilter;
         let displayObj: IKey[];
-        let sortObj: ISort;
+        let sortObj: ISimpleSort;
 
         // Slicing
         try {
@@ -42,12 +43,10 @@ export default class SimpleParser implements IParser {
             return Promise.reject(err);
         }
 
-        // Here
-
         // Objectify
         try {
             datasetObj = await this.parseDataset(dataset);
-            filterObj = await this.filter.parse(filter);
+            filterObj = await this.parseFilter(filter);
             displayObj = await this.parseDisplay(display);
 
             if (sort !== undefined) { // If sort exists
@@ -65,11 +64,12 @@ export default class SimpleParser implements IParser {
                 filter: filterObj,
                 display: displayObj,
                 sort: sortObj,
+                type: ParserType.Simple,
             },
         });
     }
 
-    private parseDataset(dataset: string[]): Promise<IDataset> {
+    public parseDataset(dataset: string[]): Promise<ISimpleDataset> {
         // Syntactic validation
         if (!(dataset.length === 4) || !(dataset[0] === "In") || !(dataset[2] === "dataset")) {
             return Promise.reject({
@@ -111,6 +111,10 @@ export default class SimpleParser implements IParser {
         }
     }
 
+    public parseFilter(filter: string[]): Promise<IFilter> {
+        return this.filter.parse(filter);
+    }
+
     private async parseDisplay(display: string[]): Promise<IKey[]> {
 
         // Syntactic validation
@@ -129,7 +133,7 @@ export default class SimpleParser implements IParser {
         const displayObj: IKey[] = [];
         for (const key of display) {
             try {
-                const keyObj = await this.keyObjectifier.convertToObject(key);
+                const keyObj = await this.keyObjectifier.convertToKey(key);
                 displayObj.push({key: keyObj});
             } catch (err) {
                 return Promise.reject(err);
@@ -139,7 +143,7 @@ export default class SimpleParser implements IParser {
         return Promise.resolve(displayObj);
     }
 
-    private async parseSort(sort: string[], displayObj: IKey[]): Promise<ISort> {
+    private async parseSort(sort: string[], displayObj: IKey[]): Promise<ISimpleSort> {
 
         // Syntactic validation
         if (sort === undefined || sort.length !== 2) {
@@ -171,7 +175,7 @@ export default class SimpleParser implements IParser {
         const sortKey = sort[1];
         let sortKeyObj: MKey | SKey;
         try {
-            sortKeyObj = await this.keyObjectifier.convertToObject(sortKey);
+            sortKeyObj = await this.keyObjectifier.convertToKey(sortKey);
 
             const displayKeys: string[] = [];
             for (const displayKey of displayObj) {

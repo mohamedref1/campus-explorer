@@ -1,6 +1,6 @@
 {
-    "title": "SELECT dept, uuid and avgGrade(avg of Average) WHERE Average > 97 GROUPT BY dept and uuid",
-    "query": "In courses dataset courses grouped by Department and UUID, find entries whose Average is greater than 97; show Department and UUID",
+    "title": "SELECT dept, uuid WHERE Average > 97 GROUPT BY dept and uuid",
+    "query": "In courses dataset courses grouped by Department and UUID, find entries whose Average is greater than 97; show Department and UUID.",
     "response": {
         "code": 200,
         "body": {

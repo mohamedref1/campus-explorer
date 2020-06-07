@@ -7,31 +7,31 @@
             "result": [
                 {
                   "courses_dept": "epse",
-                  "countGrade": 98.01
+                  "avgGrade": 98.01
                 },
                 {
                   "courses_dept": "nurs",
-                  "countGrade": 98.14
+                  "avgGrade": 98.14
                 },
                 {
                   "courses_dept": "eece",
-                  "countGrade": 98.75
+                  "avgGrade": 98.75
                 },
                 {
                   "courses_dept": "cnps",
-                  "countGrade": 98.04
+                  "avgGrade": 98.04
                 },
                 {
                   "courses_dept": "educ",
-                  "countGrade": 97.5
+                  "avgGrade": 97.5
                 },
                 {
                   "courses_dept": "math",
-                  "countGrade": 97.9
+                  "avgGrade": 97.9
                 },
                 {
                   "courses_dept": "crwr",
-                  "countGrade": 98
+                  "avgGrade": 98
                 }
             ]
         }

@@ -1,6 +1,6 @@
 {
-    "title": "SELECT dept, avgGrade(avg of Average), avgCount(count of avg) WHERE Average > 97 GROUPT BY dept",
-    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show Department, avgGrade, avgCount, avgMax, where avgGrade is the AVG of Average, avgCount is the COUNT of Average and avgMax is the MAX of Average.",
+    "title": "SELECT dept, avgGrade, avgCount, avgMax WHERE Average > 97 GROUPT BY dept",
+    "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show Department, avgGrade, avgCount and avgMax, where avgGrade is the AVG of Average, avgCount is the COUNT of Average and avgMax is the MAX of Average.",
     "response": {
         "code": 200,
         "body": {

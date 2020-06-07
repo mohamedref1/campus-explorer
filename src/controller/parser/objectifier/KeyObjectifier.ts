@@ -1,7 +1,7 @@
 import { MKey, SKey } from "./../IParser";
 
 export default class KeyObjectifier {
-    public convertToObject(key: string): Promise<MKey | SKey> {
+    public convertToKey(key: string): Promise<MKey | SKey> {
         return new Promise((fulfill, reject) => {
             this.convertToMKey(key).
             then((mkey) => fulfill(mkey)).

@@ -1,11 +1,12 @@
 import Log from "../Util";
 import {IInsightFacade, InsightResponse, InsightDatasetKind,
         InsightDataset, InsightResponseSuccessBody} from "./IInsightFacade";
-import { IParserResponse } from "./parser/IParser";
+import { IParserResponse, IParserResponseSuccessBody, ParserType } from "./parser/IParser";
 import InsightCourses from "./dataset/InsightCourses";
 import InsightRooms from "./dataset/InsightRooms";
-import Result from "./result/result";
+import SimpleResult from "./result/types/SimpleResult";
 import Parser from "./parser/Parser";
+import Result from "./result/Result";
 
 /**
  * This is the main programmatic entry point for the project.
@@ -106,8 +107,10 @@ export default class InsightFacade implements IInsightFacade {
             try {
                 // Parse the given query
                 const parserResponse: IParserResponse = await this.parser.performParse(query);
+                const parsedQuery                     = (parserResponse.body as IParserResponseSuccessBody);
+
                 // Convert it to a list of resulted sections
-                const resultResponse: InsightResponse = await this.result.performResult(parserResponse);
+                const resultResponse: InsightResponse = await this.result.performResult(parsedQuery);
                 // Resolve it
                 fulfill(resultResponse);
 

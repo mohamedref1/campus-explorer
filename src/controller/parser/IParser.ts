@@ -10,10 +10,12 @@ export interface IParserResponse {
  }
 
 export interface IParserResponseSuccessBody {
-    dataset: IDataset;
+    dataset: ISimpleDataset | IAggregateDataset;
     filter: IFilter;
     display: IKey[];
-    sort: ISort;
+    apply?: IAggregation[];
+    sort: ISimpleSort | IAggregateSort;
+    type: ParserType;
 }
 
 export interface IParserResponseErrorBody {
@@ -21,9 +23,15 @@ export interface IParserResponseErrorBody {
 }
 
 // Properties
-export interface IDataset {
-     id: string;
-     kind: InsightDatasetKind;
+export interface ISimpleDataset {
+    id: string;
+    kind: InsightDatasetKind;
+}
+
+export interface IAggregateDataset {
+    id: string;
+    kind: InsightDatasetKind;
+    group: IKey[];
 }
 
 export interface IFilter {
@@ -32,12 +40,23 @@ export interface IFilter {
     logicalOperator: LogicalOperator[];
 }
 
-export interface ISort {
+export interface ISimpleSort {
     kind: SortKind;
     key: MKey | SKey;
 }
 
+export interface IAggregateSort {
+    kind: SortKind;
+    keys: Array<MKey | SKey | string>;
+}
+
 export interface IKey {
+    key: MKey | SKey | string;
+}
+
+export interface IAggregation {
+    input: string;
+    aggregator: Aggregator;
     key: MKey | SKey;
 }
 
@@ -113,6 +132,19 @@ export enum SOperator {
 export enum LogicalOperator {
     AND = "and",
     OR = "or",
+}
+
+export enum Aggregator {
+    MIN   = "MIN",
+    MAX   = "MAX",
+    AVG   = "AVG",
+    SUM   = "SUM",
+    COUNT = "COUNT",
+}
+
+export enum ParserType {
+    Simple    = "simple",
+    Aggregate = "Aggregate",
 }
 
 export default interface IParser {

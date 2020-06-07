@@ -1,5 +1,5 @@
 {
-    "title": "SELECT dept and avgGrade(avg of Average) WHERE Average > 97 GROUPT BY dept",
+    "title": "SELECT dept and WHERE Average > 97 GROUPT BY dept",
     "query": "In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show Department.",
     "response": {
         "code": 200,

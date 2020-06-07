@@ -1,5 +1,5 @@
 {
-    "title": "SELECT dept and avgGrade, id WHERE Average > 97, id ORDERED BY dept, avgGrade, id (ascending)",
+    "title": "SELECT dept, avgGrade, id WHERE Average > 97, id ORDERED BY dept, avgGrade, id (ascending)",
     "query": "In courses dataset courses grouped by Department, Average and ID, find entries whose Average is greater than 97; show Department, avgGrade and ID, where avgGrade is the AVG of Average; sort in ascending order by Department, avgGrade and ID.",
     "response": {
         "code": 200,
