@@ -1,7 +1,7 @@
 import IParser, { IParserResponse, IFilter, IKey, IAggregateDataset,
                   IAggregation, Aggregator, SKey, MKey, IAggregateSort, SortKind, ParserType} from "../IParser";
 import Slicer from "../slicer/Slicer";
-import KeyObjectifier from "../objectifier/KeyObjectifier";
+import Converter from "../converter/converter";
 import SimpleParser from "./SimpleParser";
 
 /**
@@ -11,12 +11,12 @@ import SimpleParser from "./SimpleParser";
 export default class AggregateParser implements IParser {
     private slicer: Slicer;
     private simpleParser: SimpleParser;
-    private keyObjectifier: KeyObjectifier;
+    private converter: Converter;
 
     constructor() {
         this.slicer = new Slicer();
         this.simpleParser = new SimpleParser();
-        this.keyObjectifier = new KeyObjectifier();
+        this.converter = new Converter();
     }
 
     public async performParse(query: string): Promise<IParserResponse> {
@@ -55,7 +55,7 @@ export default class AggregateParser implements IParser {
                 applyObj   = await this.parseApply(apply);
             }
 
-            displayObj = await this.parseDisplay(display, applyObj);
+            displayObj = await this.parseDisplay(display, datasetObj.group, applyObj);
 
             if (sort !== undefined) { // If sort exists
                 sortObj = await this.parseSort(sort, displayObj);
@@ -99,7 +99,7 @@ export default class AggregateParser implements IParser {
 
             // Objectify grouping keys
             for (const key of group) {
-                const keyObj = await this.keyObjectifier.convertToKey(key);
+                const keyObj = await this.converter.convertToKey(key);
                 keysObj.push({key: keyObj});
             }
 
@@ -152,22 +152,33 @@ export default class AggregateParser implements IParser {
                  }
 
                 const input      = splittedOneAggregation[0];
-                const aggregator = await this.strToAggregator(splittedOneAggregation[1]);
+                const aggregator = await this.converter.convertToAggregator(splittedOneAggregation[1]);
                 let key: MKey | SKey;
 
                 if (aggregator === Aggregator.COUNT) { // All Keys is valid
-                    key = await this.keyObjectifier.convertToKey(splittedOneAggregation[2]);
+                    key = await this.converter.convertToKey(splittedOneAggregation[2]);
                 } else { // Only Mkey is valid
-                    key = await this.keyObjectifier.convertToMKey(splittedOneAggregation[2]);
+                    key = await this.converter.convertToMKey(splittedOneAggregation[2]);
                 }
 
-                if (input.includes("_") || input.includes("*")) { // Input validation
+                if (input.includes("_")) { // Input validation
                     return Promise.reject({
                         code: 400,
                         body: {
                             error: "invalid syntax: apply (input)",
                         },
                     });
+                }
+
+                for (const aggregationObj of aggregationObjs) { // Input Duplication
+                    if (input === aggregationObj.input) {
+                        return Promise.reject({
+                            code: 400,
+                            body: {
+                                error: "invalid syntax: apply (input duplication)",
+                            },
+                        });
+                    }
                 }
 
                 aggregationObjs.push({
@@ -184,7 +195,7 @@ export default class AggregateParser implements IParser {
         return Promise.resolve(aggregationObjs);
     }
 
-    private async parseDisplay(display: string[], applyObj: IAggregation[]): Promise<IKey []> {
+    private async parseDisplay(display: string[], groupObj: IKey[], applyObj: IAggregation[]): Promise<IKey []> {
         // Syntactic validation
         if (display[0] === "show" && display.length > 1) {
             display.shift();
@@ -201,7 +212,25 @@ export default class AggregateParser implements IParser {
         const displayObj: IKey[] = [];
         for (const key of display) {
             try {
-                const keyObj = await this.keyObjectifier.convertToKey(key);
+                const keyObj = await this.converter.convertToKey(key);
+
+                // Check whether the key exists on grouping keys or not
+                let flag: boolean = true;
+                for (const groupKey of groupObj) {
+                    if (keyObj === groupKey.key) {
+                        flag = false;
+                    }
+                }
+
+                if (flag) {
+                    return Promise.reject({
+                        code: 400,
+                        body: {
+                            error: "the given display " + keyObj + " key doesnot exist on grouped key",
+                        },
+                    });
+                }
+
                 displayObj.push({key: keyObj});
             } catch (err) {
 
@@ -271,7 +300,7 @@ export default class AggregateParser implements IParser {
             try {
 
                 try { // Try For MKey and SKey
-                    sortKeyObj = await this.keyObjectifier.convertToKey(sortKey);
+                    sortKeyObj = await this.converter.convertToKey(sortKey);
                     sortKeyObjs.push(sortKeyObj);
                 } catch (e) {
                     if (displayKeys.includes(sortKey)) {
@@ -294,27 +323,5 @@ export default class AggregateParser implements IParser {
         }
 
         return Promise.resolve({kind: sortKindObj, keys: sortKeyObjs});
-    }
-
-    private strToAggregator(aggregate: string): Promise<Aggregator> {
-        switch (aggregate) {
-            case Aggregator.MIN:
-                return Promise.resolve(Aggregator.MIN);
-            case Aggregator.MAX:
-                return Promise.resolve(Aggregator.MAX);
-            case Aggregator.AVG:
-                return Promise.resolve(Aggregator.AVG);
-            case Aggregator.SUM:
-                return Promise.resolve(Aggregator.SUM);
-            case Aggregator.COUNT:
-                return Promise.resolve(Aggregator.COUNT);
-            default:
-                return Promise.reject({
-                    code: 400,
-                    body: {
-                        error: aggregate + " is an invalid aggregator",
-                    },
-                });
-        }
     }
 }

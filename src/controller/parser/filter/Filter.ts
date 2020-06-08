@@ -1,15 +1,15 @@
 import { SOperator, MOperator, IFilter, LogicalOperator, ICriteria, MKey, SKey,
          IMCriteria, ISCriteria } from "../IParser";
 import Slicer from "../slicer/Slicer";
-import KeyObjectifier from "../objectifier/KeyObjectifier";
+import Converter from "../converter/converter";
 
 export default class Filter {
     private slicer: Slicer;
-    private keyObjectifer: KeyObjectifier;
+    private converter: Converter;
 
     constructor() {
         this.slicer = new Slicer();
-        this.keyObjectifer = new KeyObjectifier();
+        this.converter = new Converter();
     }
 
     public async parse(filter: string[]): Promise<IFilter> {
@@ -130,7 +130,7 @@ export default class Filter {
 
         // Key
         try {
-            keyObj = (await this.keyObjectifer.convertToMKey(key) as MKey);
+            keyObj = (await this.converter.convertToMKey(key) as MKey);
         } catch (err) {
             return Promise.reject(err);
         }
@@ -148,7 +148,7 @@ export default class Filter {
 
         // Operator
         try {
-            operatorObj = await this.strToMOperatorObj(operator);
+            operatorObj = await this.converter.convertToMOperator(operator);
         } catch (err) {
             return Promise.reject(err);
         }
@@ -163,7 +163,7 @@ export default class Filter {
 
         // Key
         try {
-            keyObj = (await this.keyObjectifer.convertToSKey(key) as SKey);
+            keyObj = (await this.converter.convertToSKey(key) as SKey);
         } catch (err) {
             return Promise.reject(err);
         }
@@ -183,64 +183,12 @@ export default class Filter {
 
         // Operator
         try {
-            operatorObj = await this.strToSOperatorObj(operator);
+            operatorObj = await this.converter.convertToSOperator(operator);
         } catch (err) {
             return Promise.reject(err);
         }
 
         return Promise.resolve({key: keyObj, operator: operatorObj, operand: operandObj});
-    }
-
-    private strToMOperatorObj(operator: string): Promise<MOperator> {
-        switch (operator) {
-            case MOperator.Equal:
-                return Promise.resolve(MOperator.Equal);
-            case MOperator.Greater:
-                return Promise.resolve(MOperator.Greater);
-            case MOperator.Less:
-                return Promise.resolve(MOperator.Less);
-            case MOperator.notEqual:
-                return Promise.resolve(MOperator.notEqual);
-            case MOperator.notGreater:
-                return Promise.resolve(MOperator.notGreater);
-            case MOperator.notLess:
-                return Promise.resolve(MOperator.notLess);
-            default:
-                return Promise.reject({
-                    code: 400,
-                    body: {
-                        error: "invalid mathematical operator: " + operator,
-                    },
-                });
-        }
-    }
-
-    private strToSOperatorObj(operator: string): Promise<SOperator> {
-        switch (operator) {
-            case SOperator.Is:
-                return Promise.resolve(SOperator.Is);
-            case SOperator.Includes:
-                return Promise.resolve(SOperator.Includes);
-            case SOperator.Begins:
-                return Promise.resolve(SOperator.Begins);
-            case SOperator.Ends:
-                return Promise.resolve(SOperator.Ends);
-            case SOperator.isNot:
-                return Promise.resolve(SOperator.isNot);
-            case SOperator.notInclude:
-                return Promise.resolve(SOperator.notInclude);
-            case SOperator.notBegin:
-                return Promise.resolve(SOperator.notBegin);
-            case SOperator.notEnd:
-                return Promise.resolve(SOperator.notEnd);
-            default:
-                return Promise.reject({
-                    code: 400,
-                    body: {
-                        error: "invalid string operator: " + operator,
-                    },
-                });
-        }
     }
 
     private isFloat(value: string): boolean {

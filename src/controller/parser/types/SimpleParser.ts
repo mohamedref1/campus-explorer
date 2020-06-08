@@ -3,7 +3,7 @@ import IParser, { IParserResponse, ISimpleDataset, IFilter, IKey, MKey, SKey, IS
                   ParserType} from "../IParser";
 import { InsightDatasetKind } from "../../IInsightFacade";
 import Slicer from "../slicer/Slicer";
-import KeyObjectifier from "../objectifier/KeyObjectifier";
+import Converter from "../converter/converter";
 import Filter from "../filter/Filter";
 
 /**
@@ -13,12 +13,12 @@ import Filter from "../filter/Filter";
 export default class SimpleParser implements IParser {
     private slicer: Slicer;
     private filter: Filter;
-    private keyObjectifier: KeyObjectifier;
+    private converter: Converter;
 
     constructor() {
         this.slicer = new Slicer();
         this.filter = new Filter();
-        this.keyObjectifier = new KeyObjectifier();
+        this.converter = new Converter();
     }
 
     public async performParse(query: string): Promise<IParserResponse> {
@@ -133,7 +133,7 @@ export default class SimpleParser implements IParser {
         const displayObj: IKey[] = [];
         for (const key of display) {
             try {
-                const keyObj = await this.keyObjectifier.convertToKey(key);
+                const keyObj = await this.converter.convertToKey(key);
                 displayObj.push({key: keyObj});
             } catch (err) {
                 return Promise.reject(err);
@@ -175,7 +175,7 @@ export default class SimpleParser implements IParser {
         const sortKey = sort[1];
         let sortKeyObj: MKey | SKey;
         try {
-            sortKeyObj = await this.keyObjectifier.convertToKey(sortKey);
+            sortKeyObj = await this.converter.convertToKey(sortKey);
 
             const displayKeys: string[] = [];
             for (const displayKey of displayObj) {

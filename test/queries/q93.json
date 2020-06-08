@@ -1,0 +1,10 @@
+{
+    "title": "A query that uses \"_\" in apply keys",
+    "query": "In courses dataset courses grouped by Department, find all entries; show Department and avg_Grade, where avg_Grade is the AVG of Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

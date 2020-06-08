@@ -1,10 +1,9 @@
 import Log from "../Util";
 import {IInsightFacade, InsightResponse, InsightDatasetKind,
         InsightDataset, InsightResponseSuccessBody} from "./IInsightFacade";
-import { IParserResponse, IParserResponseSuccessBody, ParserType } from "./parser/IParser";
+import { IParserResponse, IParserResponseSuccessBody } from "./parser/IParser";
 import InsightCourses from "./dataset/InsightCourses";
 import InsightRooms from "./dataset/InsightRooms";
-import SimpleResult from "./result/types/SimpleResult";
 import Parser from "./parser/Parser";
 import Result from "./result/Result";
 

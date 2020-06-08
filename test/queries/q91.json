@@ -1,0 +1,627 @@
+{
+    "title": "SELECT dept, sumGrade(sum of avg) ALL ENTRIES GROUPED BY dept ORDER BY dept",
+    "query": "In courses dataset courses grouped by Department, find all entries; show Department and sumGrade, where sumGrade is the SUM of Average; sort in ascending order by Department.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "courses_dept": "adhe",
+                  "sumGrade": 19241.49
+                },
+                {
+                  "courses_dept": "anth",
+                  "sumGrade": 21637.01
+                },
+                {
+                  "courses_dept": "appp",
+                  "sumGrade": 645.58
+                },
+                {
+                  "courses_dept": "apsc",
+                  "sumGrade": 50187.54
+                },
+                {
+                  "courses_dept": "arbc",
+                  "sumGrade": 1281.2
+                },
+                {
+                  "courses_dept": "arch",
+                  "sumGrade": 55646.25
+                },
+                {
+                  "courses_dept": "arcl",
+                  "sumGrade": 3445.92
+                },
+                {
+                  "courses_dept": "arst",
+                  "sumGrade": 21204.8
+                },
+                {
+                  "courses_dept": "arth",
+                  "sumGrade": 32937.45
+                },
+                {
+                  "courses_dept": "asic",
+                  "sumGrade": 1307.86
+                },
+                {
+                  "courses_dept": "astr",
+                  "sumGrade": 14432.23
+                },
+                {
+                  "courses_dept": "astu",
+                  "sumGrade": 3758.02
+                },
+                {
+                  "courses_dept": "atsc",
+                  "sumGrade": 6257.4
+                },
+                {
+                  "courses_dept": "audi",
+                  "sumGrade": 48786.25
+                },
+                {
+                  "courses_dept": "baac",
+                  "sumGrade": 12439.94
+                },
+                {
+                  "courses_dept": "babs",
+                  "sumGrade": 4287.84
+                },
+                {
+                  "courses_dept": "baen",
+                  "sumGrade": 7181.1
+                },
+                {
+                  "courses_dept": "bafi",
+                  "sumGrade": 26409.28
+                },
+                {
+                  "courses_dept": "bahr",
+                  "sumGrade": 14235.27
+                },
+                {
+                  "courses_dept": "bait",
+                  "sumGrade": 7473.94
+                },
+                {
+                  "courses_dept": "bala",
+                  "sumGrade": 1309.8
+                },
+                {
+                  "courses_dept": "bama",
+                  "sumGrade": 15400.05
+                },
+                {
+                  "courses_dept": "bams",
+                  "sumGrade": 16556.46
+                },
+                {
+                  "courses_dept": "bapa",
+                  "sumGrade": 3988.82
+                },
+                {
+                  "courses_dept": "basc",
+                  "sumGrade": 7231.03
+                },
+                {
+                  "courses_dept": "basm",
+                  "sumGrade": 13620.74
+                },
+                {
+                  "courses_dept": "baul",
+                  "sumGrade": 1488
+                },
+                {
+                  "courses_dept": "biof",
+                  "sumGrade": 2064.63
+                },
+                {
+                  "courses_dept": "biol",
+                  "sumGrade": 155104.34
+                },
+                {
+                  "courses_dept": "bmeg",
+                  "sumGrade": 4677.06
+                },
+                {
+                  "courses_dept": "bota",
+                  "sumGrade": 2622.1
+                },
+                {
+                  "courses_dept": "busi",
+                  "sumGrade": 119158.99
+                },
+                {
+                  "courses_dept": "caps",
+                  "sumGrade": 6979.4
+                },
+                {
+                  "courses_dept": "ccst",
+                  "sumGrade": 4202.48
+                },
+                {
+                  "courses_dept": "ceen",
+                  "sumGrade": 4549.59
+                },
+                {
+                  "courses_dept": "cell",
+                  "sumGrade": 12836.6
+                },
+                {
+                  "courses_dept": "cens",
+                  "sumGrade": 6915.32
+                },
+                {
+                  "courses_dept": "chbe",
+                  "sumGrade": 63319.16
+                },
+                {
+                  "courses_dept": "chil",
+                  "sumGrade": 2400.88
+                },
+                {
+                  "courses_dept": "chin",
+                  "sumGrade": 74466.93
+                },
+                {
+                  "courses_dept": "cics",
+                  "sumGrade": 2311.68
+                },
+                {
+                  "courses_dept": "civl",
+                  "sumGrade": 99142.75
+                },
+                {
+                  "courses_dept": "clch",
+                  "sumGrade": 1061.76
+                },
+                {
+                  "courses_dept": "clst",
+                  "sumGrade": 25488.97
+                },
+                {
+                  "courses_dept": "cnps",
+                  "sumGrade": 62666.26
+                },
+                {
+                  "courses_dept": "cnrs",
+                  "sumGrade": 2439.18
+                },
+                {
+                  "courses_dept": "cnto",
+                  "sumGrade": 432.66
+                },
+                {
+                  "courses_dept": "coec",
+                  "sumGrade": 1318.13
+                },
+                {
+                  "courses_dept": "cogs",
+                  "sumGrade": 10557.71
+                },
+                {
+                  "courses_dept": "cohr",
+                  "sumGrade": 13916.62
+                },
+                {
+                  "courses_dept": "cons",
+                  "sumGrade": 16921.35
+                },
+                {
+                  "courses_dept": "cpen",
+                  "sumGrade": 3429.4
+                },
+                {
+                  "courses_dept": "cpsc",
+                  "sumGrade": 86189.91
+                },
+                {
+                  "courses_dept": "crwr",
+                  "sumGrade": 17282.78
+                },
+                {
+                  "courses_dept": "dani",
+                  "sumGrade": 2172.8
+                },
+                {
+                  "courses_dept": "dhyg",
+                  "sumGrade": 28119.91
+                },
+                {
+                  "courses_dept": "eced",
+                  "sumGrade": 12476.23
+                },
+                {
+                  "courses_dept": "econ",
+                  "sumGrade": 171190.52
+                },
+                {
+                  "courses_dept": "edcp",
+                  "sumGrade": 23863.7
+                },
+                {
+                  "courses_dept": "edst",
+                  "sumGrade": 32590.74
+                },
+                {
+                  "courses_dept": "educ",
+                  "sumGrade": 15319.87
+                },
+                {
+                  "courses_dept": "eece",
+                  "sumGrade": 42782.11
+                },
+                {
+                  "courses_dept": "elec",
+                  "sumGrade": 9928.75
+                },
+                {
+                  "courses_dept": "ends",
+                  "sumGrade": 11769.6
+                },
+                {
+                  "courses_dept": "engl",
+                  "sumGrade": 156952.79
+                },
+                {
+                  "courses_dept": "enph",
+                  "sumGrade": 4423.71
+                },
+                {
+                  "courses_dept": "envr",
+                  "sumGrade": 6781.2
+                },
+                {
+                  "courses_dept": "eosc",
+                  "sumGrade": 128116.51
+                },
+                {
+                  "courses_dept": "epse",
+                  "sumGrade": 99019.87
+                },
+                {
+                  "courses_dept": "etec",
+                  "sumGrade": 36775.88
+                },
+                {
+                  "courses_dept": "fhis",
+                  "sumGrade": 311.04
+                },
+                {
+                  "courses_dept": "fipr",
+                  "sumGrade": 14374.3
+                },
+                {
+                  "courses_dept": "fish",
+                  "sumGrade": 3856.38
+                },
+                {
+                  "courses_dept": "fist",
+                  "sumGrade": 15641.22
+                },
+                {
+                  "courses_dept": "fmst",
+                  "sumGrade": 20952.62
+                },
+                {
+                  "courses_dept": "fnel",
+                  "sumGrade": 1620.72
+                },
+                {
+                  "courses_dept": "fnh",
+                  "sumGrade": 60040.05
+                },
+                {
+                  "courses_dept": "fnis",
+                  "sumGrade": 1398.98
+                },
+                {
+                  "courses_dept": "food",
+                  "sumGrade": 13393.06
+                },
+                {
+                  "courses_dept": "fopr",
+                  "sumGrade": 7819.84
+                },
+                {
+                  "courses_dept": "fre",
+                  "sumGrade": 20166.08
+                },
+                {
+                  "courses_dept": "fren",
+                  "sumGrade": 75280.02
+                },
+                {
+                  "courses_dept": "frst",
+                  "sumGrade": 71091.2
+                },
+                {
+                  "courses_dept": "hebr",
+                  "sumGrade": 1399.38
+                },
+                {
+                  "courses_dept": "hgse",
+                  "sumGrade": 6035.72
+                },
+                {
+                  "courses_dept": "hinu",
+                  "sumGrade": 1348.41
+                },
+                {
+                  "courses_dept": "hist",
+                  "sumGrade": 74799.57
+                },
+                {
+                  "courses_dept": "hunu",
+                  "sumGrade": 2248.1
+                },
+                {
+                  "courses_dept": "iar",
+                  "sumGrade": 423.03
+                },
+                {
+                  "courses_dept": "igen",
+                  "sumGrade": 4472.06
+                },
+                {
+                  "courses_dept": "info",
+                  "sumGrade": 170.8
+                },
+                {
+                  "courses_dept": "isci",
+                  "sumGrade": 5796.45
+                },
+                {
+                  "courses_dept": "ital",
+                  "sumGrade": 24280.36
+                },
+                {
+                  "courses_dept": "itst",
+                  "sumGrade": 7473.06
+                },
+                {
+                  "courses_dept": "iwme",
+                  "sumGrade": 168
+                },
+                {
+                  "courses_dept": "japn",
+                  "sumGrade": 70695.54
+                },
+                {
+                  "courses_dept": "jrnl",
+                  "sumGrade": 2972.58
+                },
+                {
+                  "courses_dept": "lais",
+                  "sumGrade": 346.08
+                },
+                {
+                  "courses_dept": "larc",
+                  "sumGrade": 25990.1
+                },
+                {
+                  "courses_dept": "laso",
+                  "sumGrade": 1029.34
+                },
+                {
+                  "courses_dept": "last",
+                  "sumGrade": 2415.2
+                },
+                {
+                  "courses_dept": "latn",
+                  "sumGrade": 3519.18
+                },
+                {
+                  "courses_dept": "law",
+                  "sumGrade": 84747.65
+                },
+                {
+                  "courses_dept": "lfs",
+                  "sumGrade": 11369.65
+                },
+                {
+                  "courses_dept": "libe",
+                  "sumGrade": 9187.27
+                },
+                {
+                  "courses_dept": "libr",
+                  "sumGrade": 40333.57
+                },
+                {
+                  "courses_dept": "ling",
+                  "sumGrade": 39021.25
+                },
+                {
+                  "courses_dept": "lled",
+                  "sumGrade": 47579.69
+                },
+                {
+                  "courses_dept": "math",
+                  "sumGrade": 199657.15
+                },
+                {
+                  "courses_dept": "mdvl",
+                  "sumGrade": 1497.84
+                },
+                {
+                  "courses_dept": "mech",
+                  "sumGrade": 101520.38
+                },
+                {
+                  "courses_dept": "medg",
+                  "sumGrade": 20887.14
+                },
+                {
+                  "courses_dept": "medi",
+                  "sumGrade": 11011.94
+                },
+                {
+                  "courses_dept": "micb",
+                  "sumGrade": 38015.14
+                },
+                {
+                  "courses_dept": "midw",
+                  "sumGrade": 14255.28
+                },
+                {
+                  "courses_dept": "mine",
+                  "sumGrade": 42116.06
+                },
+                {
+                  "courses_dept": "mrne",
+                  "sumGrade": 3376.22
+                },
+                {
+                  "courses_dept": "mtrl",
+                  "sumGrade": 53305.36
+                },
+                {
+                  "courses_dept": "musc",
+                  "sumGrade": 68160.02
+                },
+                {
+                  "courses_dept": "name",
+                  "sumGrade": 3554.32
+                },
+                {
+                  "courses_dept": "nest",
+                  "sumGrade": 6082.83
+                },
+                {
+                  "courses_dept": "nrsc",
+                  "sumGrade": 6399.2
+                },
+                {
+                  "courses_dept": "nurs",
+                  "sumGrade": 76918.76
+                },
+                {
+                  "courses_dept": "obst",
+                  "sumGrade": 5377.01
+                },
+                {
+                  "courses_dept": "onco",
+                  "sumGrade": 1616.8
+                },
+                {
+                  "courses_dept": "path",
+                  "sumGrade": 38697.23
+                },
+                {
+                  "courses_dept": "pcth",
+                  "sumGrade": 16055.9
+                },
+                {
+                  "courses_dept": "pers",
+                  "sumGrade": 4018.64
+                },
+                {
+                  "courses_dept": "phar",
+                  "sumGrade": 65894.47
+                },
+                {
+                  "courses_dept": "phil",
+                  "sumGrade": 24314.36
+                },
+                {
+                  "courses_dept": "phrm",
+                  "sumGrade": 926.54
+                },
+                {
+                  "courses_dept": "phth",
+                  "sumGrade": 10564.04
+                },
+                {
+                  "courses_dept": "phys",
+                  "sumGrade": 85323.53
+                },
+                {
+                  "courses_dept": "punj",
+                  "sumGrade": 5507.92
+                },
+                {
+                  "courses_dept": "relg",
+                  "sumGrade": 8283.52
+                },
+                {
+                  "courses_dept": "rgla",
+                  "sumGrade": 1242.28
+                },
+                {
+                  "courses_dept": "rhsc",
+                  "sumGrade": 18057.35
+                },
+                {
+                  "courses_dept": "rmes",
+                  "sumGrade": 12327.82
+                },
+                {
+                  "courses_dept": "rmst",
+                  "sumGrade": 1398.52
+                },
+                {
+                  "courses_dept": "rsot",
+                  "sumGrade": 14069.53
+                },
+                {
+                  "courses_dept": "russ",
+                  "sumGrade": 9944.46
+                },
+                {
+                  "courses_dept": "sans",
+                  "sumGrade": 1698.38
+                },
+                {
+                  "courses_dept": "scan",
+                  "sumGrade": 3082.32
+                },
+                {
+                  "courses_dept": "scie",
+                  "sumGrade": 10526.78
+                },
+                {
+                  "courses_dept": "soci",
+                  "sumGrade": 24619.49
+                },
+                {
+                  "courses_dept": "soil",
+                  "sumGrade": 5272.14
+                },
+                {
+                  "courses_dept": "udes",
+                  "sumGrade": 1359.68
+                },
+                {
+                  "courses_dept": "ufor",
+                  "sumGrade": 489.04
+                },
+                {
+                  "courses_dept": "urst",
+                  "sumGrade": 2498.66
+                },
+                {
+                  "courses_dept": "ursy",
+                  "sumGrade": 321.44
+                },
+                {
+                  "courses_dept": "vant",
+                  "sumGrade": 1366.21
+                },
+                {
+                  "courses_dept": "visa",
+                  "sumGrade": 46152.03
+                },
+                {
+                  "courses_dept": "wrds",
+                  "sumGrade": 9909.88
+                },
+                {
+                  "courses_dept": "zool",
+                  "sumGrade": 3203.23
+                }
+              ]
+        }
+    }
+}

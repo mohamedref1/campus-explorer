@@ -1,0 +1,10 @@
+{
+    "title": "A query that uses apply key twice",
+    "query": "In courses dataset courses grouped by Department, find all entries; show Department and avgGrade, where avgGrade is the AVG of Average and avgGrade is the AVG of Average.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

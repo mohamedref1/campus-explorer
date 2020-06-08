@@ -1,0 +1,10 @@
+{
+    "title": "A query that uses a display key which doesnot exist on groups key",
+    "query": "In courses dataset courses grouped by Department, find all entries; show Department and ID.",
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

@@ -1,0 +1,159 @@
+{
+    "title": "SELECT address, sumGrade(sum of seats) ALL ENTRIES GROUPED BY address ORDER BY sumGrade (ascending)",
+    "query": "In rooms dataset rooms grouped by Address, find all entries; show Address and sumGrade, where sumGrade is the SUM of Seats; sort in ascending order by sumGrade.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "rooms_address": "6081 University Blvd",
+                  "sumGrade": 65
+                },
+                {
+                  "rooms_address": "1874 East Mall",
+                  "sumGrade": 94
+                },
+                {
+                  "rooms_address": "1986 Mathematics Road",
+                  "sumGrade": 106
+                },
+                {
+                  "rooms_address": "6350 Stores Road",
+                  "sumGrade": 142
+                },
+                {
+                  "rooms_address": "2202 Main Mall",
+                  "sumGrade": 144
+                },
+                {
+                  "rooms_address": "2177 Wesbrook Mall V6T 1Z3",
+                  "sumGrade": 160
+                },
+                {
+                  "rooms_address": "2206 East Mall",
+                  "sumGrade": 166
+                },
+                {
+                  "rooms_address": "6303 North West Marine Drive",
+                  "sumGrade": 186
+                },
+                {
+                  "rooms_address": "1822 East Mall",
+                  "sumGrade": 228
+                },
+                {
+                  "rooms_address": "6445 University Boulevard",
+                  "sumGrade": 240
+                },
+                {
+                  "rooms_address": "2205 East Mall",
+                  "sumGrade": 263
+                },
+                {
+                  "rooms_address": "6250 Applied Science Lane",
+                  "sumGrade": 289
+                },
+                {
+                  "rooms_address": "6333 Memorial Road",
+                  "sumGrade": 325
+                },
+                {
+                  "rooms_address": "6270 University Boulevard",
+                  "sumGrade": 336
+                },
+                {
+                  "rooms_address": "2360 East Mall V6T 1Z3",
+                  "sumGrade": 354
+                },
+                {
+                  "rooms_address": "2260 West Mall, V6T 1Z4",
+                  "sumGrade": 426
+                },
+                {
+                  "rooms_address": "6174 University Boulevard",
+                  "sumGrade": 427
+                },
+                {
+                  "rooms_address": "6245 Agronomy Road V6T 1Z4",
+                  "sumGrade": 440
+                },
+                {
+                  "rooms_address": "1984 Mathematics Road",
+                  "sumGrade": 495
+                },
+                {
+                  "rooms_address": "2356 Main Mall",
+                  "sumGrade": 503
+                },
+                {
+                  "rooms_address": "6356 Agricultural Road",
+                  "sumGrade": 505
+                },
+                {
+                  "rooms_address": "2045 East Mall",
+                  "sumGrade": 537
+                },
+                {
+                  "rooms_address": "2405 Wesbrook Mall",
+                  "sumGrade": 538
+                },
+                {
+                  "rooms_address": "1961 East Mall V6T 1Z1",
+                  "sumGrade": 568
+                },
+                {
+                  "rooms_address": "2357 Main Mall",
+                  "sumGrade": 573
+                },
+                {
+                  "rooms_address": "2207 Main Mall",
+                  "sumGrade": 580
+                },
+                {
+                  "rooms_address": "1984 West Mall",
+                  "sumGrade": 619
+                },
+                {
+                  "rooms_address": "2424 Main Mall",
+                  "sumGrade": 621
+                },
+                {
+                  "rooms_address": "6224 Agricultural Road",
+                  "sumGrade": 658
+                },
+                {
+                  "rooms_address": "6363 Agronomy Road",
+                  "sumGrade": 662
+                },
+                {
+                  "rooms_address": "2350 Health Sciences Mall",
+                  "sumGrade": 825
+                },
+                {
+                  "rooms_address": "6000 Student Union Blvd",
+                  "sumGrade": 897
+                },
+                {
+                  "rooms_address": "2036 Main Mall",
+                  "sumGrade": 913
+                },
+                {
+                  "rooms_address": "2125 Main Mall",
+                  "sumGrade": 1004
+                },
+                {
+                  "rooms_address": "2194 Health Sciences Mall",
+                  "sumGrade": 1297
+                },
+                {
+                  "rooms_address": "2175 West Mall V6T 1Z4",
+                  "sumGrade": 1421
+                },
+                {
+                  "rooms_address": "2053 Main Mall",
+                  "sumGrade": 1546
+                }
+            ]
+        }
+    }
+}
