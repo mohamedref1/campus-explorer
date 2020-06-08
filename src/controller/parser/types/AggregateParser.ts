@@ -161,7 +161,7 @@ export default class AggregateParser implements IParser {
                     key = await this.keyObjectifier.convertToMKey(splittedOneAggregation[2]);
                 }
 
-                if (input.includes("_") || input.includes("_")) { // Input validation
+                if (input.includes("_") || input.includes("*")) { // Input validation
                     return Promise.reject({
                         code: 400,
                         body: {

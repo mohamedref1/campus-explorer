@@ -139,12 +139,14 @@ export default class AggregateResult {
         return Promise.resolve(groupedDataset);
     }
 
-    private groupRoomsDataset(rooms: IRoom[], group: IKey[]): Promise<any[]> {
+    private async groupRoomsDataset(rooms: IRoom[], groupingKeys: IKey[]): Promise<any[]> {
         let groupedDataset: IRoom[][]   = [rooms];
         const groupProperties: string[] = [];
 
         try { // Convert group keys to string ISection properties
-            group.forEach(async (key) => groupProperties.push(await this.keyToRoomsProperties(key)));
+            for (const key of groupingKeys) {
+                groupProperties.push(await this.keyToRoomsProperties(key));
+            }
         } catch (err) {
             return Promise.reject(err);
         }
@@ -286,7 +288,11 @@ export default class AggregateResult {
         try { // Convert key to a section property
             key = await this.keyToCoursesProperties({key: aggregation.key});
         } catch (err) {
-            return Promise.reject(err);
+            try {
+                key = await this.keyToRoomsProperties({key: aggregation.key});
+            } catch (err) {
+                return Promise.reject(err);
+            }
         }
 
         for (const subDataset of dataset) { // Get targeted values to apply on

@@ -112,6 +112,7 @@ export default class InsightFacade implements IInsightFacade {
                 // Convert it to a list of resulted sections
                 const resultResponse: InsightResponse = await this.result.performResult(parsedQuery);
                 // Resolve it
+
                 fulfill(resultResponse);
 
             } catch (err) {
