@@ -1,0 +1,3 @@
+{
+    "query1":"In courses dataset courses, find entries whose Department is \"cpsc\"; show Department and ID; sort in ascending order by ID.",
+}
