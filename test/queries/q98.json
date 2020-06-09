@@ -1,0 +1,159 @@
+{
+    "title": "SELECT avgGrade and sumGrade ALL ENTRES GROUPED BY Address ORDER BY avgGrade, sumGrade (descending)",
+    "query": "In rooms dataset rooms grouped by Address, find all entries; show avgGrade and sumGrade, where avgGrade is the AVG of Seats and sumGrade is the SUM of Latitude; sort in descending order by avgGrade and sumGrade.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "avgGrade": 426,
+                  "sumGrade": 49.26
+                },
+                {
+                  "avgGrade": 299,
+                  "sumGrade": 147.8
+                },
+                {
+                  "avgGrade": 275,
+                  "sumGrade": 147.79
+                },
+                {
+                  "avgGrade": 213.5,
+                  "sumGrade": 98.53
+                },
+                {
+                  "avgGrade": 193.33,
+                  "sumGrade": 147.79
+                },
+                {
+                  "avgGrade": 160,
+                  "sumGrade": 49.27
+                },
+                {
+                  "avgGrade": 152.17,
+                  "sumGrade": 295.6
+                },
+                {
+                  "avgGrade": 144,
+                  "sumGrade": 49.26
+                },
+                {
+                  "avgGrade": 134.25,
+                  "sumGrade": 197.06
+                },
+                {
+                  "avgGrade": 126.25,
+                  "sumGrade": 197.06
+                },
+                {
+                  "avgGrade": 118,
+                  "sumGrade": 147.79
+                },
+                {
+                  "avgGrade": 109.67,
+                  "sumGrade": 295.6
+                },
+                {
+                  "avgGrade": 106,
+                  "sumGrade": 49.27
+                },
+                {
+                  "avgGrade": 88,
+                  "sumGrade": 246.31
+                },
+                {
+                  "avgGrade": 84,
+                  "sumGrade": 197.06
+                },
+                {
+                  "avgGrade": 83.83,
+                  "sumGrade": 295.57
+                },
+                {
+                  "avgGrade": 81.06,
+                  "sumGrade": 788.24
+                },
+                {
+                  "avgGrade": 77.38,
+                  "sumGrade": 394.13
+                },
+                {
+                  "avgGrade": 64.59,
+                  "sumGrade": 1083.78
+                },
+                {
+                  "avgGrade": 62.1,
+                  "sumGrade": 492.6
+                },
+                {
+                  "avgGrade": 61.88,
+                  "sumGrade": 394.13
+                },
+                {
+                  "avgGrade": 55.21,
+                  "sumGrade": 1379.42
+                },
+                {
+                  "avgGrade": 54.17,
+                  "sumGrade": 295.61
+                },
+                {
+                  "avgGrade": 48.91,
+                  "sumGrade": 541.89
+                },
+                {
+                  "avgGrade": 48.17,
+                  "sumGrade": 295.58
+                },
+                {
+                  "avgGrade": 47.33,
+                  "sumGrade": 147.79
+                },
+                {
+                  "avgGrade": 47,
+                  "sumGrade": 98.54
+                },
+                {
+                  "avgGrade": 46.5,
+                  "sumGrade": 197.08
+                },
+                {
+                  "avgGrade": 45.64,
+                  "sumGrade": 1083.81
+                },
+                {
+                  "avgGrade": 45.6,
+                  "sumGrade": 246.35
+                },
+                {
+                  "avgGrade": 43.83,
+                  "sumGrade": 295.58
+                },
+                {
+                  "avgGrade": 32.5,
+                  "sumGrade": 98.53
+                },
+                {
+                  "avgGrade": 31.56,
+                  "sumGrade": 886.82
+                },
+                {
+                  "avgGrade": 31.52,
+                  "sumGrade": 1034.47
+                },
+                {
+                  "avgGrade": 30.16,
+                  "sumGrade": 935.96
+                },
+                {
+                  "avgGrade": 30,
+                  "sumGrade": 394.11
+                },
+                {
+                  "avgGrade": 27.67,
+                  "sumGrade": 295.59
+                }
+            ]
+        }
+    }
+}

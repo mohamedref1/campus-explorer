@@ -1,0 +1,627 @@
+{
+    "title": "SELECT avgGrade and sumGrade ALL ENTRES GROUPED BY Department ORDER BY avGrade (ascending)",
+    "query": "In courses dataset courses grouped by Department, find all entries; show avgGrade and sumGrade, where avgGrade is the AVG of Average and sumGrade is the SUM of Pass; sort in ascending order by avgGrade.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "avgGrade": 68.31,
+                  "sumGrade": 784
+                },
+                {
+                  "avgGrade": 69.93,
+                  "sumGrade": 312
+                },
+                {
+                  "avgGrade": 70.28,
+                  "sumGrade": 7154
+                },
+                {
+                  "avgGrade": 70.63,
+                  "sumGrade": 109782
+                },
+                {
+                  "avgGrade": 72.03,
+                  "sumGrade": 248864
+                },
+                {
+                  "avgGrade": 72.27,
+                  "sumGrade": 3092
+                },
+                {
+                  "avgGrade": 72.58,
+                  "sumGrade": 31804
+                },
+                {
+                  "avgGrade": 72.75,
+                  "sumGrade": 27059
+                },
+                {
+                  "avgGrade": 73.18,
+                  "sumGrade": 24404
+                },
+                {
+                  "avgGrade": 73.32,
+                  "sumGrade": 1824
+                },
+                {
+                  "avgGrade": 73.52,
+                  "sumGrade": 1032
+                },
+                {
+                  "avgGrade": 73.66,
+                  "sumGrade": 40317
+                },
+                {
+                  "avgGrade": 73.96,
+                  "sumGrade": 134288
+                },
+                {
+                  "avgGrade": 74.06,
+                  "sumGrade": 49135
+                },
+                {
+                  "avgGrade": 74.18,
+                  "sumGrade": 3116
+                },
+                {
+                  "avgGrade": 74.31,
+                  "sumGrade": 25709
+                },
+                {
+                  "avgGrade": 74.71,
+                  "sumGrade": 8948
+                },
+                {
+                  "avgGrade": 74.88,
+                  "sumGrade": 1192
+                },
+                {
+                  "avgGrade": 74.89,
+                  "sumGrade": 766
+                },
+                {
+                  "avgGrade": 75.19,
+                  "sumGrade": 1674
+                },
+                {
+                  "avgGrade": 75.19,
+                  "sumGrade": 5698
+                },
+                {
+                  "avgGrade": 75.47,
+                  "sumGrade": 858
+                },
+                {
+                  "avgGrade": 75.79,
+                  "sumGrade": 8136
+                },
+                {
+                  "avgGrade": 75.84,
+                  "sumGrade": 158
+                },
+                {
+                  "avgGrade": 75.93,
+                  "sumGrade": 10470
+                },
+                {
+                  "avgGrade": 75.93,
+                  "sumGrade": 21558
+                },
+                {
+                  "avgGrade": 75.99,
+                  "sumGrade": 251276
+                },
+                {
+                  "avgGrade": 76.21,
+                  "sumGrade": 33891
+                },
+                {
+                  "avgGrade": 76.26,
+                  "sumGrade": 1680
+                },
+                {
+                  "avgGrade": 76.36,
+                  "sumGrade": 14406
+                },
+                {
+                  "avgGrade": 76.39,
+                  "sumGrade": 219390
+                },
+                {
+                  "avgGrade": 76.45,
+                  "sumGrade": 34563
+                },
+                {
+                  "avgGrade": 76.46,
+                  "sumGrade": 19804
+                },
+                {
+                  "avgGrade": 76.62,
+                  "sumGrade": 57100
+                },
+                {
+                  "avgGrade": 76.7,
+                  "sumGrade": 3570
+                },
+                {
+                  "avgGrade": 76.92,
+                  "sumGrade": 23881
+                },
+                {
+                  "avgGrade": 76.93,
+                  "sumGrade": 1142
+                },
+                {
+                  "avgGrade": 77.05,
+                  "sumGrade": 768
+                },
+                {
+                  "avgGrade": 77.06,
+                  "sumGrade": 6720
+                },
+                {
+                  "avgGrade": 77.26,
+                  "sumGrade": 8819
+                },
+                {
+                  "avgGrade": 77.54,
+                  "sumGrade": 976
+                },
+                {
+                  "avgGrade": 77.55,
+                  "sumGrade": 11826
+                },
+                {
+                  "avgGrade": 77.58,
+                  "sumGrade": 86761
+                },
+                {
+                  "avgGrade": 77.64,
+                  "sumGrade": 198
+                },
+                {
+                  "avgGrade": 77.72,
+                  "sumGrade": 506
+                },
+                {
+                  "avgGrade": 77.74,
+                  "sumGrade": 200
+                },
+                {
+                  "avgGrade": 77.74,
+                  "sumGrade": 133395
+                },
+                {
+                  "avgGrade": 77.76,
+                  "sumGrade": 48
+                },
+                {
+                  "avgGrade": 77.87,
+                  "sumGrade": 18999
+                },
+                {
+                  "avgGrade": 77.94,
+                  "sumGrade": 3698
+                },
+                {
+                  "avgGrade": 77.98,
+                  "sumGrade": 14986
+                },
+                {
+                  "avgGrade": 78.08,
+                  "sumGrade": 1296
+                },
+                {
+                  "avgGrade": 78.12,
+                  "sumGrade": 38104
+                },
+                {
+                  "avgGrade": 78.21,
+                  "sumGrade": 98312
+                },
+                {
+                  "avgGrade": 78.28,
+                  "sumGrade": 63383
+                },
+                {
+                  "avgGrade": 78.38,
+                  "sumGrade": 14266
+                },
+                {
+                  "avgGrade": 78.41,
+                  "sumGrade": 16084
+                },
+                {
+                  "avgGrade": 78.68,
+                  "sumGrade": 883
+                },
+                {
+                  "avgGrade": 78.83,
+                  "sumGrade": 31568
+                },
+                {
+                  "avgGrade": 78.99,
+                  "sumGrade": 2124
+                },
+                {
+                  "avgGrade": 79,
+                  "sumGrade": 62388
+                },
+                {
+                  "avgGrade": 79.05,
+                  "sumGrade": 42309
+                },
+                {
+                  "avgGrade": 79.07,
+                  "sumGrade": 5774
+                },
+                {
+                  "avgGrade": 79.49,
+                  "sumGrade": 4894
+                },
+                {
+                  "avgGrade": 79.53,
+                  "sumGrade": 42098
+                },
+                {
+                  "avgGrade": 79.77,
+                  "sumGrade": 19432
+                },
+                {
+                  "avgGrade": 79.86,
+                  "sumGrade": 2230
+                },
+                {
+                  "avgGrade": 79.95,
+                  "sumGrade": 85072
+                },
+                {
+                  "avgGrade": 80,
+                  "sumGrade": 24097
+                },
+                {
+                  "avgGrade": 80.08,
+                  "sumGrade": 350
+                },
+                {
+                  "avgGrade": 80.26,
+                  "sumGrade": 6975
+                },
+                {
+                  "avgGrade": 80.36,
+                  "sumGrade": 42
+                },
+                {
+                  "avgGrade": 80.61,
+                  "sumGrade": 5080
+                },
+                {
+                  "avgGrade": 80.7,
+                  "sumGrade": 492
+                },
+                {
+                  "avgGrade": 81,
+                  "sumGrade": 1444
+                },
+                {
+                  "avgGrade": 81.04,
+                  "sumGrade": 288
+                },
+                {
+                  "avgGrade": 81.11,
+                  "sumGrade": 1618
+                },
+                {
+                  "avgGrade": 81.16,
+                  "sumGrade": 11652
+                },
+                {
+                  "avgGrade": 81.24,
+                  "sumGrade": 16376
+                },
+                {
+                  "avgGrade": 81.25,
+                  "sumGrade": 4310
+                },
+                {
+                  "avgGrade": 81.26,
+                  "sumGrade": 2008
+                },
+                {
+                  "avgGrade": 81.27,
+                  "sumGrade": 7342
+                },
+                {
+                  "avgGrade": 81.34,
+                  "sumGrade": 8405
+                },
+                {
+                  "avgGrade": 81.4,
+                  "sumGrade": 2842
+                },
+                {
+                  "avgGrade": 81.51,
+                  "sumGrade": 238
+                },
+                {
+                  "avgGrade": 81.51,
+                  "sumGrade": 3280
+                },
+                {
+                  "avgGrade": 81.64,
+                  "sumGrade": 2004
+                },
+                {
+                  "avgGrade": 81.65,
+                  "sumGrade": 87612
+                },
+                {
+                  "avgGrade": 81.66,
+                  "sumGrade": 2622
+                },
+                {
+                  "avgGrade": 81.7,
+                  "sumGrade": 3146
+                },
+                {
+                  "avgGrade": 81.92,
+                  "sumGrade": 8679
+                },
+                {
+                  "avgGrade": 82.01,
+                  "sumGrade": 455
+                },
+                {
+                  "avgGrade": 82.14,
+                  "sumGrade": 4654
+                },
+                {
+                  "avgGrade": 82.38,
+                  "sumGrade": 476
+                },
+                {
+                  "avgGrade": 82.46,
+                  "sumGrade": 2170
+                },
+                {
+                  "avgGrade": 82.51,
+                  "sumGrade": 5421
+                },
+                {
+                  "avgGrade": 82.54,
+                  "sumGrade": 2960
+                },
+                {
+                  "avgGrade": 82.55,
+                  "sumGrade": 7282
+                },
+                {
+                  "avgGrade": 82.56,
+                  "sumGrade": 780
+                },
+                {
+                  "avgGrade": 82.67,
+                  "sumGrade": 574
+                },
+                {
+                  "avgGrade": 82.78,
+                  "sumGrade": 3495
+                },
+                {
+                  "avgGrade": 82.79,
+                  "sumGrade": 12709
+                },
+                {
+                  "avgGrade": 82.94,
+                  "sumGrade": 8242
+                },
+                {
+                  "avgGrade": 83.04,
+                  "sumGrade": 3492
+                },
+                {
+                  "avgGrade": 83.09,
+                  "sumGrade": 24981
+                },
+                {
+                  "avgGrade": 83.22,
+                  "sumGrade": 9003
+                },
+                {
+                  "avgGrade": 83.52,
+                  "sumGrade": 1252
+                },
+                {
+                  "avgGrade": 83.57,
+                  "sumGrade": 320
+                },
+                {
+                  "avgGrade": 83.72,
+                  "sumGrade": 4624
+                },
+                {
+                  "avgGrade": 83.86,
+                  "sumGrade": 1714
+                },
+                {
+                  "avgGrade": 84,
+                  "sumGrade": 46
+                },
+                {
+                  "avgGrade": 84.2,
+                  "sumGrade": 1094
+                },
+                {
+                  "avgGrade": 84.22,
+                  "sumGrade": 3487
+                },
+                {
+                  "avgGrade": 84.23,
+                  "sumGrade": 2158
+                },
+                {
+                  "avgGrade": 84.25,
+                  "sumGrade": 1046
+                },
+                {
+                  "avgGrade": 84.28,
+                  "sumGrade": 294
+                },
+                {
+                  "avgGrade": 84.41,
+                  "sumGrade": 218
+                },
+                {
+                  "avgGrade": 84.48,
+                  "sumGrade": 4523
+                },
+                {
+                  "avgGrade": 84.53,
+                  "sumGrade": 29588
+                },
+                {
+                  "avgGrade": 84.61,
+                  "sumGrade": 14
+                },
+                {
+                  "avgGrade": 84.63,
+                  "sumGrade": 566
+                },
+                {
+                  "avgGrade": 84.73,
+                  "sumGrade": 10279
+                },
+                {
+                  "avgGrade": 84.87,
+                  "sumGrade": 3448
+                },
+                {
+                  "avgGrade": 84.92,
+                  "sumGrade": 164
+                },
+                {
+                  "avgGrade": 84.93,
+                  "sumGrade": 1082
+                },
+                {
+                  "avgGrade": 84.95,
+                  "sumGrade": 4820
+                },
+                {
+                  "avgGrade": 84.98,
+                  "sumGrade": 236
+                },
+                {
+                  "avgGrade": 85.07,
+                  "sumGrade": 3076
+                },
+                {
+                  "avgGrade": 85.27,
+                  "sumGrade": 7730
+                },
+                {
+                  "avgGrade": 85.35,
+                  "sumGrade": 386
+                },
+                {
+                  "avgGrade": 85.39,
+                  "sumGrade": 5688
+                },
+                {
+                  "avgGrade": 85.4,
+                  "sumGrade": 80
+                },
+                {
+                  "avgGrade": 85.76,
+                  "sumGrade": 338
+                },
+                {
+                  "avgGrade": 85.99,
+                  "sumGrade": 3796
+                },
+                {
+                  "avgGrade": 86.22,
+                  "sumGrade": 1338
+                },
+                {
+                  "avgGrade": 86.35,
+                  "sumGrade": 11190
+                },
+                {
+                  "avgGrade": 86.47,
+                  "sumGrade": 162
+                },
+                {
+                  "avgGrade": 86.52,
+                  "sumGrade": 26
+                },
+                {
+                  "avgGrade": 86.53,
+                  "sumGrade": 65
+                },
+                {
+                  "avgGrade": 86.59,
+                  "sumGrade": 9526
+                },
+                {
+                  "avgGrade": 86.92,
+                  "sumGrade": 2427
+                },
+                {
+                  "avgGrade": 87.04,
+                  "sumGrade": 23058
+                },
+                {
+                  "avgGrade": 87.4,
+                  "sumGrade": 1717
+                },
+                {
+                  "avgGrade": 87.4,
+                  "sumGrade": 376
+                },
+                {
+                  "avgGrade": 87.61,
+                  "sumGrade": 5809
+                },
+                {
+                  "avgGrade": 87.64,
+                  "sumGrade": 280
+                },
+                {
+                  "avgGrade": 88.38,
+                  "sumGrade": 5230
+                },
+                {
+                  "avgGrade": 88.92,
+                  "sumGrade": 72
+                },
+                {
+                  "avgGrade": 88.98,
+                  "sumGrade": 239
+                },
+                {
+                  "avgGrade": 89.05,
+                  "sumGrade": 11108
+                },
+                {
+                  "avgGrade": 89.14,
+                  "sumGrade": 1258
+                },
+                {
+                  "avgGrade": 89.77,
+                  "sumGrade": 219
+                },
+                {
+                  "avgGrade": 89.82,
+                  "sumGrade": 288
+                },
+                {
+                  "avgGrade": 89.94,
+                  "sumGrade": 24928
+                }
+            ]
+        }
+    }
+}

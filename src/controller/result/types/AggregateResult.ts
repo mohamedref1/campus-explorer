@@ -54,11 +54,10 @@ export default class AggregateResult {
 
                         // Sort
                         const sortedSections: ISection[][] =
-                            await this.sortCoursesDataset(desplayedSectionsGroups, sort);
+                            await this.sortCoursesGroupsDataset(desplayedSectionsGroups, sort);
 
                         // Merge
                         mergedSections = [].concat.apply([], sortedSections);
-
                     } else { // Merge Groups only
                         mergedSections = [].concat.apply([], desplayedSectionsGroups);
                     }
@@ -89,11 +88,9 @@ export default class AggregateResult {
                     let mergedRooms: IRoom[];
                     if (sort !== undefined) { // Sort and Merge Groups (if sort exists)
                         // Sort
-                        const sortedRooms: IRoom[][] = await this.sortRoomsDataset(desplayedRoomsGroups, sort);
-
+                        const sortedRooms: IRoom[][] = await this.sortRoomsGroupsDataset(desplayedRoomsGroups, sort);
                         // Merge
                         mergedRooms                  = [].concat.apply([], sortedRooms);
-
                     } else { // Merge Groups only
                         mergedRooms = [].concat.apply([], desplayedRoomsGroups);
                     }
@@ -318,7 +315,8 @@ export default class AggregateResult {
         }
     }
 
-    private async sortCoursesDataset(sectionsGroups: ISection[][], sortKeys: IAggregateSort): Promise<ISection[][]> {
+    private async sortCoursesGroupsDataset(sectionsGroups: ISection[][],
+                                           sortKeys: IAggregateSort): Promise<ISection[][]> {
         let result: ISection[][] = [];
         const kind = sortKeys.kind;
         const keys = sortKeys.keys;
@@ -335,7 +333,7 @@ export default class AggregateResult {
 
         try { // Logic
             const merge: ISection[]   = [].concat.apply([], sectionsGroups);
-            const sort: ISection[]    = await this.sortGroupedSectionsDataset(merge, firstProperty, kind);
+            const sort: ISection[]    = (await this.sortDataset(merge, firstProperty, kind) as ISection[]);
 
             let groups: ISection[][] = [];
             try { // For Key
@@ -373,7 +371,7 @@ export default class AggregateResult {
             // For each group of sections in result
             const resultGroups: ISection[][] = [];
             for (const oneGroup of result) {
-                const sort = await this.sortGroupedSectionsDataset(oneGroup, property, kind);
+                const sort = (await this.sortDataset(oneGroup, property, kind) as ISection[]);
                 resultGroups.push(sort);
 
             }
@@ -409,40 +407,13 @@ export default class AggregateResult {
         return Promise.resolve(result);
     }
 
-    private sortGroupedSectionsDataset(sections: ISection[], property: string, kind: SortKind): Promise<ISection[]> {
-
-        // Primary Sort
-        if (typeof (sections as any)[property] === typeof 0) { // For Numbers
-            sections.sort((a, b) => (a as any)[property] - (b as any)[property]);
-        } else { // For Strings
-            sections.sort((a, b) =>
-            +((a as any)[property] > (b as any)[property]) ||
-            -((a as any)[property] < (b as any)[property]));
-        }
-
-        // return sorted sections according to the given sort kind
-        if (kind === SortKind.Descending) { // Descending
-            sections.reverse();
-            return Promise.resolve(sections);
-        } else if (kind === SortKind.Ascending) { // Ascending
-            return Promise.resolve(sections);
-        } else {
-            return Promise.reject({
-                code: 400,
-                body: {
-                    error: "the given sort kind is invalid",
-                },
-            });
-        }
-    }
-
-    private async sortRoomsDataset(groupedRooms: IRoom[][], sortKeys: IAggregateSort): Promise<IRoom[][]> {
+    private async sortRoomsGroupsDataset(groupedRooms: IRoom[][], sortKeys: IAggregateSort): Promise<IRoom[][]> {
         let result: IRoom[][] = [];
         const kind = sortKeys.kind;
         const keys = sortKeys.keys;
 
         // First Key Sort
-        // Stringify sections property
+        // Stringify rooms property
         let firstProperty: string;
         const firstKey = keys.shift();
         try { // Get Property
@@ -453,7 +424,7 @@ export default class AggregateResult {
 
         try { // Logic
             const merge: IRoom[]   = [].concat.apply([], groupedRooms);
-            const sort: IRoom[]    = await this.sortGroupedRoomsDataset(merge, firstProperty, kind);
+            const sort: IRoom[]    = (await this.sortDataset(merge, firstProperty, kind) as IRoom[]);
             let groups: IRoom[][] = [];
             try { // For Key
                 groups = await this.groupifyRoomsDataset(sort, [{key: firstKey}]);
@@ -478,7 +449,7 @@ export default class AggregateResult {
         // For each Column
         for (const key of keys) {
 
-            // Stringify sections property
+            // Stringify rooms property
             let property: string;
             try {
                 property = await this.converter.convertToRoomsProperty(key);
@@ -489,7 +460,7 @@ export default class AggregateResult {
             // For each group of sections in result
             const resultGroups: IRoom[][] = [];
             for (const oneGroup of result) {
-                const sort = await this.sortGroupedRoomsDataset(oneGroup, property, kind);
+                const sort = (await this.sortDataset(oneGroup, property, kind) as IRoom[]);
                 resultGroups.push(sort);
 
             }
@@ -525,23 +496,24 @@ export default class AggregateResult {
         return Promise.resolve(result);
     }
 
-    private sortGroupedRoomsDataset(rooms: IRoom[], property: string, kind: SortKind): Promise<IRoom[]> {
+    private sortDataset(dataset: ISection[] | IRoom[],
+                        property: string, kind: SortKind): Promise<IRoom[] | ISection[]> {
 
         // Primary Sort
-        if (typeof (rooms as any)[property] === typeof 0) { // For Numbers
-            rooms.sort((a, b) => (a as any)[property] - (b as any)[property]);
+        if (typeof (dataset as any)[property] === typeof 0) { // For Numbers
+            (dataset as any).sort((a: any, b: any) => a[property] - b[property]);
         } else { // For Strings
-            rooms.sort((a, b) =>
-            +((a as any)[property] > (b as any)[property]) ||
-            -((a as any)[property] < (b as any)[property]));
+            (dataset as any).sort((a: any, b: any) =>
+            +(a[property] > b[property]) ||
+            -(a[property] < b[property]));
         }
 
         // return sorted sections according to the given sort kind
         if (kind === SortKind.Descending) { // Descending
-            rooms.reverse();
-            return Promise.resolve(rooms);
+            dataset.reverse();
+            return Promise.resolve(dataset);
         } else if (kind === SortKind.Ascending) { // Ascending
-            return Promise.resolve(rooms);
+            return Promise.resolve(dataset);
         } else {
             return Promise.reject({
                 code: 400,

@@ -1,0 +1,196 @@
+{
+    "title": "SELECT avgGrade, sumGrade, countGrade GROUPED BY address ALL ENTRIES",
+    "query": "In rooms dataset rooms grouped by Address, find all entries; show avgGrade, sumGrade and countGrade, where avgGrade is the AVG of Latitude, sumGrade is the SUM of Longitude and countGrade is the COUNT of Seats.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -616.27,
+                  "countGrade": 4
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -493.03,
+                  "countGrade": 4
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -123.25,
+                  "countGrade": 1
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -493.01,
+                  "countGrade": 3
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -246.5,
+                  "countGrade": 2
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -123.25,
+                  "countGrade": 1
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -369.74,
+                  "countGrade": 3
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -739.52,
+                  "countGrade": 4
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -739.49,
+                  "countGrade": 6
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -369.76,
+                  "countGrade": 3
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -739.5,
+                  "countGrade": 6
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -1232.49,
+                  "countGrade": 7
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -369.76,
+                  "countGrade": 3
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -739.53,
+                  "countGrade": 5
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -123.25,
+                  "countGrade": 1
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -986.05,
+                  "countGrade": 7
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -493.01,
+                  "countGrade": 2
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -739.52,
+                  "countGrade": 5
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -3451.1,
+                  "countGrade": 15
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -616.24,
+                  "countGrade": 4
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -2218.54,
+                  "countGrade": 10
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -493.02,
+                  "countGrade": 4
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -369.73,
+                  "countGrade": 2
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -739.5,
+                  "countGrade": 5
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -2341.76,
+                  "countGrade": 8
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -986.04,
+                  "countGrade": 5
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -123.25,
+                  "countGrade": 1
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -2711.57,
+                  "countGrade": 7
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -2588.24,
+                  "countGrade": 5
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -1355.68,
+                  "countGrade": 5
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -986.05,
+                  "countGrade": 2
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -739.49,
+                  "countGrade": 6
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -369.75,
+                  "countGrade": 1
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -246.49,
+                  "countGrade": 2
+                },
+                {
+                  "avgGrade": 49.27,
+                  "sumGrade": -246.5,
+                  "countGrade": 2
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -2711.59,
+                  "countGrade": 5
+                },
+                {
+                  "avgGrade": 49.26,
+                  "sumGrade": -1971.95,
+                  "countGrade": 10
+                }
+            ]
+        }
+    }
+}

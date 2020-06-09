@@ -1,0 +1,473 @@
+{
+    "title": "SELECT avgGrade ALL ENTRES GROUPED BY avgGrade (2 Apply, 1 Show)",
+    "query": "In courses dataset courses grouped by Department, find all entries; show avgGrade, where avgGrade is the AVG of Average and avgSum is the SUM of Average.",
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                  "avgGrade": 75.79
+                },
+                {
+                  "avgGrade": 89.94
+                },
+                {
+                  "avgGrade": 75.99
+                },
+                {
+                  "avgGrade": 78.21
+                },
+                {
+                  "avgGrade": 86.35
+                },
+                {
+                  "avgGrade": 76.92
+                },
+                {
+                  "avgGrade": 82.79
+                },
+                {
+                  "avgGrade": 74.06
+                },
+                {
+                  "avgGrade": 79.05
+                },
+                {
+                  "avgGrade": 78.28
+                },
+                {
+                  "avgGrade": 79.95
+                },
+                {
+                  "avgGrade": 79.07
+                },
+                {
+                  "avgGrade": 80
+                },
+                {
+                  "avgGrade": 76.21
+                },
+                {
+                  "avgGrade": 75.93
+                },
+                {
+                  "avgGrade": 81.66
+                },
+                {
+                  "avgGrade": 73.66
+                },
+                {
+                  "avgGrade": 73.96
+                },
+                {
+                  "avgGrade": 78.12
+                },
+                {
+                  "avgGrade": 76.36
+                },
+                {
+                  "avgGrade": 80.26
+                },
+                {
+                  "avgGrade": 77.58
+                },
+                {
+                  "avgGrade": 84.73
+                },
+                {
+                  "avgGrade": 79
+                },
+                {
+                  "avgGrade": 80.61
+                },
+                {
+                  "avgGrade": 76.39
+                },
+                {
+                  "avgGrade": 77.74
+                },
+                {
+                  "avgGrade": 81.26
+                },
+                {
+                  "avgGrade": 76.62
+                },
+                {
+                  "avgGrade": 73.52
+                },
+                {
+                  "avgGrade": 70.63
+                },
+                {
+                  "avgGrade": 87.61
+                },
+                {
+                  "avgGrade": 72.03
+                },
+                {
+                  "avgGrade": 78.38
+                },
+                {
+                  "avgGrade": 81.24
+                },
+                {
+                  "avgGrade": 77.54
+                },
+                {
+                  "avgGrade": 78.83
+                },
+                {
+                  "avgGrade": 85.39
+                },
+                {
+                  "avgGrade": 83.86
+                },
+                {
+                  "avgGrade": 74.31
+                },
+                {
+                  "avgGrade": 88.38
+                },
+                {
+                  "avgGrade": 82.01
+                },
+                {
+                  "avgGrade": 81.51
+                },
+                {
+                  "avgGrade": 86.92
+                },
+                {
+                  "avgGrade": 84.53
+                },
+                {
+                  "avgGrade": 81.65
+                },
+                {
+                  "avgGrade": 72.58
+                },
+                {
+                  "avgGrade": 77.94
+                },
+                {
+                  "avgGrade": 84.95
+                },
+                {
+                  "avgGrade": 82.55
+                },
+                {
+                  "avgGrade": 76.45
+                },
+                {
+                  "avgGrade": 79.77
+                },
+                {
+                  "avgGrade": 69.93
+                },
+                {
+                  "avgGrade": 78.68
+                },
+                {
+                  "avgGrade": 83.52
+                },
+                {
+                  "avgGrade": 84.92
+                },
+                {
+                  "avgGrade": 80.7
+                },
+                {
+                  "avgGrade": 82.14
+                },
+                {
+                  "avgGrade": 84.87
+                },
+                {
+                  "avgGrade": 84
+                },
+                {
+                  "avgGrade": 77.55
+                },
+                {
+                  "avgGrade": 84.48
+                },
+                {
+                  "avgGrade": 73.32
+                },
+                {
+                  "avgGrade": 86.59
+                },
+                {
+                  "avgGrade": 75.93
+                },
+                {
+                  "avgGrade": 78.41
+                },
+                {
+                  "avgGrade": 77.06
+                },
+                {
+                  "avgGrade": 83.09
+                },
+                {
+                  "avgGrade": 84.25
+                },
+                {
+                  "avgGrade": 88.92
+                },
+                {
+                  "avgGrade": 81.04
+                },
+                {
+                  "avgGrade": 87.4
+                },
+                {
+                  "avgGrade": 84.22
+                },
+                {
+                  "avgGrade": 76.46
+                },
+                {
+                  "avgGrade": 77.72
+                },
+                {
+                  "avgGrade": 77.26
+                },
+                {
+                  "avgGrade": 87.4
+                },
+                {
+                  "avgGrade": 76.93
+                },
+                {
+                  "avgGrade": 74.71
+                },
+                {
+                  "avgGrade": 79.53
+                },
+                {
+                  "avgGrade": 89.77
+                },
+                {
+                  "avgGrade": 83.22
+                },
+                {
+                  "avgGrade": 87.04
+                },
+                {
+                  "avgGrade": 89.05
+                },
+                {
+                  "avgGrade": 81.92
+                },
+                {
+                  "avgGrade": 77.98
+                },
+                {
+                  "avgGrade": 85.99
+                },
+                {
+                  "avgGrade": 84.63
+                },
+                {
+                  "avgGrade": 82.38
+                },
+                {
+                  "avgGrade": 81.7
+                },
+                {
+                  "avgGrade": 82.56
+                },
+                {
+                  "avgGrade": 83.72
+                },
+                {
+                  "avgGrade": 76.26
+                },
+                {
+                  "avgGrade": 82.46
+                },
+                {
+                  "avgGrade": 89.14
+                },
+                {
+                  "avgGrade": 77.87
+                },
+                {
+                  "avgGrade": 74.88
+                },
+                {
+                  "avgGrade": 82.78
+                },
+                {
+                  "avgGrade": 81.34
+                },
+                {
+                  "avgGrade": 81
+                },
+                {
+                  "avgGrade": 82.94
+                },
+                {
+                  "avgGrade": 79.49
+                },
+                {
+                  "avgGrade": 77.74
+                },
+                {
+                  "avgGrade": 81.27
+                },
+                {
+                  "avgGrade": 77.64
+                },
+                {
+                  "avgGrade": 85.27
+                },
+                {
+                  "avgGrade": 83.04
+                },
+                {
+                  "avgGrade": 72.75
+                },
+                {
+                  "avgGrade": 73.18
+                },
+                {
+                  "avgGrade": 76.7
+                },
+                {
+                  "avgGrade": 84.23
+                },
+                {
+                  "avgGrade": 75.19
+                },
+                {
+                  "avgGrade": 78.99
+                },
+                {
+                  "avgGrade": 68.31
+                },
+                {
+                  "avgGrade": 81.64
+                },
+                {
+                  "avgGrade": 81.25
+                },
+                {
+                  "avgGrade": 82.51
+                },
+                {
+                  "avgGrade": 81.16
+                },
+                {
+                  "avgGrade": 84.93
+                },
+                {
+                  "avgGrade": 86.22
+                },
+                {
+                  "avgGrade": 82.54
+                },
+                {
+                  "avgGrade": 70.28
+                },
+                {
+                  "avgGrade": 81.11
+                },
+                {
+                  "avgGrade": 75.19
+                },
+                {
+                  "avgGrade": 85.07
+                },
+                {
+                  "avgGrade": 87.64
+                },
+                {
+                  "avgGrade": 81.4
+                },
+                {
+                  "avgGrade": 80.36
+                },
+                {
+                  "avgGrade": 74.18
+                },
+                {
+                  "avgGrade": 84.41
+                },
+                {
+                  "avgGrade": 84.28
+                },
+                {
+                  "avgGrade": 79.86
+                },
+                {
+                  "avgGrade": 85.35
+                },
+                {
+                  "avgGrade": 84.2
+                },
+                {
+                  "avgGrade": 83.57
+                },
+                {
+                  "avgGrade": 77.76
+                },
+                {
+                  "avgGrade": 78.08
+                },
+                {
+                  "avgGrade": 75.47
+                },
+                {
+                  "avgGrade": 82.67
+                },
+                {
+                  "avgGrade": 81.51
+                },
+                {
+                  "avgGrade": 86.53
+                },
+                {
+                  "avgGrade": 89.82
+                },
+                {
+                  "avgGrade": 80.08
+                },
+                {
+                  "avgGrade": 74.89
+                },
+                {
+                  "avgGrade": 84.61
+                },
+                {
+                  "avgGrade": 88.98
+                },
+                {
+                  "avgGrade": 85.4
+                },
+                {
+                  "avgGrade": 72.27
+                },
+                {
+                  "avgGrade": 84.98
+                },
+                {
+                  "avgGrade": 85.76
+                },
+                {
+                  "avgGrade": 75.84
+                },
+                {
+                  "avgGrade": 86.47
+                },
+                {
+                  "avgGrade": 86.52
+                },
+                {
+                  "avgGrade": 77.05
+                }
+            ]
+        }
+    }
+}
