@@ -6,6 +6,7 @@ import fs = require("fs");
 import restify = require("restify");
 import Log from "../Util";
 import {InsightResponse} from "../controller/IInsightFacade";
+import InsightFacade from "../controller/InsightFacade";
 
 /**
  * This configures the REST endpoints for the server.
@@ -14,10 +15,11 @@ export default class Server {
 
     private port: number;
     private rest: restify.Server;
+    private static facade: InsightFacade;
 
     constructor(port: number) {
         Log.info("Server::<init>( " + port + " )");
-        this.port = port;
+        this.port   = port;
     }
 
     /**
@@ -53,6 +55,7 @@ export default class Server {
                     name: "insightUBC",
                 });
 
+                that.rest.use(restify.bodyParser({mapFiles: true, mapParams: true}));
                 that.rest.use(
                     function crossOrigin(req, res, next) {
                         res.header("Access-Control-Allow-Origin", "*");
@@ -64,7 +67,13 @@ export default class Server {
                 // http://localhost:4321/echo/hello
                 that.rest.get("/echo/:msg", Server.echo);
 
-                // NOTE: your endpoints should go here
+                that.rest.put("/dataset/:id/:kind", Server.putDataset);
+
+                that.rest.del("/dataset/:id", Server.deleteDataset);
+
+                that.rest.get("/dataset", Server.getDataset);
+
+                that.rest.post("/query", Server.postQuery);
 
                 // This must be the last endpoint!
                 that.rest.get("/.*", Server.getStatic);
@@ -131,4 +140,103 @@ export default class Server {
         });
     }
 
+    private static getInstanceOfFacade(): InsightFacade {
+        if (Server.facade === null || Server.facade === undefined) {
+            this.facade = new InsightFacade();
+            return this.facade;
+        }
+
+        return Server.facade;
+    }
+
+    private static async putDataset(req: restify.Request, res: restify.Response, next: restify.Next) {
+        Log.trace("RoutHandler::putDataset::" + req.url);
+
+        // Make sure that specific params are exists
+        if (!req.params.id || !req.params.body || !req.params.kind) {
+            res.send(400, {error: "there is a problem with parameters"});
+            return next();
+        }
+
+        // Add the given dataset to our insightFacade
+        let insightResponse: InsightResponse;
+        try {
+            const id        = req.params.id;
+            const kind      = req.params.kind;
+            const content   = req.params.body.toString("base64");
+            insightResponse = await Server.getInstanceOfFacade().addDataset(id, content, kind);
+
+        } catch (err) {
+            insightResponse = err;
+        }
+
+        // Send a response of adding the given dataset
+        res.send(insightResponse.code, insightResponse.body);
+        return next();
+    }
+
+    private static async deleteDataset(req: restify.Request, res: restify.Response, next: restify.Next) {
+        Log.trace("RoutHandler::delDataset::" + req.url);
+
+        // Make sure that specific params are exists
+        if (!req.params.id) {
+            res.send(400, {error: "there is a problem with id parameter"});
+            return next();
+        }
+
+        // Remove the given dataset from our insightFacade
+        let insightResponse: InsightResponse;
+        try {
+            const id        = req.params.id;
+            insightResponse = await Server.getInstanceOfFacade().removeDataset(id);
+
+        } catch (err) {
+            insightResponse = err;
+        }
+
+        // Send a response of adding the given dataset
+        res.send(insightResponse.code, insightResponse.body);
+        return next();
+    }
+
+    private static async getDataset(req: restify.Request, res: restify.Response, next: restify.Next) {
+        Log.trace("RoutHandler::getDataset::" + req.url);
+
+        // Get insightFacade dataset list
+        let insightResponse: InsightResponse;
+        try {
+            insightResponse = await Server.getInstanceOfFacade().listDatasets();
+
+        } catch (err) {
+            insightResponse = err;
+        }
+
+        // Send a response of adding the given dataset
+        res.send(insightResponse.code, insightResponse.body);
+        return next();
+    }
+
+    private static async postQuery(req: restify.Request, res: restify.Response, next: restify.Next) {
+        Log.trace("RoutHandler::postQuery::" + req.url);
+
+        // Check whether body parameter exists or not
+        if (!req.body) {
+            res.send(400, {error: "body is undefined"});
+            return next();
+        }
+
+        // Get insightFacade dataset list
+        let insightResponse: InsightResponse;
+        const query = req.body;
+        try {
+            insightResponse = await Server.getInstanceOfFacade().performQuery(query);
+
+        } catch (err) {
+            insightResponse = err;
+        }
+
+        // Send a response of adding the given dataset
+        res.send(insightResponse.code, insightResponse.body);
+        return next();
+    }
 }

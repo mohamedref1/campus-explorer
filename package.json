@@ -55,7 +55,7 @@
         "cleanwin": "rmdir node_modules /s /q & del /f .yarnclean & exit 0",
         "clean": "rm -rf ./node_modules/; rm -f .yarnclean",
         "build": "tsc && tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
-        "test": "mocha -r ts-node/register test/**/*.ts",
+        "test": "mocha -r ts-node/register test/**/*.ts --timeout 25000",
         "cover": "nyc --reporter text --reporter html yarn run test",
         "test:frontend": "karma start",
         "start": "node src/App.js"
