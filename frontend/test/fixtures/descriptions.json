@@ -1,3 +1,14 @@
 {
     "query1":"simple query is comparison for department with two columns and one order element",
+    "query2":"aggregate query is grouped by addres and comparison for seats with two columns, one transformation and one order element",
+    "query3":"simple query is comparison for average and average with two columns and one order element",
+    "query4":"simple query is comparison for average or average with two columns and one order element",
+    "query5":"simple query is comparison for not (average and average) with two columns and one order element",
+    "query6":"simple query is comparison for department (includes) with one column",
+    "query7":"simple query is comparison for department (begins) with one column",
+    "query8":"simple query is comparison for department (ends) with one column",
+    "query9":"aggregate query is grouped by department and average with two columns and comparison for average",
+    "query10":"aggregate query is grouped by department, average and id with three columns and comparison for average",
+    "query11":"simple query is comparison for seats with three columns and three orders",
+    "query12":"aggregate query is grouped by department and comparison for avg with four columns and three order"
 }

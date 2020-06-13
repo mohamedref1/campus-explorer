@@ -1,3 +1,14 @@
 {
     "query1":"In courses dataset courses, find entries whose Department is \"cpsc\"; show Department and ID; sort in ascending order by ID.",
+    "query2":"In rooms dataset rooms grouped by Address, find entries whose Seats is not less than 300; show Address and seatsGrade, where seatsGrade is the AVG of Seats; sort in descending order by seatsGrade.",
+    "query3":"In courses dataset courses, find entries whose Average is not equal to 99.50 and Average is greater than 98.23; show Department and Average; sort in ascending order by Average.",
+    "query4":"In courses dataset courses, find entries whose Average is not equal to 99.50 or Average is greater than 98.23; show Department and Average; sort in ascending order by Average.",
+    "query5":"In courses dataset courses, find entries whose Average is equal to 99.50 and Average is not greater than 98.23; show Department and Average; sort in ascending order by Average.",
+    "query6":"In courses dataset courses, find entries whose Department includes \"adhe\"; show Department.",
+    "query7":"In courses dataset courses, find entries whose Department begins with \"ad\"; show Department.",
+    "query8":"In courses dataset courses, find entries whose Department ends with \"ad\"; show Department.",
+    "query9":"In courses dataset courses grouped by Department and Average, find entries whose Average is greater than 96; show Department and Average.",
+    "query10":"In courses dataset courses grouped by Department, Average and ID, find entries whose Average is greater than 96; show Department, Average and ID.",
+    "query11":"In rooms dataset rooms, find entries whose Seats is equal to 50; show Address, Full Name and Short Name; sort in descending order by Address, Full Name and Short Name.",
+    "query12":"In courses dataset courses grouped by Department, find entries whose Average is greater than 97; show Department, avgGrade, countGrade and maxGrade, where avgGrade is the AVG of Average, countGrade is the COUNT of Average and maxGrade is the MAX of Average; sort in descending order by Department, avgGrade and maxGrade."
 }

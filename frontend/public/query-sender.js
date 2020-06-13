@@ -5,8 +5,14 @@
  * @returns {Promise} Promise that must be fulfilled if the Ajax request is successful and be rejected otherwise.
  */
 CampusExplorer.sendQuery = function(query) {
-    return new Promise(function(fulfill, reject) {
-        // TODO: implement!
-        console.log("CampusExplorer.sendQuery not implemented yet.");
+    return new Promise((fulfill, reject) => {
+        try {
+            const http = new XMLHttpRequest();
+            http.open("POST", "/query", true);
+            http.onload = function() { fulfill(this.response); }
+            http.send(query);
+        } catch (err) {
+            reject(err);
+        }
     });
 };
