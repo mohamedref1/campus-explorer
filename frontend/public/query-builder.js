@@ -112,7 +112,7 @@ function getConditions(formElement){
         logical === " or " ? filter  = filter.substr(0, filter.length - 4) : filter  = filter.substr(0, filter.length - 5);
 
     } else {
-        console.error("You have to provide at least one condition!!");
+        return "find all entries"
     }
 
     return filter;
